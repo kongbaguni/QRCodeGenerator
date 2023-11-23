@@ -18,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B5864E22B0F40A7008D7289 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1B8F46BA2B0EED0D0097CB9D /* QR-code-generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QR-code-generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B8F46BD2B0EED0D0097CB9D /* QR_code_generatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QR_code_generatorApp.swift; sourceTree = "<group>"; };
 		1B8F46BF2B0EED0D0097CB9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		1B8F46BC2B0EED0D0097CB9D /* QR-code-generator */ = {
 			isa = PBXGroup;
 			children = (
+				1B5864E22B0F40A7008D7289 /* Info.plist */,
 				1B8F46CB2B0EED750097CB9D /* Extensions */,
 				1B8F46BD2B0EED0D0097CB9D /* QR_code_generatorApp.swift */,
 				1B8F46BF2B0EED0D0097CB9D /* ContentView.swift */,
@@ -300,6 +302,7 @@
 				DEVELOPMENT_TEAM = QU9EPTU238;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "QR-code-generator/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -329,6 +332,7 @@
 				DEVELOPMENT_TEAM = QU9EPTU238;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "QR-code-generator/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
