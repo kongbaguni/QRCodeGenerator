@@ -11,10 +11,11 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            CodeGenerator.makeQRImage(text: "QR code generator", colorA: .white, colorB: .green)
+            Text("App Title")
+            CodeGenerator.makeQRImage(text: "QR code generator", colorA: .orange, colorB: .white)
                 .resizable()
                 .scaledToFit()
-            CodeGenerator.makeBarcodeImage(text: "bar code Generator", colorA: .blue, colorB: .white)
+            CodeGenerator.makeBarcodeImage(text: "bar code Generator", colorA: .orange, colorB: .white)
                 .resizable()
                 .scaledToFit()
             

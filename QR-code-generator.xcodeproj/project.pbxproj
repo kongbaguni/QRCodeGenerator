@@ -13,6 +13,8 @@
 		1B8F46C52B0EED100097CB9D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F46C42B0EED100097CB9D /* Preview Assets.xcassets */; };
 		1B8F46CF2B0F28460097CB9D /* CodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F46CE2B0F28460097CB9D /* CodeGenerator.swift */; };
 		1B8F46D12B0F32B20097CB9D /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F46D02B0F32B20097CB9D /* Color+Extensions.swift */; };
+		1B8F46D32B0F3C380097CB9D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F46D22B0F3C380097CB9D /* Localizable.xcstrings */; };
+		1B8F46D52B0F3CE00097CB9D /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F46D42B0F3CE00097CB9D /* InfoPlist.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		1B8F46C42B0EED100097CB9D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1B8F46CE2B0F28460097CB9D /* CodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerator.swift; sourceTree = "<group>"; };
 		1B8F46D02B0F32B20097CB9D /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		1B8F46D22B0F3C380097CB9D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		1B8F46D42B0F3CE00097CB9D /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,7 @@
 		1B8F46B12B0EED0D0097CB9D = {
 			isa = PBXGroup;
 			children = (
+				1B8F46D42B0F3CE00097CB9D /* InfoPlist.xcstrings */,
 				1B8F46BC2B0EED0D0097CB9D /* QR-code-generator */,
 				1B8F46BB2B0EED0D0097CB9D /* Products */,
 			);
@@ -61,6 +66,7 @@
 				1B8F46C12B0EED100097CB9D /* Assets.xcassets */,
 				1B8F46C32B0EED100097CB9D /* Preview Content */,
 				1B8F46CE2B0F28460097CB9D /* CodeGenerator.swift */,
+				1B8F46D22B0F3C380097CB9D /* Localizable.xcstrings */,
 			);
 			path = "QR-code-generator";
 			sourceTree = "<group>";
@@ -123,6 +129,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 1B8F46B12B0EED0D0097CB9D;
 			productRefGroup = 1B8F46BB2B0EED0D0097CB9D /* Products */;
@@ -141,6 +148,8 @@
 			files = (
 				1B8F46C52B0EED100097CB9D /* Preview Assets.xcassets in Resources */,
 				1B8F46C22B0EED100097CB9D /* Assets.xcassets in Resources */,
+				1B8F46D52B0F3CE00097CB9D /* InfoPlist.xcstrings in Resources */,
+				1B8F46D32B0F3C380097CB9D /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
