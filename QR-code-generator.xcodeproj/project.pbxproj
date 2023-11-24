@@ -467,6 +467,7 @@
 				CODE_SIGN_ENTITLEMENTS = "QR-code-generator/QR-code-generator.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"QR-code-generator/Preview Content\"";
 				DEVELOPMENT_TEAM = QU9EPTU238;
 				ENABLE_PREVIEWS = YES;

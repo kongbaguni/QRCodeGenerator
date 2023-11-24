@@ -11,7 +11,7 @@ import FirebaseCore
 @main
 struct QR_code_generatorApp: App {
     init() {
-        FirebaseApp.configure()
+        FirebaseApp.configure()        
     }
     var body: some Scene {
         WindowGroup {

@@ -20,6 +20,10 @@ struct HomeView: View {
     
     var body: some View {
         ScrollView {
+            Button("Crash") {
+              fatalError("Crash was triggered")
+            }
+            
             if isSignIn {
                 
             } else {
