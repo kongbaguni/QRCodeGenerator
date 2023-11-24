@@ -7,6 +7,8 @@
 
 import Foundation
 enum CustomError : Error {
+    /** 익명 계정에서 로그아웃 */
+    case anonymousSignOut
     /** 계정 탈퇴를 위한 인증에서 다른 아이디로 로그인함*/
     case wrongAccountSigninWhenLeave
     /** 포인트가 부족하다*/
@@ -16,6 +18,8 @@ enum CustomError : Error {
 extension CustomError {
     public var description : String {
         switch self {
+        case .anonymousSignOut:
+            return "anomymouse sign out"
         case .notEnoughPoint:
             return "Not enough Point"
         case .wrongAccountSigninWhenLeave:
@@ -31,6 +35,8 @@ extension CustomError : LocalizedError {
             return NSLocalizedString("Not enough Point", comment: "Not enough Point")
         case .wrongAccountSigninWhenLeave:
             return NSLocalizedString("wrongAccountSigninWhenLeave msg", comment: "wrong acount sign in")
+        case .anonymousSignOut:
+            return NSLocalizedString("anomymouse sign out", comment: "signout")
         }
     }
 }

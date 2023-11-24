@@ -71,11 +71,21 @@ struct SignInView: View {
     
     var signoutButton : some View  {
         Button {
-            self.error = AuthManager.shared.signout()
-            checkSignin()
+            if isAnonymous {
+                error = CustomError.anonymousSignOut
+            }
+            else {
+                signout()
+            }
+            
         } label: {
             Text("SignOut")
         }
+    }
+    
+    func signout() {
+        self.error = AuthManager.shared.signout()
+        checkSignin()
     }
     
     
@@ -95,7 +105,20 @@ struct SignInView: View {
             checkSignin()
         }
         .alert(isPresented: $isAlert, content: {
-            .init(title: .init("alert"), message: .init(error?.localizedDescription ?? ""))
+            switch error as? CustomError {
+            case .anonymousSignOut:
+                return .init(
+                    title: .init("alert"),
+                    message: .init(error?.localizedDescription ?? ""),
+                    primaryButton: .cancel(),
+                    secondaryButton: .default(.init("SignOut"), action: {
+                       signout()
+                    })
+                )
+            default:
+                return .init(title: .init("alert"), message: .init(error?.localizedDescription ?? ""))
+            }
+            
         })
         .navigationTitle(isSignin ? .init("Account") : .init("Signin"))
     }
