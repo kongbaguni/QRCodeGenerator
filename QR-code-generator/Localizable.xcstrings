@@ -12,6 +12,16 @@
         }
       }
     },
+    "account creation date" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "계정 생성 일시"
+          }
+        }
+      }
+    },
     "alert" : {
       "localizations" : {
         "ko" : {
@@ -71,7 +81,27 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Google 로 계속하기"
+            "value" : "Google로 계속하기"
+          }
+        }
+      }
+    },
+    "Don't see this message again" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 메세지 다시 보지 않기"
+          }
+        }
+      }
+    },
+    "email" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이메일"
           }
         }
       }
@@ -82,6 +112,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "홈"
+          }
+        }
+      }
+    },
+    "ID" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "아이디"
+          }
+        }
+      }
+    },
+    "last sign in date" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "마지막 로그인 일시"
           }
         }
       }
@@ -99,6 +149,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "포인트가 부족합니다. 광고를 시청하여 포인트를 충전할 수 있습니다. "
+          }
+        }
+      }
+    },
+    "phone" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "전화번호"
           }
         }
       }
@@ -130,6 +190,23 @@
         }
       }
     },
+    "Signin desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can sign in in the following three ways.\n\nAfter signing in with an anonymous account, you can upgrade to an Apple or Google account.\n\nData saved in the cloud with an anonymous account will be deleted immediately after logging out.\nIf you sign out of an anonymous account, you cannot sign in again with the same account.\n\nTo keep your data even after signing out, log in with Apple or Google.\nYou can use an anonymous account and then upgrade to an Apple or Google account."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다음 세가지 방법으로 로그인 할 수 있습니다.\n\n익명계정으로 로그인한 다음에는 Apple 이나 Google 계정으로 업그레이드 할 수 있습니다.\n\n익명계정으로 클라우드에 저장된 데이터는 로그아웃 즉시 삭제됩니다. \n익명계정은 로그아웃 하면 같은 계정으로 다시 로그인 할 수 없습니다.\n\n로그아웃한 후에도 데이터가 유지되도록 하려면 Apple, Google 로 로그인 하십시오. \n익명계정으로 사용후 Apple, Google 계정으로 업그레이드 하셔도 됩니다.\n"
+          }
+        }
+      }
+    },
     "Signin with Apple" : {
       "localizations" : {
         "en" : {
@@ -157,7 +234,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Google 로 로그인"
+            "value" : "Google로 로그인"
           }
         }
       }

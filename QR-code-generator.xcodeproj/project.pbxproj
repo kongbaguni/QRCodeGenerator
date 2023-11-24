@@ -46,6 +46,9 @@
 		1B5865342B10328E008D7289 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5865332B10328E008D7289 /* CustomError.swift */; };
 		1B5865362B10334D008D7289 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5865352B10334D008D7289 /* SignInView.swift */; };
 		1B58653A2B103B83008D7289 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B5865392B103B83008D7289 /* GoogleService-Info.plist */; };
+		1B58653C2B105C21008D7289 /* TableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B58653B2B105C21008D7289 /* TableRowView.swift */; };
+		1B58653E2B106FA5008D7289 /* AuthorizationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B58653D2B106FA5008D7289 /* AuthorizationButton.swift */; };
+		1B5865402B1084B9008D7289 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B58653F2B1084B9008D7289 /* CheckboxView.swift */; };
 		1B8F46BE2B0EED0D0097CB9D /* QR_code_generatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F46BD2B0EED0D0097CB9D /* QR_code_generatorApp.swift */; };
 		1B8F46C02B0EED0D0097CB9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F46BF2B0EED0D0097CB9D /* ContentView.swift */; };
 		1B8F46C22B0EED100097CB9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F46C12B0EED100097CB9D /* Assets.xcassets */; };
@@ -67,6 +70,9 @@
 		1B5865332B10328E008D7289 /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		1B5865352B10334D008D7289 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		1B5865392B103B83008D7289 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1B58653B2B105C21008D7289 /* TableRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRowView.swift; sourceTree = "<group>"; };
+		1B58653D2B106FA5008D7289 /* AuthorizationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationButton.swift; sourceTree = "<group>"; };
+		1B58653F2B1084B9008D7289 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		1B8F46BA2B0EED0D0097CB9D /* QR-code-generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QR-code-generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B8F46BD2B0EED0D0097CB9D /* QR_code_generatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QR_code_generatorApp.swift; sourceTree = "<group>"; };
 		1B8F46BF2B0EED0D0097CB9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -123,10 +129,13 @@
 		1B5865372B103599008D7289 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1B58653D2B106FA5008D7289 /* AuthorizationButton.swift */,
+				1B58653F2B1084B9008D7289 /* CheckboxView.swift */,
 				1B8F46BF2B0EED0D0097CB9D /* ContentView.swift */,
 				1B5864E52B1027EF008D7289 /* AppTitleView.swift */,
 				1B5864E72B10290A008D7289 /* HomeView.swift */,
 				1B5865352B10334D008D7289 /* SignInView.swift */,
+				1B58653B2B105C21008D7289 /* TableRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -323,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B58653E2B106FA5008D7289 /* AuthorizationButton.swift in Sources */,
 				1B5864E62B1027EF008D7289 /* AppTitleView.swift in Sources */,
 				1B5865322B103254008D7289 /* Realm+Extensions.swift in Sources */,
 				1B5865242B10311A008D7289 /* AuthManager.swift in Sources */,
@@ -331,7 +341,9 @@
 				1B5865342B10328E008D7289 /* CustomError.swift in Sources */,
 				1B5864E82B10290A008D7289 /* HomeView.swift in Sources */,
 				1B8F46C02B0EED0D0097CB9D /* ContentView.swift in Sources */,
+				1B58653C2B105C21008D7289 /* TableRowView.swift in Sources */,
 				1B58652B2B103179008D7289 /* UIApplication+Extensions.swift in Sources */,
+				1B5865402B1084B9008D7289 /* CheckboxView.swift in Sources */,
 				1B5865362B10334D008D7289 /* SignInView.swift in Sources */,
 				1B8F46BE2B0EED0D0097CB9D /* QR_code_generatorApp.swift in Sources */,
 			);
