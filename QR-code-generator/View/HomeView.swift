@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     var signin : some View {
         NavigationLink {
-            Text("Signin")
+            SignInView()
         } label: {
             Text("Signin")
         }
