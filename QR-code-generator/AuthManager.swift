@@ -170,6 +170,8 @@ class AuthManager : NSObject {
             realm.deleteAll()
             try realm.commitWrite()
             try auth.signOut()
+            
+            NotificationCenter.default.post(name: .authDidSucessed, object: nil)
         } catch {
             return error
         }

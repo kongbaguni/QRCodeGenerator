@@ -1,6 +1,17 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Account" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "계정"
+          }
+        }
+      }
+    },
     "alert" : {
       "localizations" : {
         "ko" : {
@@ -27,6 +38,12 @@
           }
         }
       }
+    },
+    "Continue with Apple" : {
+
+    },
+    "Continue with Google" : {
+
     },
     "Home" : {
       "localizations" : {

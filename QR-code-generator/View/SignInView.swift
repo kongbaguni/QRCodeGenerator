@@ -17,6 +17,7 @@ struct SignInView: View {
     }
     @State var isAlert:Bool = false
     @State var isSignin = AuthManager.shared.isSignined
+    @State var isAnonymous = AuthManager.shared.auth.currentUser?.isAnonymous == true
     
     var signinButtons : some View {
         Group {
@@ -47,6 +48,27 @@ struct SignInView: View {
         }
     }
     
+    var upgradeButtons : some View  {
+        Group {
+            Button {
+                AuthManager.shared.upgradeAnonymousWithAppleId { error in
+                    self.error = error
+                    checkSignin()
+                }
+            } label: {
+                Text("Continue with Apple")
+            }
+            Button {
+                AuthManager.shared.upgradeAnonymousWithGoogleId { error in
+                    self.error = error
+                    checkSignin()
+                }
+            } label: {
+                Text("Continue with Google")
+            }
+        }
+    }
+    
     var signoutButton : some View  {
         Button {
             self.error = AuthManager.shared.signout()
@@ -61,6 +83,9 @@ struct SignInView: View {
         ScrollView {
             if isSignin {
                 Text(AuthManager.shared.userId ?? "?")
+                if isAnonymous {
+                    upgradeButtons
+                }
                 signoutButton
             } else {
                 signinButtons
@@ -72,10 +97,12 @@ struct SignInView: View {
         .alert(isPresented: $isAlert, content: {
             .init(title: .init("alert"), message: .init(error?.localizedDescription ?? ""))
         })
+        .navigationTitle(isSignin ? .init("Account") : .init("Signin"))
     }
     
     func checkSignin() {
         isSignin = AuthManager.shared.isSignined
+        isAnonymous = AuthManager.shared.auth.currentUser?.isAnonymous == true
     }
 }
 

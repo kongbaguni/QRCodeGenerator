@@ -7,13 +7,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "QR Code Generator"
+            "value" : "QR,Bar Code Generator"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "QR 코드 생성기"
+            "value" : "QR,Bar 코드 생성기"
           }
         }
       }
