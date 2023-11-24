@@ -26,7 +26,7 @@ struct MakeBarCodeView: View {
                 ColorPicker("background Color", selection: $backgroundColor)
             }
                        
-        }.navigationTitle(.init("make QR code"))
+        }.navigationTitle(.init("make Bar code"))
     }
 }
 
