@@ -18,9 +18,20 @@ struct MakeBarCodeView: View {
                     .resizable()
                     .scaledToFit()
             }
+            
             Section("text") {
                 TextEditor(text: $text)
+                    .toolbar {
+                        ToolbarItemGroup(placement: .keyboard) {
+                            Button {
+                                UIApplication.shared.endEditing()
+                            } label: {
+                                Text("confirm")
+                            }
+                        }
+                    }
             }
+            
             Section("color") {
                 ColorPicker("foreground Color", selection: $foregroundColor)
                 ColorPicker("background Color", selection: $backgroundColor)

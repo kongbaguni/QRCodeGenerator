@@ -67,13 +67,44 @@
       }
     },
     "background Color" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "배경색"
+          }
+        }
+      }
     },
     "Bar code" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "바코드"
+          }
+        }
+      }
     },
     "color" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "색상"
+          }
+        }
+      }
+    },
+    "confirm" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "확인"
+          }
+        }
+      }
     },
     "Continue with Apple" : {
       "localizations" : {
@@ -116,7 +147,14 @@
       }
     },
     "foreground Color" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "전경색"
+          }
+        }
+      }
     },
     "Home" : {
       "localizations" : {
@@ -196,7 +234,14 @@
       }
     },
     "QR code" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR코드"
+          }
+        }
+      }
     },
     "Signin" : {
       "extractionState" : "manual",
@@ -291,7 +336,14 @@
       }
     },
     "text" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "문자 입력"
+          }
+        }
+      }
     },
     "wrongAccountSigninWhenLeave msg" : {
       "comment" : "wrong acount sign in",

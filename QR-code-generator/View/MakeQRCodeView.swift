@@ -20,6 +20,15 @@ struct MakeQRCodeView: View {
             }
             Section("text") {
                 TextEditor(text: $text)
+                    .toolbar {
+                        ToolbarItemGroup(placement: .keyboard) {
+                            Button {
+                                UIApplication.shared.endEditing()
+                            } label: {
+                                Text("confirm")
+                            }
+                        }
+                    }
             }
             Section("color") {
                 ColorPicker("foreground Color", selection: $foregroundColor)
