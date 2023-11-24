@@ -8,19 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @State var navigationPath = NavigationPath()
     var body: some View {
-        VStack {
-            Text("App Title")
-            CodeGenerator.makeQRImage(text: "QR code generator", colorA: .orange, colorB: .white)
-                .resizable()
-                .scaledToFit()
-            CodeGenerator.makeBarcodeImage(text: "bar code Generator", colorA: .orange, colorB: .white)
-                .resizable()
-                .scaledToFit()
+        NavigationView {
+            NavigationStack(path: $navigationPath, root: {
+               HomeView()
+            })
             
         }
-        .padding()
+        
     }
 }
 
