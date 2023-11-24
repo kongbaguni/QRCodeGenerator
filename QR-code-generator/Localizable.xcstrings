@@ -66,6 +66,15 @@
         }
       }
     },
+    "background Color" : {
+
+    },
+    "Bar code" : {
+
+    },
+    "color" : {
+
+    },
     "Continue with Apple" : {
       "localizations" : {
         "ko" : {
@@ -106,6 +115,9 @@
         }
       }
     },
+    "foreground Color" : {
+
+    },
     "Home" : {
       "localizations" : {
         "ko" : {
@@ -136,6 +148,26 @@
         }
       }
     },
+    "make Bar codce" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "바코드 만들기"
+          }
+        }
+      }
+    },
+    "make QR code" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR 코드 만들기"
+          }
+        }
+      }
+    },
     "Not enough Point" : {
       "comment" : "Not enough Point",
       "localizations" : {
@@ -162,6 +194,9 @@
           }
         }
       }
+    },
+    "QR code" : {
+
     },
     "Signin" : {
       "extractionState" : "manual",
@@ -254,6 +289,9 @@
           }
         }
       }
+    },
+    "text" : {
+
     },
     "wrongAccountSigninWhenLeave msg" : {
       "comment" : "wrong acount sign in",

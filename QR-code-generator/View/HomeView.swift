@@ -19,8 +19,34 @@ struct HomeView: View {
     }
     
     var body: some View {
-        ScrollView {
+        List {
             if isSignIn {
+                NavigationLink {
+                    MakeQRCodeView()
+                } label: {
+                    HStack {
+                        CodeGenerator.makeQRImage(text: "QR", foreground: .teal, background: .clear)
+                            .resizable()
+                            .scaledToFit()
+                            .padding(20)
+                            .frame(width:100,height: 100)
+                        Text("make QR code")
+                        
+                    }
+                }
+                
+                NavigationLink {
+                    MakeBarCodeView()
+                } label : {
+                    HStack {
+                        CodeGenerator.makeBarcodeImage(text: "barcode", forground: .teal, background: .clear)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width:100,height: 100)
+                        
+                        Text("make Bar codce")
+                    }
+                }
                 
             } else {
                 AppTitleView()
@@ -38,5 +64,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView(isSignIn: true)
 }
