@@ -8,30 +8,22 @@
 import SwiftUI
 
 struct MakeQRCodeView: View {
-    enum InputType : Int, CaseIterable {
-        case text
-        case mailto
-        case https
-        case http
-        static var allTexts:[Text] {
-            return InputType.allCases.map { type in
-                switch type {
-                case .text:
-                    return .init("text")
-                case .mailto:
-                    return .init("mailto")
-                case .https:
-                    return .init("https")
-                case .http:
-                    return .init("http")
-                }
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+    @State var error:Error? = nil {
+        didSet {
+            if error != nil {
+                isAlert = true
             }
         }
     }
     
+    @State var isAlert:Bool = false
+   
+    
     @State var text:String = ""
     var outputText:String {
-        switch InputType.allCases[tabIndex] {
+        switch CodeModel.InputType.allCases[tabIndex] {
         case .text:
             return text
         case .mailto:
@@ -55,8 +47,8 @@ struct MakeQRCodeView: View {
                     .frame(height: 200)
             }
             Section("input") {
-                ScrollTabBarView(titles: InputType.allTexts, selectedIndex: $tabIndex)
-                switch InputType(rawValue: tabIndex) {
+                ScrollTabBarView(titles: CodeModel.InputType.allTexts, selectedIndex: $tabIndex)
+                switch CodeModel.InputType(rawValue: tabIndex) {
                 case .text:
                     TextEditor(text: $text)
                         .toolbar {
@@ -95,9 +87,29 @@ struct MakeQRCodeView: View {
                 ColorPicker("foreground Color", selection: $foregroundColor)
                 ColorPicker("background Color", selection: $backgroundColor)
             }
-           
-            
-        }.navigationTitle(.init("make QR code"))
+                       
+        }
+        .navigationTitle(.init("make QR code"))
+        .toolbar {
+            Button {
+                CodeModel.add(
+                    codeType: .qr,
+                    inputType: CodeModel.InputType(rawValue: tabIndex)
+                    ?? .text,
+                    text: text,
+                    colors: (f:foregroundColor,b:backgroundColor)) { error in
+                        if error == nil {
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                        self.error = error
+                    }
+            } label : {
+                Text("save")
+            }
+        }
+        .alert(isPresented: $isAlert) {
+            .init(title: .init("alert"), message: .init(error!.localizedDescription))
+        }
     }
 }
 

@@ -247,6 +247,9 @@
         }
       }
     },
+    "list" : {
+
+    },
     "mailto" : {
       "localizations" : {
         "ko" : {
@@ -331,6 +334,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "QR코드"
+          }
+        }
+      }
+    },
+    "save" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "저장"
           }
         }
       }

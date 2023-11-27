@@ -8,6 +8,17 @@
 import SwiftUI
 
 struct MakeBarCodeView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+    @State var error:Error? = nil {
+        didSet {
+            if error != nil {
+                isAlert = true
+            }
+        }
+    }
+    @State var isAlert:Bool = false
+    
     @State var text:String = ""
     @State var foregroundColor:Color = .black
     @State var backgroundColor:Color = .white
@@ -39,7 +50,24 @@ struct MakeBarCodeView: View {
                 ColorPicker("background Color", selection: $backgroundColor)
             }
                        
-        }.navigationTitle(.init("make Bar code"))
+        }
+        .navigationTitle(.init("make Bar code"))
+        .toolbar {
+            Button {
+                CodeModel.add(codeType: .bar, inputType: .text, text: text, colors: (f: foregroundColor, b: backgroundColor)) { error in
+                    if error == nil {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                    self.error = error
+                }
+            } label : {
+                Text("save")
+            }
+        }
+        .alert(isPresented: $isAlert) {
+            .init(title: .init("alert"),
+                  message: .init(error!.localizedDescription))
+        }
     }
 }
 
