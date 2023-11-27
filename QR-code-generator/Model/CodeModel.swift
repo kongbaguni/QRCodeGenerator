@@ -100,6 +100,16 @@ extension CodeModel {
             return CodeGenerator.makeQRImage(text: outputString, foreground: foregroundColor, background: backgroundColor)
         }
     }
+    
+    var uiimage:UIImage? {
+        switch codeType {
+        case .bar:
+            return CodeGenerator.makeBarcodeUiImage(text: text, foreground: foregroundColor.ciColorValue, background: backgroundColor.ciColorValue)
+        case .qr:
+            return CodeGenerator.makeQRUIImage(text: outputString, foreground: foregroundColor.ciColorValue, background: backgroundColor.ciColorValue)
+        }
+
+    }
 }
 
 
@@ -155,6 +165,7 @@ extension CodeModel {
         query.getDocuments { snapShot, error in
             let realm = Realm.shared
             realm.beginWrite()
+            print("sync newcount : \(snapShot?.documents.count ?? 0)")
             for document in snapShot?.documents ?? [] {
                 var data = document.data()
                 data["id"] = document.documentID

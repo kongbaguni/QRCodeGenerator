@@ -54,6 +54,8 @@
 		1B5865462B109636008D7289 /* CodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5865452B109636008D7289 /* CodeModel.swift */; };
 		1B58654A2B10991E008D7289 /* FirebaseFirestoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5865492B10991E008D7289 /* FirebaseFirestoreHelper.swift */; };
 		1B7EB5C72B141C9300352857 /* ScrollTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EB5C62B141C9300352857 /* ScrollTabBarView.swift */; };
+		1B7EB5C92B144F1900352857 /* CodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EB5C82B144F1900352857 /* CodeDetailView.swift */; };
+		1B7EB5CC2B14539500352857 /* ActivityView in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7EB5CB2B14539500352857 /* ActivityView */; };
 		1B8F46BE2B0EED0D0097CB9D /* QR_code_generatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F46BD2B0EED0D0097CB9D /* QR_code_generatorApp.swift */; };
 		1B8F46C02B0EED0D0097CB9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F46BF2B0EED0D0097CB9D /* ContentView.swift */; };
 		1B8F46C22B0EED100097CB9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F46C12B0EED100097CB9D /* Assets.xcassets */; };
@@ -83,6 +85,7 @@
 		1B5865452B109636008D7289 /* CodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeModel.swift; sourceTree = "<group>"; };
 		1B5865492B10991E008D7289 /* FirebaseFirestoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreHelper.swift; sourceTree = "<group>"; };
 		1B7EB5C62B141C9300352857 /* ScrollTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTabBarView.swift; sourceTree = "<group>"; };
+		1B7EB5C82B144F1900352857 /* CodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailView.swift; sourceTree = "<group>"; };
 		1B8F46BA2B0EED0D0097CB9D /* QR-code-generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QR-code-generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B8F46BD2B0EED0D0097CB9D /* QR_code_generatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QR_code_generatorApp.swift; sourceTree = "<group>"; };
 		1B8F46BF2B0EED0D0097CB9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 				1B58650B2B102D25008D7289 /* FirebaseFunctions in Frameworks */,
 				1B5865212B102D25008D7289 /* FirebaseStorageCombine-Community in Frameworks */,
 				1B58651B2B102D25008D7289 /* FirebaseRemoteConfig in Frameworks */,
+				1B7EB5CC2B14539500352857 /* ActivityView in Frameworks */,
 				1B5864F72B102D25008D7289 /* FirebaseAppDistribution-Beta in Frameworks */,
 				1B5864FB2B102D25008D7289 /* FirebaseAuthCombine-Community in Frameworks */,
 				1B5865192B102D25008D7289 /* FirebasePerformance in Frameworks */,
@@ -149,6 +153,7 @@
 				1B5865412B108E59008D7289 /* MakeQRCodeView.swift */,
 				1B5865432B1090EA008D7289 /* MakeBarCodeView.swift */,
 				1B7EB5C62B141C9300352857 /* ScrollTabBarView.swift */,
+				1B7EB5C82B144F1900352857 /* CodeDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				1B5865282B10313D008D7289 /* GoogleSignInSwift */,
 				1B58652D2B1031BE008D7289 /* Realm */,
 				1B58652F2B1031BE008D7289 /* RealmSwift */,
+				1B7EB5CB2B14539500352857 /* ActivityView */,
 			);
 			productName = "QR-code-generator";
 			productReference = 1B8F46BA2B0EED0D0097CB9D /* QR-code-generator.app */;
@@ -308,6 +314,7 @@
 				1B5864EB2B102D25008D7289 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				1B5865252B10313D008D7289 /* XCRemoteSwiftPackageReference "GoogleSignIn-ios" */,
 				1B58652C2B1031BE008D7289 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				1B7EB5CA2B14539500352857 /* XCRemoteSwiftPackageReference "ActivityView" */,
 			);
 			productRefGroup = 1B8F46BB2B0EED0D0097CB9D /* Products */;
 			projectDirPath = "";
@@ -371,6 +378,7 @@
 				1B8F46D12B0F32B20097CB9D /* Color+Extensions.swift in Sources */,
 				1B5865422B108E59008D7289 /* MakeQRCodeView.swift in Sources */,
 				1B5865342B10328E008D7289 /* CustomError.swift in Sources */,
+				1B7EB5C92B144F1900352857 /* CodeDetailView.swift in Sources */,
 				1B5864E82B10290A008D7289 /* HomeView.swift in Sources */,
 				1B5865442B1090EA008D7289 /* MakeBarCodeView.swift in Sources */,
 				1B58654A2B10991E008D7289 /* FirebaseFirestoreHelper.swift in Sources */,
@@ -618,6 +626,14 @@
 				kind = branch;
 			};
 		};
+		1B7EB5CA2B14539500352857 /* XCRemoteSwiftPackageReference "ActivityView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUI-Plus/ActivityView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -775,6 +791,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1B58652C2B1031BE008D7289 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		1B7EB5CB2B14539500352857 /* ActivityView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B7EB5CA2B14539500352857 /* XCRemoteSwiftPackageReference "ActivityView" */;
+			productName = ActivityView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

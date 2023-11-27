@@ -13,7 +13,7 @@ struct HomeView: View {
         CodeModel.self,
         sortDescriptor: .init(
             keyPath: "updateDtTimeIntervalSince1970",
-            ascending: true)
+            ascending: false)
     ) var codelist
     @State var error:Error? = nil {
         didSet {
@@ -64,27 +64,32 @@ struct HomeView: View {
                         }
                     }
                 }
-                Section("list") {
+                Section("my codes") {
                     ForEach(codelist, id:\.self) { code in
-                        switch code.codeType {
-                        case .bar:
-                            VStack {
-                                code.image
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(maxHeight:70)
-                                Text(code.text)
-                            }
-                        case .qr:
-                            HStack {
-                                code.image
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(height:100)
-                                Text(code.outputString)
-                                Spacer()
+                        NavigationLink {
+                            CodeDetailView(code: code)
+                        } label: {
+                            switch code.codeType {
+                            case .bar:
+                                VStack {
+                                    code.image
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(maxHeight:70)
+                                    Text(code.text)
+                                }
+                            case .qr:
+                                HStack {
+                                    code.image
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(height:100)
+                                    Text(code.outputString)
+                                    Spacer()
+                                }
                             }
                         }
+
                     }
                 }
             } else {

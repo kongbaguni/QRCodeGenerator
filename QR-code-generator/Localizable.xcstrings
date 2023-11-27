@@ -216,6 +216,16 @@
         }
       }
     },
+    "id" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "아이디"
+          }
+        }
+      }
+    },
     "ID" : {
       "localizations" : {
         "ko" : {
@@ -246,9 +256,6 @@
           }
         }
       }
-    },
-    "list" : {
-
     },
     "mailto" : {
       "localizations" : {
@@ -301,6 +308,9 @@
         }
       }
     },
+    "my codes" : {
+
+    },
     "Not enough Point" : {
       "comment" : "Not enough Point",
       "localizations" : {
@@ -334,6 +344,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "QR코드"
+          }
+        }
+      }
+    },
+    "regDt" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "등록일시"
           }
         }
       }
@@ -446,6 +466,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "문자 입력"
+          }
+        }
+      }
+    },
+    "updateDt" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "수정일시"
           }
         }
       }
