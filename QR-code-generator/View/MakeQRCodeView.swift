@@ -54,7 +54,7 @@ struct MakeQRCodeView: View {
                     .scaledToFit()
                     .frame(height: 200)
             }
-            Section("text") {
+            Section("input") {
                 ScrollTabBarView(titles: InputType.allTexts, selectedIndex: $tabIndex)
                 switch InputType(rawValue: tabIndex) {
                 case .text:

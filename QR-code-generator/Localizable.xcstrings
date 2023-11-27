@@ -226,6 +226,17 @@
         }
       }
     },
+    "input" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "입력"
+          }
+        }
+      }
+    },
     "last sign in date" : {
       "localizations" : {
         "ko" : {
