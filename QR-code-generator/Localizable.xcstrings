@@ -146,6 +146,16 @@
         }
       }
     },
+    "error" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "에러"
+          }
+        }
+      }
+    },
     "foreground Color" : {
       "localizations" : {
         "ko" : {
@@ -162,6 +172,46 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "홈"
+          }
+        }
+      }
+    },
+    "http" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "http://" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "https" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "https://" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
           }
         }
       }
@@ -186,7 +236,38 @@
         }
       }
     },
+    "mailto" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "mailto:" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
     "make Bar codce" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "바코드 만들기"
+          }
+        }
+      }
+    },
+    "make Bar code" : {
+      "extractionState" : "manual",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -341,6 +422,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "문자 입력"
+          }
+        }
+      }
+    },
+    "website" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "웹사이트"
           }
         }
       }

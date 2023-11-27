@@ -17,6 +17,7 @@ struct MakeBarCodeView: View {
                 CodeGenerator.makeBarcodeImage(text: text, forground: foregroundColor, background: backgroundColor)
                     .resizable()
                     .scaledToFit()
+                    .frame(height: 100)
             }
             
             Section("text") {
@@ -30,6 +31,7 @@ struct MakeBarCodeView: View {
                             }
                         }
                     }
+                    .keyboardType(.asciiCapable)
             }
             
             Section("color") {

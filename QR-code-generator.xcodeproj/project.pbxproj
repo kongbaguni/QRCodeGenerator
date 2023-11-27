@@ -51,6 +51,9 @@
 		1B5865402B1084B9008D7289 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B58653F2B1084B9008D7289 /* CheckboxView.swift */; };
 		1B5865422B108E59008D7289 /* MakeQRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5865412B108E59008D7289 /* MakeQRCodeView.swift */; };
 		1B5865442B1090EA008D7289 /* MakeBarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5865432B1090EA008D7289 /* MakeBarCodeView.swift */; };
+		1B5865462B109636008D7289 /* CodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5865452B109636008D7289 /* CodeModel.swift */; };
+		1B58654A2B10991E008D7289 /* FirebaseFirestoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5865492B10991E008D7289 /* FirebaseFirestoreHelper.swift */; };
+		1B7EB5C72B141C9300352857 /* ScrollTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EB5C62B141C9300352857 /* ScrollTabBarView.swift */; };
 		1B8F46BE2B0EED0D0097CB9D /* QR_code_generatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F46BD2B0EED0D0097CB9D /* QR_code_generatorApp.swift */; };
 		1B8F46C02B0EED0D0097CB9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F46BF2B0EED0D0097CB9D /* ContentView.swift */; };
 		1B8F46C22B0EED100097CB9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F46C12B0EED100097CB9D /* Assets.xcassets */; };
@@ -77,6 +80,9 @@
 		1B58653F2B1084B9008D7289 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		1B5865412B108E59008D7289 /* MakeQRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeQRCodeView.swift; sourceTree = "<group>"; };
 		1B5865432B1090EA008D7289 /* MakeBarCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBarCodeView.swift; sourceTree = "<group>"; };
+		1B5865452B109636008D7289 /* CodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeModel.swift; sourceTree = "<group>"; };
+		1B5865492B10991E008D7289 /* FirebaseFirestoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreHelper.swift; sourceTree = "<group>"; };
+		1B7EB5C62B141C9300352857 /* ScrollTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTabBarView.swift; sourceTree = "<group>"; };
 		1B8F46BA2B0EED0D0097CB9D /* QR-code-generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QR-code-generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B8F46BD2B0EED0D0097CB9D /* QR_code_generatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QR_code_generatorApp.swift; sourceTree = "<group>"; };
 		1B8F46BF2B0EED0D0097CB9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,8 +148,25 @@
 				1B58653B2B105C21008D7289 /* TableRowView.swift */,
 				1B5865412B108E59008D7289 /* MakeQRCodeView.swift */,
 				1B5865432B1090EA008D7289 /* MakeBarCodeView.swift */,
+				1B7EB5C62B141C9300352857 /* ScrollTabBarView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1B5865472B109709008D7289 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1B5865452B109636008D7289 /* CodeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1B5865482B109901008D7289 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				1B5865492B10991E008D7289 /* FirebaseFirestoreHelper.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		1B8F46B12B0EED0D0097CB9D = {
@@ -167,6 +190,7 @@
 		1B8F46BC2B0EED0D0097CB9D /* QR-code-generator */ = {
 			isa = PBXGroup;
 			children = (
+				1B5865482B109901008D7289 /* Firebase */,
 				1B5865332B10328E008D7289 /* CustomError.swift */,
 				1B5865232B10311A008D7289 /* AuthManager.swift */,
 				1B5865222B102ED4008D7289 /* QR-code-generator.entitlements */,
@@ -178,6 +202,7 @@
 				1B8F46C32B0EED100097CB9D /* Preview Content */,
 				1B8F46CE2B0F28460097CB9D /* CodeGenerator.swift */,
 				1B8F46D22B0F3C380097CB9D /* Localizable.xcstrings */,
+				1B5865472B109709008D7289 /* Model */,
 			);
 			path = "QR-code-generator";
 			sourceTree = "<group>";
@@ -348,10 +373,13 @@
 				1B5865342B10328E008D7289 /* CustomError.swift in Sources */,
 				1B5864E82B10290A008D7289 /* HomeView.swift in Sources */,
 				1B5865442B1090EA008D7289 /* MakeBarCodeView.swift in Sources */,
+				1B58654A2B10991E008D7289 /* FirebaseFirestoreHelper.swift in Sources */,
 				1B8F46C02B0EED0D0097CB9D /* ContentView.swift in Sources */,
 				1B58653C2B105C21008D7289 /* TableRowView.swift in Sources */,
 				1B58652B2B103179008D7289 /* UIApplication+Extensions.swift in Sources */,
 				1B5865402B1084B9008D7289 /* CheckboxView.swift in Sources */,
+				1B5865462B109636008D7289 /* CodeModel.swift in Sources */,
+				1B7EB5C72B141C9300352857 /* ScrollTabBarView.swift in Sources */,
 				1B5865362B10334D008D7289 /* SignInView.swift in Sources */,
 				1B8F46BE2B0EED0D0097CB9D /* QR_code_generatorApp.swift in Sources */,
 			);

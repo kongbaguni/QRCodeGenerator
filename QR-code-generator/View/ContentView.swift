@@ -14,8 +14,8 @@ struct ContentView: View {
             NavigationStack(path: $navigationPath, root: {
                HomeView()
             })
-            
         }
+        .navigationViewStyle(.stack)
         
     }
 }

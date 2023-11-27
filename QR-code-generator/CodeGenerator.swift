@@ -19,6 +19,7 @@ struct CodeGenerator {
         }
         
         let filter = CIFilter.qrCodeGenerator()
+        
         filter.message = data
         
         guard let ciimage = filter.outputImage else {
