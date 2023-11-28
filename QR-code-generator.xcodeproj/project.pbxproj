@@ -68,6 +68,7 @@
 		1B8F46D12B0F32B20097CB9D /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F46D02B0F32B20097CB9D /* Color+Extensions.swift */; };
 		1B8F46D32B0F3C380097CB9D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F46D22B0F3C380097CB9D /* Localizable.xcstrings */; };
 		1B8F46D52B0F3CE00097CB9D /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F46D42B0F3CE00097CB9D /* InfoPlist.xcstrings */; };
+		1BB658092B15CCF700A8C474 /* CodeImageCacheModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB658082B15CCF700A8C474 /* CodeImageCacheModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,7 @@
 		1B8F46D02B0F32B20097CB9D /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		1B8F46D22B0F3C380097CB9D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1B8F46D42B0F3CE00097CB9D /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		1BB658082B15CCF700A8C474 /* CodeImageCacheModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeImageCacheModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				1B7EB5CD2B14614600352857 /* PointModel.swift */,
 				1B5865452B109636008D7289 /* CodeModel.swift */,
 				1B7EB5CF2B14628A00352857 /* TagModel.swift */,
+				1BB658082B15CCF700A8C474 /* CodeImageCacheModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 			files = (
 				1B58653E2B106FA5008D7289 /* AuthorizationButton.swift in Sources */,
 				1B5864E62B1027EF008D7289 /* AppTitleView.swift in Sources */,
+				1BB658092B15CCF700A8C474 /* CodeImageCacheModel.swift in Sources */,
 				1B5865322B103254008D7289 /* Realm+Extensions.swift in Sources */,
 				1B5865242B10311A008D7289 /* AuthManager.swift in Sources */,
 				1B8F46CF2B0F28460097CB9D /* CodeGenerator.swift in Sources */,

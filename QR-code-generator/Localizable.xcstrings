@@ -173,6 +173,28 @@
         }
       }
     },
+    "edit Bar code" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bar 코드 편집"
+          }
+        }
+      }
+    },
+    "edit QR code" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR 코드 편집"
+          }
+        }
+      }
+    },
     "email" : {
       "localizations" : {
         "ko" : {
