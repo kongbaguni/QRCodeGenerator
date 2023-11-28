@@ -38,7 +38,7 @@ struct HomeView: View {
             if isSignIn {
                 Section {
                     NavigationLink {
-                        MakeQRCodeView()
+                        MakeQRCodeView(id:nil)
                     } label: {
                         HStack {
                             CodeGenerator.makeQRImage(text: "QR", foreground: .teal, background: .clear)
@@ -52,7 +52,7 @@ struct HomeView: View {
                     }
                     
                     NavigationLink {
-                        MakeBarCodeView()
+                        MakeBarCodeView(id:nil)
                     } label : {
                         HStack {
                             CodeGenerator.makeBarcodeImage(text: "barcode", forground: .teal, background: .clear)

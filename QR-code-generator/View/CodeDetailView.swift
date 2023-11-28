@@ -10,8 +10,19 @@ import RealmSwift
 import ActivityView
 
 struct CodeDetailView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     @ObservedRealmObject var code:CodeModel
     @State var activityItem:ActivityItem? = nil
+    @State var error:Error? = nil {
+        didSet {
+            if error != nil {
+                isAlert = true
+            }
+        }
+    }
+    @State var isAlert:Bool = false
+    
     var body: some View {
         ScrollView {
             code.image
@@ -50,9 +61,25 @@ struct CodeDetailView: View {
                         sub: .init(code.updateDt.formatted(date: .complete, time: .standard)), headWidth: 100)
                 }
             }.padding()
-            
-            
-            
+         
+            HStack {
+                NavigationLink {
+                    switch code.codeType {
+                    case .qr:
+                        MakeQRCodeView(id:code.id)
+                    case .bar:
+                        MakeBarCodeView(id:code.id)
+                    }
+                } label: {
+                    Text("edit")
+                }
+
+                Button {
+                    self.error = CustomError.deleteCodeConfirm
+                } label: {
+                    Text("delete")
+                }
+            }
         }
         .navigationTitle(code.outputString)
         .toolbar {
@@ -67,6 +94,29 @@ struct CodeDetailView: View {
             }
         }
         .activitySheet($activityItem)
+        .alert(isPresented: $isAlert) {
+            switch error as? CustomError {
+            case .deleteCodeConfirm:
+                return .init(title: .init("alert"),
+                             message: .init(error!.localizedDescription),
+                             primaryButton: .cancel(),
+                             secondaryButton: .default(.init("confirm"), action: {
+                    code.delete { error in
+                        self.error = error
+                        if error == nil {
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    }
+                    
+                })
+                )
+            default:
+                return .init(
+                    title: .init("alert"),
+                    message:.init(error!.localizedDescription)
+                )
+            }
+        }
     }
 }
 

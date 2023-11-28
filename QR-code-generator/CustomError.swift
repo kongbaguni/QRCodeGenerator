@@ -15,6 +15,9 @@ enum CustomError : Error {
     case notEnoughPoint
     /** 이미 등록된 태그*/
     case tagsAlreadyRegistered
+    
+    /** 코드 삭제하기 확인창 띄우기 */
+    case deleteCodeConfirm
 }
 
 extension CustomError {
@@ -28,6 +31,8 @@ extension CustomError {
             return "wrong account signin when leave"
         case .tagsAlreadyRegistered:
             return "Tags already registered"
+        case .deleteCodeConfirm:
+            return "delete code confirm"
         }
     }
 }
@@ -43,6 +48,8 @@ extension CustomError : LocalizedError {
             return NSLocalizedString("anomymouse sign out", comment: "signout")
         case .tagsAlreadyRegistered:
             return NSLocalizedString("Tags already registered", comment: "tag")
+        case .deleteCodeConfirm:
+            return NSLocalizedString("delete code confirm message", comment: "delete tag")
         }
     }
 }

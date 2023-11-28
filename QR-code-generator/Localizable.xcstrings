@@ -126,12 +126,49 @@
         }
       }
     },
+    "delete" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "삭제"
+          }
+        }
+      }
+    },
+    "delete code confirm message" : {
+      "comment" : "delete tag",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete the code.\nIf you delete it now, the deleted code cannot be recovered. Are you sure you want to delete?"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "코드를 삭제합니다.\n지금 삭제하면 삭제된 코드는 복구할 수 없습니다. 삭제하시겠습니까?"
+          }
+        }
+      }
+    },
     "Don't see this message again" : {
       "localizations" : {
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "이 메세지 다시 보지 않기"
+          }
+        }
+      }
+    },
+    "edit" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "편집"
           }
         }
       }
@@ -211,7 +248,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ""
+            "value" : " "
           }
         }
       }

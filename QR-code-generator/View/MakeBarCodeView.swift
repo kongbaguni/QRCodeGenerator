@@ -6,8 +6,16 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct MakeBarCodeView: View {
+    let id:String?
+    var model:CodeModel? {
+        if let id = id {
+            return Realm.shared.object(ofType: CodeModel.self, forPrimaryKey: id)
+        }
+        return nil
+    }
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     @State var error:Error? = nil {
@@ -54,7 +62,7 @@ struct MakeBarCodeView: View {
             }
                        
         }
-        .navigationTitle(.init("make Bar code"))
+        .navigationTitle(model == nil ? .init("make Bar code") : .init("edit Bar code"))
         .toolbar {
             Button {
                 for tag in tags.components(separatedBy: ",") {
@@ -63,6 +71,17 @@ struct MakeBarCodeView: View {
                             
                         }
                     }
+                }
+                if let model = model {
+                    model.edit(inputType: .text, text: text, colors: (f: foregroundColor, b: backgroundColor), tags: tags) { error in
+                        if error == nil {
+                            DispatchQueue.main.async {
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                        }
+                        self.error = error
+                    }
+                    return
                 }
                 CodeModel.add(codeType: .bar, inputType: .text, text: text, colors: (f: foregroundColor, b: backgroundColor), tags: tags.trimmingCharacters(in: .whitespacesAndNewlines)) { error in
                     if error == nil {
@@ -78,9 +97,17 @@ struct MakeBarCodeView: View {
             .init(title: .init("alert"),
                   message: .init(error!.localizedDescription))
         }
+        .onAppear {
+            if let model = model {
+                text = model.text
+                tags = model.tagsValue
+                foregroundColor = model.foregroundColor
+                backgroundColor = model.backgroundColor
+            }
+        }
     }
 }
 
 #Preview {
-    MakeBarCodeView()
+    MakeBarCodeView(id:nil)
 }

@@ -170,6 +170,7 @@ extension CodeModel {
         
     }
     
+    
     static func sync(complete:@escaping(_ error:Error?)->Void) {
         guard let collection = FirebaseFirestoreHelper.codesCollection else {
             return
@@ -183,10 +184,73 @@ extension CodeModel {
             print("sync newcount : \(snapShot?.documents.count ?? 0)")
             for document in snapShot?.documents ?? [] {
                 var data = document.data()
-                data["id"] = document.documentID
-                realm.create(CodeModel.self, value: data, update: .all)
+                if data["deleted"] as? Bool == true {
+                    if let obj = realm.object(ofType: CodeModel.self, forPrimaryKey: document.documentID) {
+                        realm.delete(obj)
+                    }
+                }
+                else {
+                    data["id"] = document.documentID
+                    realm.create(CodeModel.self, value: data, update: .all)
+                }
             }
             try! realm.commitWrite()
+        }
+    }
+    
+    func delete(complete:@escaping(_ error:Error?)->Void) {
+        guard let collection = FirebaseFirestoreHelper.codesCollection else {
+            return
+        }
+        let id = self.id
+        collection.document(id).setData([
+            "deleted":true,
+            "updateDtTimeIntervalSince1970":Date().timeIntervalSince1970
+        ]) { error in
+            if error == nil {
+                let realm = Realm.shared
+                if let obj = realm.object(ofType: CodeModel.self, forPrimaryKey: id) {
+                    realm.beginWrite()
+                    realm.delete(obj)
+                    try! realm.commitWrite()
+                }
+            }
+            complete(error)
+        }
+        
+    }
+    
+    func edit(inputType:InputType, text:String, colors:(f:Color,b:Color), tags:String, complete:@escaping(_ error:Error?)->Void) {
+        guard let collection = FirebaseFirestoreHelper.codesCollection else {
+            return
+        }
+        let fci = colors.f.ciColorValue
+        let bci = colors.b.ciColorValue
+
+        var data:[String:AnyHashable] = [
+            "text":text,
+            "tagsValue":tags,
+            "foregroundColorRed":fci.red,
+            "foregroundColorGreen":fci.green,
+            "foregroundColorBlue":fci.blue,
+            "foregroundColorAlpha":fci.alpha,
+            "backgroundColorRed":bci.red,
+            "backgroundColorGreen":bci.green,
+            "backgroundColorBlue":bci.blue,
+            "backgroundColorAlpha":bci.alpha,
+            "inputTypeValue":inputType.rawValue,
+            "updateDtTimeIntervalSince1970":Date().timeIntervalSince1970
+        ]
+        let id = id
+        collection.document(id).updateData(data) { error in
+            if error == nil {
+                data["id"] = id
+                let realm = Realm.shared
+                realm.beginWrite()
+                realm.create(CodeModel.self, value: data, update: .modified)
+                try! realm.commitWrite()
+            }
+            complete(error)
         }
         
     }
