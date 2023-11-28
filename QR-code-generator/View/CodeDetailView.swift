@@ -39,7 +39,7 @@ struct CodeDetailView: View {
                     headWidth: 100)
                 
                 TableRowView(header: .init("tags"),
-                             sub: .init(code.tagesValue),
+                             sub: .init(code.tagsValue),
                              headWidth: 100)
                 
                 TableRowView(header: .init("regDt"), sub: .init(code.regDt.formatted(date: .complete, time: .standard)), headWidth: 100)
@@ -76,6 +76,7 @@ struct CodeDetailView: View {
             let data:[String:AnyHashable] = [
                 "id":"123asdjkl",
                 "text":"text",
+                "tagsValue":"ㅋㅋㅋ,바보",
                 "codeTypeValue":1,
                 "inputTypeValue":1,
                 "foregroundColorRed":1,

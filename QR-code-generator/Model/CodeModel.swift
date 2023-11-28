@@ -12,7 +12,7 @@ class CodeModel : Object , ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var id:String = ""
     @Persisted var text:String = ""
     /** 태그, 콤마로 구분하는 문자열 저장 */
-    @Persisted var tagesValue:String = ""
+    @Persisted var tagsValue:String = ""
     @Persisted var foregroundColorRed:Double = 0
     @Persisted var foregroundColorGreen:Double = 0
     @Persisted var foregroundColorBlue:Double = 0
@@ -59,7 +59,7 @@ class CodeModel : Object , ObjectKeyIdentifiable {
 extension CodeModel {
     var tags:[TagModel] {
         var result:[TagModel] = []
-        for text in tagesValue.components(separatedBy: ",") {
+        for text in tagsValue.components(separatedBy: ",") {
             let id = text.trimmingCharacters(in: .whitespacesAndNewlines)
             if id.isEmpty == false {
                 if let model = Realm.shared.object(ofType: TagModel.self, forPrimaryKey: id) {
@@ -138,7 +138,7 @@ extension CodeModel {
         let now = Date().timeIntervalSince1970
         var data:[String:AnyHashable] = [
             "text":text,
-            "tagesValue":tags,
+            "tagsValue":tags,
             "inputTypeValue":inputType.rawValue,
             "foregroundColorRed":fci.red,
             "foregroundColorGreen":fci.green,
