@@ -23,13 +23,13 @@ struct TagInputView: View {
                 }
             }
             if #available(iOS 17.0, *) {
-                TextField("tags", text: $tagsString)
+                TextField("Tag input: separated by commas", text: $tagsString)
                     .textFieldStyle(.roundedBorder)
                     .onChange(of: tagsString) {
                         changeTextCheck()
                     }
             } else {
-                TextField("tags", text: $tagsString)
+                TextField("Tag input: separated by commas", text: $tagsString)
                     .textFieldStyle(.roundedBorder)
                     .onChange(of: tagsString, perform: { value in
                         changeTextCheck()

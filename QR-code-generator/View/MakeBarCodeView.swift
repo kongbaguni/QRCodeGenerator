@@ -31,10 +31,10 @@ struct MakeBarCodeView: View {
                     .scaledToFit()
                     .frame(height: 100)
             }
-            
-            Section("text") {
+            Section("tag input") {
                 TagInputView(tags: TagModel.tags, tagsString: $tags)
-                
+            }
+            Section("text input") {
                 TextEditor(text: $text)
                     .toolbar {
                         ToolbarItemGroup(placement: .keyboard) {

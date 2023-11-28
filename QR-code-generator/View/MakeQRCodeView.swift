@@ -47,7 +47,10 @@ struct MakeQRCodeView: View {
                     .scaledToFit()
                     .frame(height: 200)
             }
-            Section("input") {
+            Section("tag input") {
+                TagInputView(tags: TagModel.tags, tagsString: $tags)
+            }
+            Section("text input") {
                 ScrollTabBarView(titles: CodeModel.InputType.allTexts, selectedIndex: $tabIndex)
                 switch CodeModel.InputType(rawValue: tabIndex) {
                 case .text:
@@ -82,8 +85,6 @@ struct MakeQRCodeView: View {
                 default:
                     Text("error")
                 }
-            
-                TagInputView(tags: TagModel.tags, tagsString: $tags)
             }
             Section("color") {
                 ColorPicker("foreground Color", selection: $foregroundColor)

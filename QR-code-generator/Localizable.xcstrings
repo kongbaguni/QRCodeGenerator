@@ -309,7 +309,14 @@
       }
     },
     "my codes" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "나의 코드들"
+          }
+        }
+      }
     },
     "Not enough Point" : {
       "comment" : "Not enough Point",
@@ -460,13 +467,58 @@
         }
       }
     },
+    "tag input" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "태그 입력"
+          }
+        }
+      }
+    },
+    "Tag input: separated by commas" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "태그입력: 콤마로구분"
+          }
+        }
+      }
+    },
     "tags" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "태그"
+          }
+        }
+      }
     },
     "Tags already registered" : {
-      "comment" : "tag"
+      "comment" : "tag",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이미 등록된 태그입니다."
+          }
+        }
+      }
     },
     "text" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "문자 입력"
+          }
+        }
+      }
+    },
+    "text input" : {
       "localizations" : {
         "ko" : {
           "stringUnit" : {
