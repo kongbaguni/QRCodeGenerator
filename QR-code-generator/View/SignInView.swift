@@ -168,6 +168,9 @@ struct SignInView: View {
         if isSignin {
             PointModel.initPoint { error in
                 self.error = error
+                TagModel.sync { error in
+                    self.error = error 
+                }
             }
         }
         isAnonymous = AuthManager.shared.auth.currentUser?.isAnonymous == true
