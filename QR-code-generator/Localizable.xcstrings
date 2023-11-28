@@ -460,6 +460,12 @@
         }
       }
     },
+    "tags" : {
+
+    },
+    "Tags already registered" : {
+      "comment" : "tag"
+    },
     "text" : {
       "localizations" : {
         "ko" : {

@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import RealmSwift
 import FirebaseCore
 
 @main
-struct QR_code_generatorApp: App {
+struct QR_code_generatorApp: SwiftUI.App {
     init() {
-        FirebaseApp.configure()        
+        let _ = Realm.shared
+        FirebaseApp.configure()
     }
     var body: some Scene {
         WindowGroup {

@@ -165,6 +165,11 @@ struct SignInView: View {
     
     func checkSignin() {
         isSignin = AuthManager.shared.isSignined
+        if isSignin {
+            PointModel.initPoint { error in
+                self.error = error
+            }
+        }
         isAnonymous = AuthManager.shared.auth.currentUser?.isAnonymous == true
         user = AuthManager.shared.auth.currentUser
     }

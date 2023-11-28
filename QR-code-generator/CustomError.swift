@@ -13,6 +13,8 @@ enum CustomError : Error {
     case wrongAccountSigninWhenLeave
     /** 포인트가 부족하다*/
     case notEnoughPoint
+    /** 이미 등록된 태그*/
+    case tagsAlreadyRegistered
 }
 
 extension CustomError {
@@ -24,6 +26,8 @@ extension CustomError {
             return "Not enough Point"
         case .wrongAccountSigninWhenLeave:
             return "wrong account signin when leave"
+        case .tagsAlreadyRegistered:
+            return "Tags already registered"
         }
     }
 }
@@ -37,6 +41,8 @@ extension CustomError : LocalizedError {
             return NSLocalizedString("wrongAccountSigninWhenLeave msg", comment: "wrong acount sign in")
         case .anonymousSignOut:
             return NSLocalizedString("anomymouse sign out", comment: "signout")
+        case .tagsAlreadyRegistered:
+            return NSLocalizedString("Tags already registered", comment: "tag")
         }
     }
 }

@@ -38,7 +38,12 @@ struct CodeDetailView: View {
                     sub: .init(code.id),
                     headWidth: 100)
                 
+                TableRowView(header: .init("tags"),
+                             sub: .init(code.tagesValue),
+                             headWidth: 100)
+                
                 TableRowView(header: .init("regDt"), sub: .init(code.regDt.formatted(date: .complete, time: .standard)), headWidth: 100)
+                
                 if code.regDtTimeIntervalSince1970 != code.updateDtTimeIntervalSince1970 {
                     TableRowView(
                         header: .init("updateDt"),

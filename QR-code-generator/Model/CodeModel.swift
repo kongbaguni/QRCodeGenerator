@@ -11,7 +11,8 @@ import SwiftUI
 class CodeModel : Object , ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var id:String = ""
     @Persisted var text:String = ""
-    
+    /** 태그, 콤마로 구분하는 문자열 저장 */
+    @Persisted var tagesValue:String = ""
     @Persisted var foregroundColorRed:Double = 0
     @Persisted var foregroundColorGreen:Double = 0
     @Persisted var foregroundColorBlue:Double = 0
@@ -56,6 +57,19 @@ class CodeModel : Object , ObjectKeyIdentifiable {
 }
 
 extension CodeModel {
+    var tags:[TagModel] {
+        var result:[TagModel] = []
+        for text in tagesValue.components(separatedBy: ",") {
+            let id = text.trimmingCharacters(in: .whitespacesAndNewlines)
+            if id.isEmpty == false {
+                if let model = Realm.shared.object(ofType: TagModel.self, forPrimaryKey: id) {
+                    result.append(model)
+                }
+            }
+        }
+        return result
+    }
+    
     var regDt:Date {
         .init(timeIntervalSince1970: regDtTimeIntervalSince1970)
     }
@@ -115,7 +129,7 @@ extension CodeModel {
 
 extension CodeModel {
     static var lastAddedDocumentId:String? = nil
-    static func add(codeType:CodeType , inputType:InputType, text:String,colors:(f:Color,b:Color), complete:@escaping (_ error:Error?)->Void) {
+    static func add(codeType:CodeType , inputType:InputType, text:String, colors:(f:Color,b:Color), tags:String, complete:@escaping (_ error:Error?)->Void) {
         guard let collection = FirebaseFirestoreHelper.codesCollection else {
             return
         }
@@ -124,6 +138,7 @@ extension CodeModel {
         let now = Date().timeIntervalSince1970
         var data:[String:AnyHashable] = [
             "text":text,
+            "tagesValue":tags,
             "inputTypeValue":inputType.rawValue,
             "foregroundColorRed":fci.red,
             "foregroundColorGreen":fci.green,

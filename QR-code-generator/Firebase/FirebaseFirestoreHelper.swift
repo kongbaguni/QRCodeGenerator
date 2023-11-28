@@ -24,5 +24,8 @@ struct FirebaseFirestoreHelper {
         }
         return Firestore.firestore().collection(userid).document("data").collection("codes")
     }
-
+    
+    static var tagsCollection:CollectionReference {
+        return Firestore.firestore().collection("tags")
+    }
 }

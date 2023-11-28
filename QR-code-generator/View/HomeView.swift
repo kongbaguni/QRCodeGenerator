@@ -98,6 +98,9 @@ struct HomeView: View {
         }
         .onAppear {
             reload()
+            PointModel.initPoint { error in
+                self.error = error
+            }
         }
         .refreshable {
             reload()
@@ -115,6 +118,9 @@ struct HomeView: View {
     func reload() {
         CodeModel.sync { error in
             self.error = error
+            TagModel.sync { error in
+                self.error = error
+            }
         }
     }
 }

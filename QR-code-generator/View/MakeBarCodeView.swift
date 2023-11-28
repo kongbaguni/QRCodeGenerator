@@ -20,6 +20,7 @@ struct MakeBarCodeView: View {
     @State var isAlert:Bool = false
     
     @State var text:String = ""
+    @State var tags:String = ""
     @State var foregroundColor:Color = .black
     @State var backgroundColor:Color = .white
     var body: some View {
@@ -32,6 +33,8 @@ struct MakeBarCodeView: View {
             }
             
             Section("text") {
+                TagInputView(tags: TagModel.tags, tagsString: $tags)
+                
                 TextEditor(text: $text)
                     .toolbar {
                         ToolbarItemGroup(placement: .keyboard) {
@@ -41,7 +44,7 @@ struct MakeBarCodeView: View {
                                 Text("confirm")
                             }
                         }
-                    }
+                    }                    
                     .keyboardType(.asciiCapable)
             }
             
@@ -54,7 +57,14 @@ struct MakeBarCodeView: View {
         .navigationTitle(.init("make Bar code"))
         .toolbar {
             Button {
-                CodeModel.add(codeType: .bar, inputType: .text, text: text, colors: (f: foregroundColor, b: backgroundColor)) { error in
+                for tag in tags.components(separatedBy: ",") {
+                    if tag.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false {
+                        TagModel.addNewTag(text: tag) { error in
+                            
+                        }
+                    }
+                }
+                CodeModel.add(codeType: .bar, inputType: .text, text: text, colors: (f: foregroundColor, b: backgroundColor), tags: tags.trimmingCharacters(in: .whitespacesAndNewlines)) { error in
                     if error == nil {
                         presentationMode.wrappedValue.dismiss()
                     }

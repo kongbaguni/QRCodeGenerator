@@ -22,6 +22,7 @@ struct MakeQRCodeView: View {
    
     
     @State var text:String = ""
+    @State var tags:String = ""
     var outputText:String {
         switch CodeModel.InputType.allCases[tabIndex] {
         case .text:
@@ -82,6 +83,7 @@ struct MakeQRCodeView: View {
                     Text("error")
                 }
             
+                TagInputView(tags: TagModel.tags, tagsString: $tags)
             }
             Section("color") {
                 ColorPicker("foreground Color", selection: $foregroundColor)
@@ -92,12 +94,21 @@ struct MakeQRCodeView: View {
         .navigationTitle(.init("make QR code"))
         .toolbar {
             Button {
+                TagModel.addNewTags(text: tags) { progress in
+                    
+                } complete: { error in
+                    
+                }
+
                 CodeModel.add(
                     codeType: .qr,
                     inputType: CodeModel.InputType(rawValue: tabIndex)
                     ?? .text,
                     text: text,
-                    colors: (f:foregroundColor,b:backgroundColor)) { error in
+                    colors: (f:foregroundColor,b:backgroundColor),
+                    tags:tags
+                
+                ) { error in
                         if error == nil {
                             presentationMode.wrappedValue.dismiss()
                         }
