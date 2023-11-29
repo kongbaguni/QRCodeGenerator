@@ -34,13 +34,15 @@ struct MakeBarCodeView: View {
     var body: some View {
         List {
             Section("Bar code") {
-                CodeGenerator.makeBarcodeImage(text: text, forground: foregroundColor, background: backgroundColor)
+                CodeGenerator.makeBarcodeImage(
+                    text: text,
+                    forground: foregroundColor,
+                    background: backgroundColor,
+                    useCache: false
+                )
                     .resizable()
                     .scaledToFit()
                     .frame(height: 100)
-            }
-            Section("tag input") {
-                TagInputView(tags: TagModel.tags, tagsString: $tags)
             }
             Section("text input") {
                 TextEditor(text: $text)
@@ -60,6 +62,11 @@ struct MakeBarCodeView: View {
                 ColorPicker("foreground Color", selection: $foregroundColor)
                 ColorPicker("background Color", selection: $backgroundColor)
             }
+            
+            Section("tag input") {
+                TagInputView(tagsString: $tags)
+            }
+
                        
         }
         .navigationTitle(model == nil ? .init("make Bar code") : .init("edit Bar code"))

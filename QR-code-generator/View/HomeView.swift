@@ -41,7 +41,13 @@ struct HomeView: View {
                         MakeQRCodeView(id:nil)
                     } label: {
                         HStack {
-                            CodeGenerator.makeQRImage(text: "QR", foreground: .teal, background: .clear)
+                            CodeGenerator.makeQRImage(
+                                text: "QR",
+                                foreground: .teal,
+                                background: .clear,
+                                useCache: true
+                                                      
+                            )
                                 .resizable()
                                 .scaledToFit()
                                 .padding(20)
@@ -55,7 +61,12 @@ struct HomeView: View {
                         MakeBarCodeView(id:nil)
                     } label : {
                         HStack {
-                            CodeGenerator.makeBarcodeImage(text: "barcode", forground: .teal, background: .clear)
+                            CodeGenerator.makeBarcodeImage(
+                                text: "barcode", 
+                                forground: .teal,
+                                background: .clear,
+                                useCache: true
+                            )
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width:100,height: 100)
@@ -65,31 +76,24 @@ struct HomeView: View {
                     }
                 }
                 Section("my codes") {
-                    ForEach(codelist, id:\.self) { code in
+                    ForEach(codelist.prefix(5), id:\.self) { code in
                         NavigationLink {
                             CodeDetailView(code: code)
                         } label: {
-                            switch code.codeType {
-                            case .bar:
-                                VStack {
-                                    code.image
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(maxHeight:70)
-                                    Text(code.text)
-                                }
-                            case .qr:
-                                HStack {
-                                    code.image
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(height:100)
-                                    Text(code.outputString)
-                                    Spacer()
-                                }
+                            HStack {
+                                code.image
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height:100)
+                                Text(code.outputString)
+                                Spacer()
                             }
                         }
-
+                    }
+                    NavigationLink {
+                        CodeListView(tag:nil)
+                    } label: {
+                        Text("more....")
                     }
                 }
             } else {

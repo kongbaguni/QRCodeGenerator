@@ -44,10 +44,12 @@ struct CodeGenerator {
         return .init(cgImage: cgImage)
     }
     
-    static func makeQRImage (text:String, foreground colorA:Color, background colorB:Color) -> Image {
-        if let uiimage = CodeImageCacheModel.findCachedImage(text: text, foreground: colorA, background: colorB, codeType: .qr) ??
-            CodeImageCacheModel.save(text: text, foreground: colorA, background: colorB, codeType: .qr) {
-            return .init(uiImage: uiimage)
+    static func makeQRImage (text:String, foreground colorA:Color, background colorB:Color, useCache:Bool) -> Image {
+        if useCache {
+            if let uiimage = CodeImageCacheModel.findCachedImage(text: text, foreground: colorA, background: colorB, codeType: .qr) ??
+                CodeImageCacheModel.save(text: text, foreground: colorA, background: colorB, codeType: .qr) {
+                return .init(uiImage: uiimage)
+            }
         }
         
         if let image = makeQRUIImage(text: text, foreground: colorA.ciColorValue, background: colorB.ciColorValue) {
@@ -87,10 +89,12 @@ struct CodeGenerator {
         return .init(cgImage: cgImage)
     }
     
-    static func makeBarcodeImage(text:String, forground colorA:Color, background colorB:Color)->Image {
-        if let uiimage = CodeImageCacheModel.findCachedImage(text: text, foreground: colorA, background: colorB, codeType: .bar) ??
-            CodeImageCacheModel.save(text: text, foreground: colorA, background: colorB, codeType: .bar) {
-            return .init(uiImage: uiimage)
+    static func makeBarcodeImage(text:String, forground colorA:Color, background colorB:Color, useCache:Bool)->Image {
+        if useCache {
+            if let uiimage = CodeImageCacheModel.findCachedImage(text: text, foreground: colorA, background: colorB, codeType: .bar) ??
+                CodeImageCacheModel.save(text: text, foreground: colorA, background: colorB, codeType: .bar) {
+                return .init(uiImage: uiimage)
+            }
         }
         
         if let uiimage = makeBarcodeUiImage(text: text, foreground: colorA.ciColorValue, background: colorB.ciColorValue) {

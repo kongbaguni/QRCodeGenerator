@@ -33,18 +33,11 @@ struct MakeQRCodeView: View {
     
     @State var text:String = ""
     @State var tags:String = ""
+    
     var outputText:String {
-        switch CodeModel.InputType.allCases[tabIndex] {
-        case .text:
-            return text
-        case .mailto:
-            return "mailto:\(text)"
-        case .https:
-            return "https://\(text)"
-        case .http:
-            return "http://\(text)"
-        }
+        CodeModel.InputType.allCases[tabIndex].makeOutputString(text: text)
     }
+    
     @State var foregroundColor:Color = .black
     @State var backgroundColor:Color = .white
     @State var tabIndex = 0
@@ -56,14 +49,21 @@ struct MakeQRCodeView: View {
     var body: some View {
         List {
             Section("QR code") {
-                Text(outputText)
-                CodeGenerator.makeQRImage(text: outputText, foreground: foregroundColor, background: backgroundColor)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 200)
-            }
-            Section("tag input") {
-                TagInputView(tags: TagModel.tags, tagsString: $tags)
+                VStack {
+                    CodeGenerator.makeQRImage(text: outputText, foreground: foregroundColor, background: backgroundColor, useCache: false)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 200)
+                    Text(outputText)
+                        .foregroundStyle(foregroundColor)
+                        
+                }
+                .padding(10)
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .foregroundStyle(backgroundColor)
+                )
+                .padding(10)
             }
             Section("text input") {
                 ScrollTabBarView(titles: CodeModel.InputType.allTexts, selectedIndex: $tabIndex)
@@ -97,14 +97,39 @@ struct MakeQRCodeView: View {
                         TextField("website", text: $text)
                             .keyboardType(.webSearch)
                     }
+                case .facebook:
+                    HStack(spacing:0) {
+                        Text("facebook.com/")
+                        TextField("facebook id", text: $text)
+                            .keyboardType(.webSearch)
+                    }
+                case .instagram:
+                    HStack(spacing:0) {
+                        Text("instagram.com/")
+                        TextField("instagram id", text: $text)
+                            .keyboardType(.webSearch)
+                    }
+                case .x:
+                    HStack(spacing:0) {
+                        Text("x.com/")
+                        TextField("X id", text: $text)
+                            .keyboardType(.webSearch)
+                    }
+
                 default:
                     Text("error")
                 }
             }
+            
             Section("color") {
                 ColorPicker("foreground Color", selection: $foregroundColor)
                 ColorPicker("background Color", selection: $backgroundColor)
             }
+            
+            Section("tag input") {
+                TagInputView(tagsString: $tags)
+            }
+
                        
         }
         .navigationTitle(model == nil ? .init("make QR code") : .init("edit QR code"))

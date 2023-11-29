@@ -14,22 +14,26 @@ struct TagCloudView: View {
         FlowLayout(mode: .scrollable,
                    items: tags,
                    itemSpacing: 4) { data in
-            NavigationLink {
-                CodeListView(tag: data)
-            } label: {
-                Text(data)
-                    .font(.subheadline)
-                    .foregroundStyle(.primary)
-                    .padding(10)
-                    .background(
-                        RoundedRectangle(cornerRadius: 15)
-                            .foregroundColor(.yellow)
-                    )
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 15)
-                            .stroke(lineWidth: 2)
-                    }
-
+            if data.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                EmptyView()                
+            } else {
+                NavigationLink {
+                    CodeListView(tag: data)
+                } label: {
+                    Text(data)
+                        .font(.subheadline)
+                        .foregroundStyle(.primary)
+                        .padding(10)
+                        .background(
+                            RoundedRectangle(cornerRadius: 15)
+                                .foregroundColor(.yellow)
+                        )
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 15)
+                                .stroke(lineWidth: 2)
+                        }
+                    
+                }
             }
         }.padding()
         

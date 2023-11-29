@@ -86,6 +86,17 @@
         }
       }
     },
+    "code list" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "코드 목록"
+          }
+        }
+      }
+    },
     "color" : {
       "localizations" : {
         "ko" : {
@@ -215,6 +226,29 @@
         }
       }
     },
+    "facebook" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "페이스북"
+          }
+        }
+      }
+    },
+    "facebook id" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "페이스북 아이디"
+          }
+        }
+      }
+    },
+    "facebook.com/" : {
+
+    },
     "foreground Color" : {
       "localizations" : {
         "ko" : {
@@ -270,7 +304,40 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : " "
+            "value" : ""
+          }
+        }
+      }
+    },
+    "https://www.facebook.com/" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "https://www.instagram.com/" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "https://x.com/" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
           }
         }
       }
@@ -305,6 +372,29 @@
           }
         }
       }
+    },
+    "instagram" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "인스타그램"
+          }
+        }
+      }
+    },
+    "instagram id" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "인스타그램 아이디"
+          }
+        }
+      }
+    },
+    "instagram.com/" : {
+
     },
     "last sign in date" : {
       "localizations" : {
@@ -363,6 +453,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "QR 코드 만들기"
+          }
+        }
+      }
+    },
+    "more...." : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "더보기"
           }
         }
       }
@@ -623,6 +723,29 @@
           }
         }
       }
+    },
+    "x" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "X id" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "X 아이디"
+          }
+        }
+      }
+    },
+    "x.com/" : {
+
     }
   },
   "version" : "1.0"

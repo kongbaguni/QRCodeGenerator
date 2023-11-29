@@ -85,10 +85,8 @@ struct CodeDetailView: View {
         .navigationTitle(code.outputString)
         .toolbar {
             Button {
-                if let image = code.uiimage {
-                    if let data = image.pngData() {
-                        activityItem = .init(itemsArray: [data])
-                    }
+                if let image = code.uiimage {                    
+                    activityItem = .init(itemsArray: [image])
                 }
             } label : {
                 Image(systemName: "square.and.arrow.up")

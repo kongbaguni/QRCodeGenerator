@@ -39,6 +39,9 @@ class CodeModel : Object , ObjectKeyIdentifiable {
         case mailto
         case https
         case http
+        case facebook
+        case instagram
+        case x
         static var allTexts:[Text] {
             return InputType.allCases.map { type in
                 switch type {
@@ -50,7 +53,32 @@ class CodeModel : Object , ObjectKeyIdentifiable {
                     return .init("https")
                 case .http:
                     return .init("http")
+                case .facebook:
+                    return .init("facebook")
+                case .instagram:
+                    return .init("instagram")
+                case .x:
+                    return .init("x")
                 }
+            }
+        }
+        
+        func makeOutputString(text:String)->String {
+            switch self {
+            case .text:
+                return text
+            case .http:
+                return "http://\(text)"
+            case .https:
+                return "https://\(text)"
+            case .mailto:
+                return "mailto:\(text)"
+            case .facebook:
+                return "facebook.com/\(text)"
+            case .instagram:
+                return "instagram.com/\(text)"
+            case .x:
+                return "x.com/\(text)"
             }
         }
     }
@@ -94,24 +122,15 @@ extension CodeModel {
         .init(red: backgroundColorRed, green: backgroundColorGreen, blue: backgroundColorBlue, opacity: backgroundColorAlpha)
     }
     var outputString:String {
-        switch inputType {
-        case .text:
-            return text
-        case .http:
-            return "http://\(text)"
-        case .https:
-            return "https://\(text)"
-        case .mailto:
-            return "mailto:\(text)"
-        }
+        inputType.makeOutputString(text: text)
     }
     
     var image:Image {
         switch codeType {
         case .bar:
-            return CodeGenerator.makeBarcodeImage(text: text, forground: foregroundColor, background: backgroundColor)
+            return CodeGenerator.makeBarcodeImage(text: text, forground: foregroundColor, background: backgroundColor, useCache: true)
         case .qr:
-            return CodeGenerator.makeQRImage(text: outputString, foreground: foregroundColor, background: backgroundColor)
+            return CodeGenerator.makeQRImage(text: outputString, foreground: foregroundColor, background: backgroundColor, useCache: true)
         }
     }
     

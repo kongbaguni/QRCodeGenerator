@@ -9,7 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct TagInputView: View {
-    let tags:[String]
+    @State var tags:[String] = TagModel.tags
     
     @State var inputTags:Set<String> = []
     @Binding var tagsString:String
@@ -18,6 +18,12 @@ struct TagInputView: View {
         VStack {
             if tags.count > 0 {
                 ScrollSelectButtonView(title: .init("tags"), strings: tags) { string in
+                    for tag in tagsString.components(separatedBy: ",") {
+                        if tag.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false {
+                            inputTags.insert(tag)
+                        }
+                    }
+                    
                     inputTags.insert(string)
                     tagsString = inputTags.sorted().joined(separator: ",")
                 }
@@ -36,6 +42,11 @@ struct TagInputView: View {
                     })
             }
         }
+        .onAppear {
+            TagModel.sync { error in
+                tags = TagModel.tags
+            }
+        }
     }
     
     func changeTextCheck() {
@@ -50,5 +61,5 @@ struct TagInputView: View {
 }
 
 #Preview {
-    TagInputView(tags: ["홈페이지","하하"],tagsString: .constant("test"))
+    TagInputView(tagsString: .constant("test"))
 }

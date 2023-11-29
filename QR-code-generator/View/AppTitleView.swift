@@ -10,10 +10,10 @@ import SwiftUI
 struct AppTitleView: View {
     var body: some View {
         VStack(spacing:0) {
-            CodeGenerator.makeQRImage(text: "QR code", foreground: .teal, background: .clear)
+            CodeGenerator.makeQRImage(text: "QR code", foreground: .teal, background: .clear, useCache: true)
                 .resizable()
                 .scaledToFit()
-            CodeGenerator.makeBarcodeImage(text: "bar code", forground: .teal, background: .clear)
+            CodeGenerator.makeBarcodeImage(text: "bar code", forground: .teal, background: .clear, useCache: true)
                 .resizable()
                 .scaledToFit()
             
