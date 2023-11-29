@@ -28,7 +28,7 @@ struct ScrollSelectButtonView: View {
                                 .padding(.horizontal)
                                 .padding(.vertical, 4)
                                 .foregroundStyle(.black)
-                                .background(selection.firstIndex(of: strings[index]) == nil ? .yellow : .gray)
+                                .background(selection.firstIndex(of: strings[index].trimmingCharacters(in:  .whitespacesAndNewlines)) == nil ? .yellow : .gray)
                                 .cornerRadius(10)
                         }
                     }

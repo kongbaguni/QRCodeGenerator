@@ -30,7 +30,9 @@ extension TagModel {
     
     /** 테그목록 */
     static func sync(complete:@escaping(_ error:Error?)->Void) {
-        let collection = FirebaseFirestoreHelper.tagsCollection
+        guard let collection = FirebaseFirestoreHelper.tagsCollection else {
+            return
+        }
         let lasttime = Realm.shared.objects(TagModel.self).sorted(byKeyPath: "regDtTimeIntervalSince1970", ascending: true).last?.regDtTimeIntervalSince1970 ?? 0
         
         collection.whereField("regDtTimeIntervalSince1970", isGreaterThan: lasttime)
@@ -48,11 +50,12 @@ extension TagModel {
     
     /** 신규 태그 추가*/
     static func addNewTag(text:String, complete:@escaping(_ error:Error?)->Void) {
-        guard let userId = AuthManager.shared.userId else {
+        guard let userId = AuthManager.shared.userId,
+              let collection = FirebaseFirestoreHelper.tagsCollection else {
             return
         }
         
-        let collection = FirebaseFirestoreHelper.tagsCollection
+        
         let data:[String:AnyHashable] = [
             "text":text,
             "regDtTimeIntervalSince1970":Date().timeIntervalSince1970,

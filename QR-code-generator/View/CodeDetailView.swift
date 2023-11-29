@@ -25,23 +25,28 @@ struct CodeDetailView: View {
     
     var body: some View {
         ScrollView {
-            code.image
-                .resizable()
-                .scaledToFit()
-                .frame(height: 200)
-                .padding(20)
-                .background(code.backgroundColor)
-                .cornerRadius(20)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(.teal, lineWidth: 5.0)
-                }
-                .overlay {
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(.primary, lineWidth: 2.0)
-                }
-                .padding()
-            Text(code.outputString)
+            VStack {
+                code.image
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 200)
+                    .padding(20)
+                Text(code.outputString)
+                    .foregroundStyle(code.foregroundColor)
+                    .padding(.bottom,20)
+            }
+            .background(code.backgroundColor)
+            .cornerRadius(20)
+            .overlay {
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(.teal, lineWidth: 5.0)
+            }
+            .overlay {
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(.primary, lineWidth: 2.0)
+            }
+            .padding()
+
 
             VStack {
                 TagCloudView(tags: code.tagsValue.components(separatedBy: ","))
@@ -49,11 +54,7 @@ struct CodeDetailView: View {
                     header: .init("id"),
                     sub: .init(code.id),
                     headWidth: 100)
-                
-                TableRowView(header: .init("tags"),
-                             sub: .init(code.tagsValue),
-                             headWidth: 100)
-                
+                                
                 TableRowView(header: .init("regDt"), sub: .init(code.regDt.formatted(date: .complete, time: .standard)), headWidth: 100)
                 
                 if code.regDtTimeIntervalSince1970 != code.updateDtTimeIntervalSince1970 {

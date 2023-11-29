@@ -14,17 +14,19 @@ struct TagInputView: View {
     @State var inputTags:Set<String> = []
     @Binding var tagsString:String
     
+    func initInputTags() {
+        for tag in tagsString.components(separatedBy: ",") {
+            if tag.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false {
+                inputTags.insert(tag)
+            }
+        }
+    }
+    
     var body: some View {
         VStack {
             if tags.count > 0 {
                 ScrollSelectButtonView(title: .init("tags"), strings: tags, selection: inputTags) { string in
-                    for tag in tagsString.components(separatedBy: ",") {
-                        if tag.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false {
-                            
-                            inputTags.insert(tag)
-                            
-                        }
-                    }
+                    initInputTags()
                     
                     if let idx = inputTags.firstIndex(of: string) {
                         inputTags.remove(at: idx)
@@ -49,8 +51,11 @@ struct TagInputView: View {
             }
         }
         .onAppear {
+            tags = TagModel.tags
+            initInputTags()
             TagModel.sync { error in
                 tags = TagModel.tags
+                initInputTags()
             }
         }
     }

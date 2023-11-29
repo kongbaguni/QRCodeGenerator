@@ -7,54 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "76330BD4-2BA9-46C5-8A7D-5DB1F281439D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QR-code-generator/Model/TagModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "addNewTag(text:complete:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "76330BD4-2BA9-46C5-8A7D-5DB1F281439D - 5496ecf3a54c6492"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static QR_code_generator.TagModel.addNewTag(text: Swift.String, complete: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "QR-code-generator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/changyeolseo/Documents/iOS/QR-code-generator/QR-code-generator/Model/TagModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "936">
-               </Location>
-               <Location
-                  uuid = "76330BD4-2BA9-46C5-8A7D-5DB1F281439D - 7ea6785b8fd473c5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static QR_code_generator.TagModel.addNewTag(text: Swift.String, complete: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "QR-code-generator"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/changyeolseo/Documents/iOS/QR-code-generator/QR-code-generator/Model/TagModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "60">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "2A09105A-CAED-41D5-A43A-9C918DE68447"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -62,8 +14,8 @@
             filePath = "QR-code-generator/Model/TagModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "addNewTag(text:complete:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +30,8 @@
             filePath = "QR-code-generator/Model/TagModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "addNewTag(text:complete:)"
             landmarkType = "7">
             <Locations>
