@@ -6,13 +6,46 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct CodeListView: View {
+    let tag:String?
+
+    @ObservedResults (
+        CodeModel.self,
+        sortDescriptor: .init(
+            keyPath: "updateDtTimeIntervalSince1970",
+            ascending: false)
+        
+    ) var codelist
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(codelist, id:\.self) { code in
+                HStack {
+                    NavigationLink {
+                        CodeDetailView(code: code)
+                    }label: {
+                        code.image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height:100)
+                        
+                        Text(code.text)
+
+                    }
+                }
+            }
+        }
+        .navigationTitle(.init(tag ?? "code list"))
+        .onAppear {
+            if let tag = tag {
+                $codelist.filter = .init(format: "tagsValue contains %@", tag)
+            }
+        }
     }
 }
 
 #Preview {
-    CodeListView()
+    CodeListView(tag: "123")
 }

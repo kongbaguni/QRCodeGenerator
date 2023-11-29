@@ -69,6 +69,9 @@
 		1B8F46D32B0F3C380097CB9D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F46D22B0F3C380097CB9D /* Localizable.xcstrings */; };
 		1B8F46D52B0F3CE00097CB9D /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F46D42B0F3CE00097CB9D /* InfoPlist.xcstrings */; };
 		1BB658092B15CCF700A8C474 /* CodeImageCacheModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB658082B15CCF700A8C474 /* CodeImageCacheModel.swift */; };
+		1BB6580B2B15DDCC00A8C474 /* TagCloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6580A2B15DDCC00A8C474 /* TagCloudView.swift */; };
+		1BB6580E2B15DF5800A8C474 /* SwiftUIFlowLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 1BB6580D2B15DF5800A8C474 /* SwiftUIFlowLayout */; };
+		1BB658102B16B8BE00A8C474 /* CodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6580F2B16B8BE00A8C474 /* CodeListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +108,8 @@
 		1B8F46D22B0F3C380097CB9D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1B8F46D42B0F3CE00097CB9D /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		1BB658082B15CCF700A8C474 /* CodeImageCacheModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeImageCacheModel.swift; sourceTree = "<group>"; };
+		1BB6580A2B15DDCC00A8C474 /* TagCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloudView.swift; sourceTree = "<group>"; };
+		1BB6580F2B16B8BE00A8C474 /* CodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +134,7 @@
 				1B5865272B10313D008D7289 /* GoogleSignIn in Frameworks */,
 				1B58650F2B102D25008D7289 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				1B5865012B102D25008D7289 /* FirebaseDatabaseSwift in Frameworks */,
+				1BB6580E2B15DF5800A8C474 /* SwiftUIFlowLayout in Frameworks */,
 				1B58650B2B102D25008D7289 /* FirebaseFunctions in Frameworks */,
 				1B5865212B102D25008D7289 /* FirebaseStorageCombine-Community in Frameworks */,
 				1B58651B2B102D25008D7289 /* FirebaseRemoteConfig in Frameworks */,
@@ -166,6 +172,8 @@
 				1B7EB5D32B146E6400352857 /* ScrollSelectButtonView.swift */,
 				1B7EB5C82B144F1900352857 /* CodeDetailView.swift */,
 				1B7EB5D12B146B5200352857 /* TagInputView.swift */,
+				1BB6580A2B15DDCC00A8C474 /* TagCloudView.swift */,
+				1BB6580F2B16B8BE00A8C474 /* CodeListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,6 +303,7 @@
 				1B58652D2B1031BE008D7289 /* Realm */,
 				1B58652F2B1031BE008D7289 /* RealmSwift */,
 				1B7EB5CB2B14539500352857 /* ActivityView */,
+				1BB6580D2B15DF5800A8C474 /* SwiftUIFlowLayout */,
 			);
 			productName = "QR-code-generator";
 			productReference = 1B8F46BA2B0EED0D0097CB9D /* QR-code-generator.app */;
@@ -330,6 +339,7 @@
 				1B5865252B10313D008D7289 /* XCRemoteSwiftPackageReference "GoogleSignIn-ios" */,
 				1B58652C2B1031BE008D7289 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				1B7EB5CA2B14539500352857 /* XCRemoteSwiftPackageReference "ActivityView" */,
+				1BB6580C2B15DF5800A8C474 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */,
 			);
 			productRefGroup = 1B8F46BB2B0EED0D0097CB9D /* Products */;
 			projectDirPath = "";
@@ -397,7 +407,9 @@
 				1B5865342B10328E008D7289 /* CustomError.swift in Sources */,
 				1B7EB5D22B146B5200352857 /* TagInputView.swift in Sources */,
 				1B7EB5C92B144F1900352857 /* CodeDetailView.swift in Sources */,
+				1BB658102B16B8BE00A8C474 /* CodeListView.swift in Sources */,
 				1B5864E82B10290A008D7289 /* HomeView.swift in Sources */,
+				1BB6580B2B15DDCC00A8C474 /* TagCloudView.swift in Sources */,
 				1B5865442B1090EA008D7289 /* MakeBarCodeView.swift in Sources */,
 				1B7EB5D42B146E6400352857 /* ScrollSelectButtonView.swift in Sources */,
 				1B7EB5D02B14628A00352857 /* TagModel.swift in Sources */,
@@ -654,6 +666,14 @@
 				minimumVersion = 1.2.0;
 			};
 		};
+		1BB6580C2B15DF5800A8C474 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/globulus/swiftui-flow-layout";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -816,6 +836,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1B7EB5CA2B14539500352857 /* XCRemoteSwiftPackageReference "ActivityView" */;
 			productName = ActivityView;
+		};
+		1BB6580D2B15DF5800A8C474 /* SwiftUIFlowLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1BB6580C2B15DF5800A8C474 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */;
+			productName = SwiftUIFlowLayout;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

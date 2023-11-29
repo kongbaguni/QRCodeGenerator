@@ -8,15 +8,14 @@
 import SwiftUI
 import SwiftUIFlowLayout
 
-struct TagCollectionView: View {
+struct TagCloudView: View {
     let tags:[String]
-    let onClick:(_ tag:String)->Void
     var body: some View {
         FlowLayout(mode: .scrollable,
                    items: tags,
                    itemSpacing: 4) { data in
-            Button {
-                onClick(data)
+            NavigationLink {
+                CodeListView(tag: data)
             } label: {
                 Text(data)
                     .font(.subheadline)
@@ -38,13 +37,14 @@ struct TagCollectionView: View {
 }
 
 #Preview {
-    TagCollectionView(tags: [
-        "test1",
-        "da","asdf","rand","zzz","test 합니다","da","asdf","rand","zz zdsa",
-        "test1","da","asdf","rand"
-        ,"zzasd d z","test1"
-        ,"금강산도 식후겸","asdf","rand","zzz"]) { tag in
-            print(tag)
-            
+    NavigationView {
+        NavigationStack {
+            TagCloudView(tags: [
+                "test1",
+                "da","asdf","rand","zzz","test 합니다","da","asdf","rand","zz zdsa",
+                "test1","da","asdf","rand"
+                ,"zzasd d z","test1"
+                ,"금강산도 식후겸","asdf","rand","zzz"])
         }
+    }
 }

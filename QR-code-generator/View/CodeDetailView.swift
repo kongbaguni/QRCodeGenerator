@@ -44,6 +44,7 @@ struct CodeDetailView: View {
             Text(code.outputString)
 
             VStack {
+                TagCloudView(tags: code.tagsValue.components(separatedBy: ","))
                 TableRowView(
                     header: .init("id"),
                     sub: .init(code.id),
