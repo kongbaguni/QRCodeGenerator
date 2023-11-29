@@ -17,14 +17,20 @@ struct TagInputView: View {
     var body: some View {
         VStack {
             if tags.count > 0 {
-                ScrollSelectButtonView(title: .init("tags"), strings: tags) { string in
+                ScrollSelectButtonView(title: .init("tags"), strings: tags, selection: inputTags) { string in
                     for tag in tagsString.components(separatedBy: ",") {
                         if tag.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false {
+                            
                             inputTags.insert(tag)
+                            
                         }
                     }
                     
-                    inputTags.insert(string)
+                    if let idx = inputTags.firstIndex(of: string) {
+                        inputTags.remove(at: idx)
+                    } else {
+                        inputTags.insert(string)
+                    }
                     tagsString = inputTags.sorted().joined(separator: ",")
                 }
             }

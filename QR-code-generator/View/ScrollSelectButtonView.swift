@@ -10,6 +10,7 @@ import SwiftUI
 struct ScrollSelectButtonView: View {
     let title:Text
     let strings:[String]
+    let selection:Set<String>
     let onTouch:(_ string:String)->Void
     
     var body: some View {
@@ -27,7 +28,7 @@ struct ScrollSelectButtonView: View {
                                 .padding(.horizontal)
                                 .padding(.vertical, 4)
                                 .foregroundStyle(.black)
-                                .background(.yellow)
+                                .background(selection.firstIndex(of: strings[index]) == nil ? .yellow : .gray)
                                 .cornerRadius(10)
                         }
                     }
@@ -46,7 +47,7 @@ struct ScrollSelectButtonView: View {
 }
 
 #Preview {
-    ScrollSelectButtonView(title:.init("tags") ,strings: ["test","test2"]) { string in
+    ScrollSelectButtonView(title:.init("tags") ,strings: ["test","test2"], selection: ["test"]) { string in
         print(string)
     }
 }
