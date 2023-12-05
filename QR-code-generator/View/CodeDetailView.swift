@@ -25,28 +25,8 @@ struct CodeDetailView: View {
     
     var body: some View {
         ScrollView {
-            VStack {
-                code.image
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 200)
-                    .padding(20)
-                Text(code.outputString)
-                    .foregroundStyle(code.foregroundColor)
-                    .padding(.bottom,20)
-            }
-            .background(code.backgroundColor)
-            .cornerRadius(20)
-            .overlay {
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(.teal, lineWidth: 5.0)
-            }
-            .overlay {
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(.primary, lineWidth: 2.0)
-            }
-            .padding()
-
+            CodeView(code: code)
+                .padding()
 
             VStack {
                 TagCloudView(tags: code.tagsValue.components(separatedBy: ","))

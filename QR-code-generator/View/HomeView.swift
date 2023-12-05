@@ -80,14 +80,8 @@ struct HomeView: View {
                         NavigationLink {
                             CodeDetailView(code: code)
                         } label: {
-                            HStack {
-                                code.image
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(height:100)
-                                Text(code.outputString)
-                                Spacer()
-                            }
+                            CodeView(code: code)
+                                .frame(maxHeight: 200)
                         }
                     }
                     NavigationLink {

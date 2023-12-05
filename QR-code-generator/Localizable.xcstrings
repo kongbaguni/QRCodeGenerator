@@ -247,7 +247,14 @@
       }
     },
     "facebook.com/" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "foreground Color" : {
       "localizations" : {
@@ -309,39 +316,6 @@
         }
       }
     },
-    "https://www.facebook.com/" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "https://www.instagram.com/" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "https://x.com/" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
     "id" : {
       "localizations" : {
         "ko" : {
@@ -394,7 +368,14 @@
       }
     },
     "instagram.com/" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "last sign in date" : {
       "localizations" : {
@@ -495,6 +476,16 @@
       }
     },
     "phone" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "전화번호"
+          }
+        }
+      }
+    },
+    "phonenumber" : {
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -667,6 +658,16 @@
         }
       }
     },
+    "tel:" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
     "text" : {
       "localizations" : {
         "ko" : {
@@ -745,7 +746,44 @@
       }
     },
     "x.com/" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "youtube" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "유투브"
+          }
+        }
+      }
+    },
+    "youtube id" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "유투브 아이디"
+          }
+        }
+      }
+    },
+    "youtube.com/" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

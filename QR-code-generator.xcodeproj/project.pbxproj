@@ -72,6 +72,7 @@
 		1BB6580B2B15DDCC00A8C474 /* TagCloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6580A2B15DDCC00A8C474 /* TagCloudView.swift */; };
 		1BB6580E2B15DF5800A8C474 /* SwiftUIFlowLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 1BB6580D2B15DF5800A8C474 /* SwiftUIFlowLayout */; };
 		1BB658102B16B8BE00A8C474 /* CodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6580F2B16B8BE00A8C474 /* CodeListView.swift */; };
+		1BC7EBB82B1EF9AA000885E2 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7EBB72B1EF9AA000885E2 /* CodeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		1BB658082B15CCF700A8C474 /* CodeImageCacheModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeImageCacheModel.swift; sourceTree = "<group>"; };
 		1BB6580A2B15DDCC00A8C474 /* TagCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloudView.swift; sourceTree = "<group>"; };
 		1BB6580F2B16B8BE00A8C474 /* CodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeListView.swift; sourceTree = "<group>"; };
+		1BC7EBB72B1EF9AA000885E2 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				1B7EB5D12B146B5200352857 /* TagInputView.swift */,
 				1BB6580A2B15DDCC00A8C474 /* TagCloudView.swift */,
 				1BB6580F2B16B8BE00A8C474 /* CodeListView.swift */,
+				1BC7EBB72B1EF9AA000885E2 /* CodeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				1B58652B2B103179008D7289 /* UIApplication+Extensions.swift in Sources */,
 				1B5865402B1084B9008D7289 /* CheckboxView.swift in Sources */,
 				1B5865462B109636008D7289 /* CodeModel.swift in Sources */,
+				1BC7EBB82B1EF9AA000885E2 /* CodeView.swift in Sources */,
 				1B7EB5C72B141C9300352857 /* ScrollTabBarView.swift in Sources */,
 				1B5865362B10334D008D7289 /* SignInView.swift in Sources */,
 				1B8F46BE2B0EED0D0097CB9D /* QR_code_generatorApp.swift in Sources */,

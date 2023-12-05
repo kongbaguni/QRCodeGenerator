@@ -22,18 +22,11 @@ struct CodeListView: View {
     var body: some View {
         List {
             ForEach(codelist, id:\.self) { code in
-                HStack {
-                    NavigationLink {
-                        CodeDetailView(code: code)
-                    }label: {
-                        code.image
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height:100)
-                        
-                        Text(code.text)
-
-                    }
+                NavigationLink {
+                    CodeDetailView(code: code)
+                }label: {
+                    CodeView(code: code)
+                        .frame(maxHeight: 200)
                 }
             }
         }

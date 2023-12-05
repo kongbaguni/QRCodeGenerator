@@ -115,7 +115,18 @@ struct MakeQRCodeView: View {
                         TextField("X id", text: $text)
                             .keyboardType(.webSearch)
                     }
-
+                case .youtube:
+                    HStack(spacing:0) {
+                        Text("youtube.com/")
+                        TextField("youtube id", text: $text)
+                            .keyboardType(.webSearch)
+                    }
+                case .phonenumber:
+                    HStack(spacing:0) {
+                        Text("tel:")
+                        TextField("phonenumber", text: $text)
+                            .keyboardType(.phonePad)
+                    }
                 default:
                     Text("error")
                 }
