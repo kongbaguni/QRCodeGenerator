@@ -73,6 +73,7 @@
 		1BB6580E2B15DF5800A8C474 /* SwiftUIFlowLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 1BB6580D2B15DF5800A8C474 /* SwiftUIFlowLayout */; };
 		1BB658102B16B8BE00A8C474 /* CodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6580F2B16B8BE00A8C474 /* CodeListView.swift */; };
 		1BC7EBB82B1EF9AA000885E2 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7EBB72B1EF9AA000885E2 /* CodeView.swift */; };
+		1BC7EBBA2B1F007E000885E2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BC7EBB92B1F007E000885E2 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,7 @@
 		1BB6580A2B15DDCC00A8C474 /* TagCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloudView.swift; sourceTree = "<group>"; };
 		1BB6580F2B16B8BE00A8C474 /* CodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeListView.swift; sourceTree = "<group>"; };
 		1BC7EBB72B1EF9AA000885E2 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		1BC7EBB92B1F007E000885E2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 		1B8F46B12B0EED0D0097CB9D = {
 			isa = PBXGroup;
 			children = (
+				1BC7EBB92B1F007E000885E2 /* Launch Screen.storyboard */,
 				1B8F46D42B0F3CE00097CB9D /* InfoPlist.xcstrings */,
 				1B5865392B103B83008D7289 /* GoogleService-Info.plist */,
 				1B8F46BC2B0EED0D0097CB9D /* QR-code-generator */,
@@ -358,6 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BC7EBBA2B1F007E000885E2 /* Launch Screen.storyboard in Resources */,
 				1B8F46C52B0EED100097CB9D /* Preview Assets.xcassets in Resources */,
 				1B8F46C22B0EED100097CB9D /* Assets.xcassets in Resources */,
 				1B58653A2B103B83008D7289 /* GoogleService-Info.plist in Resources */,
@@ -568,6 +572,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -599,6 +604,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
