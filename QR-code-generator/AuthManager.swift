@@ -231,10 +231,7 @@ class AuthManager : NSObject {
             if error == nil {
                 deleteAccount { error in
                     if error == nil {
-                        let realm = Realm.shared
-                        realm.beginWrite()
-                        realm.deleteAll()
-                        try! realm.commitWrite()
+                        NotificationCenter.default.post(name: .authDidSucessed, object: nil)
                     }
                     complete(error)
                 }
