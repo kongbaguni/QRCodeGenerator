@@ -83,10 +83,12 @@ struct SignInView: View {
     var deleteAccount : some View {
         Group {
             if let account = account ?? AuthManager.shared.accountModel {
-                NavigationLink {
-                    DeleteAccountConfirmView(accountModel: account)
-                } label: {
-                    Text("delete account")
+                if account.isAnonymous == false {
+                    NavigationLink {
+                        DeleteAccountConfirmView(accountModel: account)
+                    } label: {
+                        Text("delete account")
+                    }
                 }
             }
         }
