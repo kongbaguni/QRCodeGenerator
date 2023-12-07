@@ -76,6 +76,10 @@ struct MakeQRCodeView: View {
                     RoundedRectangle(cornerRadius: 20)
                         .foregroundStyle(backgroundColor)
                 )
+                .overlay{
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(foregroundColor, lineWidth:2)
+                }
                 .padding(10)
             }
             Section("text input") {

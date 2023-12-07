@@ -10,12 +10,37 @@ import RealmSwift
 
 struct CodeView: View {
     @ObservedRealmObject var code:CodeModel
+    var string:String {
+        if let model = ContactModel.parseVCard(vCardString: code.outputString) {
+            var result = ""
+            if !model.fn.isEmpty {
+                if !result.isEmpty {
+                    result.append("\n")
+                }
+                result.append("name : \(model.fn)")
+            }
+            if !model.org.isEmpty {
+                if !result.isEmpty {
+                    result.append("\n")
+                }
+                result.append("org : \(model.org)")
+            }
+            if !model.email.isEmpty {
+                result.append("\nemail : \(model.email)")
+            }
+            if !model.tel.isEmpty {
+                result.append("\ntel : \(model.tel)")
+            }
+            return result
+        }
+        return code.outputString
+    }
     var body: some View {
         VStack {
             code.image
                 .resizable()
                 .scaledToFit()            
-            Text(code.outputString)
+            Text(string)
                 .foregroundStyle(code.foregroundColor)
         }
         .padding()
