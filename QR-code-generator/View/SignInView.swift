@@ -81,10 +81,14 @@ struct SignInView: View {
     }
     
     var deleteAccount : some View {
-        NavigationLink {
-            DeleteAccountConfirmView(accountModel: account ?? AuthManager.shared.accountModel!)
-        } label: {
-            Text("delete account")
+        Group {
+            if let account = account ?? AuthManager.shared.accountModel {
+                NavigationLink {
+                    DeleteAccountConfirmView(accountModel: account)
+                } label: {
+                    Text("delete account")
+                }
+            }
         }
     }
     
@@ -97,7 +101,7 @@ struct SignInView: View {
         Group {
             VStack(spacing:0) {
                 let w:CGFloat = 70
-                if let url = account?.photoURL {                    
+                if let url = account?.photoURL {
                     AsyncImage(url: url)
                         .padding()
                 }
