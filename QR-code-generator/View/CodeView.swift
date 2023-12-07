@@ -15,7 +15,7 @@ struct CodeView: View {
             code.image
                 .resizable()
                 .scaledToFit()            
-            Text(code.text)
+            Text(code.outputString)
                 .foregroundStyle(code.foregroundColor)
         }
         .padding()
