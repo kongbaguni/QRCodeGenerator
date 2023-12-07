@@ -95,7 +95,11 @@ struct HomeView: View {
                     }
                 }
             } else {
-                AppTitleView()
+                NavigationLink {
+                    SignInView()
+                } label: {
+                    AppTitleView()
+                }
             }
         }
         .onAppear {
