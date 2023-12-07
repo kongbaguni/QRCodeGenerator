@@ -139,7 +139,14 @@ extension CodeModel {
     var outputString:String {
         inputType.makeOutputString(text: text)
     }
-    
+    var title:String {
+        switch inputType {
+        case .contact:
+            return ContactModel.parseVCard(vCardString: text)?.fn ?? "VCARD"
+        default:
+            return outputString
+        }
+    }
     var image:Image {
         switch codeType {
         case .bar:

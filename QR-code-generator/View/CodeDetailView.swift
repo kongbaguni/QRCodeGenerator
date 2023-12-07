@@ -63,7 +63,7 @@ struct CodeDetailView: View {
                 }
             }.padding(.horizontal,10)
         }
-        .navigationTitle(code.outputString)
+        .navigationTitle(code.title)
         .toolbar {
             Button {
                 if let image = code.uiimage {                    
