@@ -23,6 +23,21 @@ extension Notification.Name {
 class AuthManager : NSObject {
     static let shared = AuthManager()
     let auth = Auth.auth()
+    
+    var accountModel:AccountModel? {
+        guard let user = auth.currentUser else {
+            return nil
+        }
+        return .init(
+            userId: user.uid,
+            accountRegDt: user.metadata.creationDate,
+            accountLastSigninDt: user.metadata.lastSignInDate,
+            email: user.email,
+            phoneNumber: user.phoneNumber,
+            photoURL: user.photoURL,
+            isAnonymous: user.isAnonymous)
+    }
+    
     var appleReAuth = false
     var userId:String? {
         return auth.currentUser?.uid
@@ -179,7 +194,7 @@ class AuthManager : NSObject {
     }
 
     //MARK: - 탈퇴하기
-    func leave(progress:@escaping(_ progress:(title:Text,completed:Int,total:Int))->Void, complete:@escaping(_ error:Error?)->Void) {
+    func leave(complete:@escaping(_ error:Error?)->Void) {
         
         let leaveUserID = AuthManager.shared.userId
         func reauth(complete:@escaping(_ error:Error?)->Void) {
@@ -204,12 +219,17 @@ class AuthManager : NSObject {
         }
         
         func deleteAccount(complete:@escaping(_ error:Error?)-> Void) {
-            auth.currentUser?.delete(completion: { error in
-                complete(error)
+            FirebaseFirestoreHelper.rootDocument?.delete(completion: { error in
+                if error == nil {
+                    self.auth.currentUser?.delete(completion: { error in
+                        complete(error)
+                    })
+                }
+                else {
+                    complete(error)
+                }
             })
         }
-        
-       
         
         reauth { error in
             if error == nil {

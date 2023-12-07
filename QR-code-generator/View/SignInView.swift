@@ -9,6 +9,8 @@ import SwiftUI
 import FirebaseAuth
 
 struct SignInView: View {
+    
+    
     @AppStorage("readSigninDesc") var readSigninDesc = false
     @State var readCheck = false
     
@@ -21,8 +23,7 @@ struct SignInView: View {
     }
     @State var isAlert:Bool = false
     @State var isSignin = AuthManager.shared.isSignined
-    @State var isAnonymous = AuthManager.shared.auth.currentUser?.isAnonymous == true
-    @State var user:FirebaseAuth.User? = nil
+    @State var account:AccountModel? = nil
     
     var signinButtons : some View {
         Group {
@@ -67,7 +68,7 @@ struct SignInView: View {
     
     var signoutButton : some View  {
         Button {
-            if isAnonymous {
+            if account?.isAnonymous == true {
                 error = CustomError.anonymousSignOut
             }
             else {
@@ -79,6 +80,14 @@ struct SignInView: View {
         }
     }
     
+    var deleteAccount : some View {
+        NavigationLink {
+            DeleteAccountConfirmView(accountModel: account ?? AuthManager.shared.accountModel!)
+        } label: {
+            Text("delete account")
+        }
+    }
+    
     func signout() {
         self.error = AuthManager.shared.signout()
         checkSignin()
@@ -87,30 +96,34 @@ struct SignInView: View {
     var accountInfoView : some View {
         Group {
             VStack(spacing:0) {
-                if let user = user {
-                    let w:CGFloat = 70
-                    TableRowView(header: .init("ID"), sub: .init(user.uid),
-                                 headWidth: w)
-                    if let dt = user.metadata.creationDate {
-                        TableRowView(header: .init("account creation date"), sub: .init(dt.formatted(.dateTime)), headWidth: w)
-                    }
-                    if let dt = user.metadata.lastSignInDate {
-                        TableRowView(header: .init("last sign in date"), sub: .init(dt.formatted(.dateTime)), headWidth: w)
-
-                    }
-                    if let email = user.email {
-                        TableRowView(
-                            header: .init("email"),
-                            sub: .init(email), headWidth: w)
-                    }
-                    if let phone = user.phoneNumber {
-                        TableRowView(
-                            header: .init("phone"),
-                            sub: .init(phone), headWidth: w)
-
-                    }
-                        
+                let w:CGFloat = 70
+                if let url = account?.photoURL {                    
+                    AsyncImage(url: url)
+                        .padding()
                 }
+                if let userId = account?.userId {
+                    TableRowView(header: .init("ID"), sub: .init(userId),
+                                 headWidth: w)
+                }
+                if let dt = account?.accountRegDt {
+                    TableRowView(header: .init("account creation date"), sub: .init(dt.formatted(.dateTime)), headWidth: w)
+                }
+                if let dt = account?.accountLastSigninDt {
+                    TableRowView(header: .init("last sign in date"), sub: .init(dt.formatted(.dateTime)), headWidth: w)
+                    
+                }
+                if let email = account?.email {
+                    TableRowView(
+                        header: .init("email"),
+                        sub: .init(email), headWidth: w)
+                }
+                if let phone = account?.phoneNumber {
+                    TableRowView(
+                        header: .init("phone"),
+                        sub: .init(phone), headWidth: w)
+                    
+                }
+                
                 
             }
         }
@@ -120,9 +133,10 @@ struct SignInView: View {
             if isSignin {
                 accountInfoView
                     .padding()
-                if isAnonymous {
+                if account?.isAnonymous == true {
                     upgradeButtons
                 }
+                deleteAccount
                 signoutButton
             } else {
                 if readSigninDesc == false {
@@ -173,8 +187,10 @@ struct SignInView: View {
                 }
             }
         }
-        isAnonymous = AuthManager.shared.auth.currentUser?.isAnonymous == true
-        user = AuthManager.shared.auth.currentUser
+
+        account = AuthManager.shared.accountModel
+        
+        
     }
 }
 

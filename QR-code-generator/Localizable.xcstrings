@@ -147,6 +147,32 @@
         }
       }
     },
+    "delete account" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "계정 삭제"
+          }
+        }
+      }
+    },
+    "delete account desc1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete your account.\nAfterwards, previously saved data cannot be accessed again.\nIf you agree to account deletion, fill out the text field below and click the confirm button."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "계정을 삭제 합니다.\n이후 기존에 저장된 데이터에 다시 접근 할 수 없습니다.\n계정삭제에 동의하면 아래 텍스트필드를 작성후 확인버튼을 누르세요."
+          }
+        }
+      }
+    },
     "delete code confirm message" : {
       "comment" : "delete tag",
       "localizations" : {

@@ -75,19 +75,23 @@ struct HomeView: View {
                         }
                     }
                 }
-                Section("my codes") {
-                    ForEach(codelist.prefix(5), id:\.self) { code in
-                        NavigationLink {
-                            CodeDetailView(code: code)
-                        } label: {
-                            CodeView(code: code)
-                                .frame(maxHeight: 200)
+                if codelist.count > 0 {
+                    Section("my codes") {
+                        ForEach(codelist.prefix(5), id:\.self) { code in
+                            NavigationLink {
+                                CodeDetailView(code: code)
+                            } label: {
+                                CodeView(code: code)
+                                    .frame(maxHeight: 200)
+                            }
                         }
-                    }
-                    NavigationLink {
-                        CodeListView(tag:nil)
-                    } label: {
-                        Text("more....")
+                        if codelist.count > 5 {
+                            NavigationLink {
+                                CodeListView(tag:nil)
+                            } label: {
+                                Text("more....")
+                            }
+                        }
                     }
                 }
             } else {

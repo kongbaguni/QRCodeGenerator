@@ -74,6 +74,8 @@
 		1BB658102B16B8BE00A8C474 /* CodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6580F2B16B8BE00A8C474 /* CodeListView.swift */; };
 		1BC7EBB82B1EF9AA000885E2 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7EBB72B1EF9AA000885E2 /* CodeView.swift */; };
 		1BC7EBBA2B1F007E000885E2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BC7EBB92B1F007E000885E2 /* Launch Screen.storyboard */; };
+		1BC7EBBC2B2144F9000885E2 /* DeleteAccountConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7EBBB2B2144F9000885E2 /* DeleteAccountConfirmView.swift */; };
+		1BC7EBBE2B2151C0000885E2 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7EBBD2B2151C0000885E2 /* AccountModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +116,8 @@
 		1BB6580F2B16B8BE00A8C474 /* CodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeListView.swift; sourceTree = "<group>"; };
 		1BC7EBB72B1EF9AA000885E2 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		1BC7EBB92B1F007E000885E2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		1BC7EBBB2B2144F9000885E2 /* DeleteAccountConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountConfirmView.swift; sourceTree = "<group>"; };
+		1BC7EBBD2B2151C0000885E2 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +183,7 @@
 				1BB6580A2B15DDCC00A8C474 /* TagCloudView.swift */,
 				1BB6580F2B16B8BE00A8C474 /* CodeListView.swift */,
 				1BC7EBB72B1EF9AA000885E2 /* CodeView.swift */,
+				1BC7EBBB2B2144F9000885E2 /* DeleteAccountConfirmView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				1B5865452B109636008D7289 /* CodeModel.swift */,
 				1B7EB5CF2B14628A00352857 /* TagModel.swift */,
 				1BB658082B15CCF700A8C474 /* CodeImageCacheModel.swift */,
+				1BC7EBBD2B2151C0000885E2 /* AccountModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -421,11 +427,13 @@
 				1B7EB5D42B146E6400352857 /* ScrollSelectButtonView.swift in Sources */,
 				1B7EB5D02B14628A00352857 /* TagModel.swift in Sources */,
 				1B58654A2B10991E008D7289 /* FirebaseFirestoreHelper.swift in Sources */,
+				1BC7EBBC2B2144F9000885E2 /* DeleteAccountConfirmView.swift in Sources */,
 				1B8F46C02B0EED0D0097CB9D /* ContentView.swift in Sources */,
 				1B58653C2B105C21008D7289 /* TableRowView.swift in Sources */,
 				1B58652B2B103179008D7289 /* UIApplication+Extensions.swift in Sources */,
 				1B5865402B1084B9008D7289 /* CheckboxView.swift in Sources */,
 				1B5865462B109636008D7289 /* CodeModel.swift in Sources */,
+				1BC7EBBE2B2151C0000885E2 /* AccountModel.swift in Sources */,
 				1BC7EBB82B1EF9AA000885E2 /* CodeView.swift in Sources */,
 				1B7EB5C72B141C9300352857 /* ScrollTabBarView.swift in Sources */,
 				1B5865362B10334D008D7289 /* SignInView.swift in Sources */,
