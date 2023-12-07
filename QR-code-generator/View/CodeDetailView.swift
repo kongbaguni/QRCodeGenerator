@@ -53,15 +53,15 @@ struct CodeDetailView: View {
                         MakeBarCodeView(id:code.id)
                     }
                 } label: {
-                    Text("edit")
+                    RoundedTextView(text: .init("edit"), image: .init(systemName: "square.and.pencil"), style: .normal)
                 }
 
                 Button {
                     self.error = CustomError.deleteCodeConfirm
                 } label: {
-                    Text("delete")
+                    RoundedTextView(text: .init("delete"), image: .init(systemName: "trash.circle"), style: .cancel)
                 }
-            }
+            }.padding(.horizontal,10)
         }
         .navigationTitle(code.outputString)
         .toolbar {
