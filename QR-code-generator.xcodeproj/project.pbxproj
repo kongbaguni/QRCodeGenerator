@@ -76,6 +76,7 @@
 		1BC7EBBA2B1F007E000885E2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BC7EBB92B1F007E000885E2 /* Launch Screen.storyboard */; };
 		1BC7EBBC2B2144F9000885E2 /* DeleteAccountConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7EBBB2B2144F9000885E2 /* DeleteAccountConfirmView.swift */; };
 		1BC7EBBE2B2151C0000885E2 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7EBBD2B2151C0000885E2 /* AccountModel.swift */; };
+		1BC7EBC02B217C41000885E2 /* RoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7EBBF2B217C41000885E2 /* RoundedTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +119,7 @@
 		1BC7EBB92B1F007E000885E2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		1BC7EBBB2B2144F9000885E2 /* DeleteAccountConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountConfirmView.swift; sourceTree = "<group>"; };
 		1BC7EBBD2B2151C0000885E2 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
+		1BC7EBBF2B217C41000885E2 /* RoundedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				1B58653D2B106FA5008D7289 /* AuthorizationButton.swift */,
+				1BC7EBBF2B217C41000885E2 /* RoundedTextView.swift */,
 				1B58653F2B1084B9008D7289 /* CheckboxView.swift */,
 				1B8F46BF2B0EED0D0097CB9D /* ContentView.swift */,
 				1B5864E52B1027EF008D7289 /* AppTitleView.swift */,
@@ -422,6 +425,7 @@
 				1B7EB5C92B144F1900352857 /* CodeDetailView.swift in Sources */,
 				1BB658102B16B8BE00A8C474 /* CodeListView.swift in Sources */,
 				1B5864E82B10290A008D7289 /* HomeView.swift in Sources */,
+				1BC7EBC02B217C41000885E2 /* RoundedTextView.swift in Sources */,
 				1BB6580B2B15DDCC00A8C474 /* TagCloudView.swift in Sources */,
 				1B5865442B1090EA008D7289 /* MakeBarCodeView.swift in Sources */,
 				1B7EB5D42B146E6400352857 /* ScrollSelectButtonView.swift in Sources */,

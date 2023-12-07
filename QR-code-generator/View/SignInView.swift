@@ -76,7 +76,9 @@ struct SignInView: View {
             }
             
         } label: {
-            Text("SignOut")
+            
+            RoundedTextView(text: Text("SignOut"), image: .init(systemName:"rectangle.portrait.and.arrow.forward"), style: .normal)
+                .padding(.horizontal,10)
         }
     }
     
@@ -87,7 +89,8 @@ struct SignInView: View {
                     NavigationLink {
                         DeleteAccountConfirmView(accountModel: account)
                     } label: {
-                        Text("delete account")
+                        RoundedTextView(text: .init("delete account"), image: .init(systemName: "arrow.up.trash"), style: .cancel)
+                            .padding(.horizontal,10)
                     }
                 }
             }
