@@ -77,6 +77,8 @@
 		1BC7EBBC2B2144F9000885E2 /* DeleteAccountConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7EBBB2B2144F9000885E2 /* DeleteAccountConfirmView.swift */; };
 		1BC7EBBE2B2151C0000885E2 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7EBBD2B2151C0000885E2 /* AccountModel.swift */; };
 		1BC7EBC02B217C41000885E2 /* RoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7EBBF2B217C41000885E2 /* RoundedTextView.swift */; };
+		1BC7EBC22B219930000885E2 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7EBC12B219930000885E2 /* ContactModel.swift */; };
+		1BC7EBC42B219FA6000885E2 /* ConatctInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7EBC32B219FA6000885E2 /* ConatctInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +122,8 @@
 		1BC7EBBB2B2144F9000885E2 /* DeleteAccountConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountConfirmView.swift; sourceTree = "<group>"; };
 		1BC7EBBD2B2151C0000885E2 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		1BC7EBBF2B217C41000885E2 /* RoundedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextView.swift; sourceTree = "<group>"; };
+		1BC7EBC12B219930000885E2 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		1BC7EBC32B219FA6000885E2 /* ConatctInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConatctInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,7 @@
 				1BB6580F2B16B8BE00A8C474 /* CodeListView.swift */,
 				1BC7EBB72B1EF9AA000885E2 /* CodeView.swift */,
 				1BC7EBBB2B2144F9000885E2 /* DeleteAccountConfirmView.swift */,
+				1BC7EBC32B219FA6000885E2 /* ConatctInputView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				1B7EB5CF2B14628A00352857 /* TagModel.swift */,
 				1BB658082B15CCF700A8C474 /* CodeImageCacheModel.swift */,
 				1BC7EBBD2B2151C0000885E2 /* AccountModel.swift */,
+				1BC7EBC12B219930000885E2 /* ContactModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -416,11 +422,13 @@
 				1BB658092B15CCF700A8C474 /* CodeImageCacheModel.swift in Sources */,
 				1B5865322B103254008D7289 /* Realm+Extensions.swift in Sources */,
 				1B5865242B10311A008D7289 /* AuthManager.swift in Sources */,
+				1BC7EBC42B219FA6000885E2 /* ConatctInputView.swift in Sources */,
 				1B8F46CF2B0F28460097CB9D /* CodeGenerator.swift in Sources */,
 				1B8F46D12B0F32B20097CB9D /* Color+Extensions.swift in Sources */,
 				1B5865422B108E59008D7289 /* MakeQRCodeView.swift in Sources */,
 				1B7EB5CE2B14614600352857 /* PointModel.swift in Sources */,
 				1B5865342B10328E008D7289 /* CustomError.swift in Sources */,
+				1BC7EBC22B219930000885E2 /* ContactModel.swift in Sources */,
 				1B7EB5D22B146B5200352857 /* TagInputView.swift in Sources */,
 				1B7EB5C92B144F1900352857 /* CodeDetailView.swift in Sources */,
 				1BB658102B16B8BE00A8C474 /* CodeListView.swift in Sources */,

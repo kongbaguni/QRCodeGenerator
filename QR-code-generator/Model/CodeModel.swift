@@ -44,6 +44,7 @@ class CodeModel : Object , ObjectKeyIdentifiable {
         case x
         case youtube
         case phonenumber
+        case contact
         static var allTexts:[Text] {
             return InputType.allCases.map { type in
                 switch type {
@@ -65,6 +66,8 @@ class CodeModel : Object , ObjectKeyIdentifiable {
                     return .init("youtube")
                 case .phonenumber:
                     return .init("phonenumber")
+                case .contact:
+                    return .init("contact")
                 }
             }
         }
@@ -89,6 +92,8 @@ class CodeModel : Object , ObjectKeyIdentifiable {
                 return "youtube.com/\(text)"
             case .phonenumber:
                 return "tel:\(text)"
+            case .contact:
+                return text
             }
         }
     }

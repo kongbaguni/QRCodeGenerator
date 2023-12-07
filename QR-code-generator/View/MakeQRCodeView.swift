@@ -32,10 +32,23 @@ struct MakeQRCodeView: View {
    
     
     @State var text:String = ""
+    
+    @State var c_fn:String = ""
+    @State var c_org:String = ""
+    @State var c_tel:String = ""
+    @State var c_email:String = ""
+    
     @State var tags:String = ""
     
+    
     var outputText:String {
-        CodeModel.InputType.allCases[tabIndex].makeOutputString(text: text)
+        let inputType = CodeModel.InputType.allCases[tabIndex]
+        switch inputType {
+        case .contact:
+            return ContactModel(fn: c_fn, org: c_org, tel: c_tel, email: c_email).vCardString
+        default:
+            return inputType.makeOutputString(text: text)
+        }
     }
     
     @State var foregroundColor:Color = .black
@@ -127,6 +140,8 @@ struct MakeQRCodeView: View {
                         TextField("phonenumber", text: $text)
                             .keyboardType(.phonePad)
                     }
+                case .contact:
+                    ContactInputView(fn: $c_fn, org: $c_org, tel: $c_tel, email: $c_email)
                 default:
                     Text("error")
                 }
@@ -151,6 +166,12 @@ struct MakeQRCodeView: View {
                 } complete: { error in
                     
                 }
+                
+                var text = text
+                if CodeModel.InputType(rawValue: tabIndex) == .contact {
+                    text = outputText
+                }
+                
                 if let model = model {
                     
                     model.edit(inputType: inputType, text: text, colors: (f: foregroundColor, b: backgroundColor), tags: tags) { error in
@@ -164,6 +185,8 @@ struct MakeQRCodeView: View {
                     return
                 }
 
+            
+                
                 CodeModel.add(
                     codeType: .qr,
                     inputType: CodeModel.InputType(rawValue: tabIndex)
@@ -187,11 +210,21 @@ struct MakeQRCodeView: View {
         }
         .onAppear {
             if let model = model {
+                print(model.text)
                 text = model.text
                 tags = model.tagsValue
                 tabIndex = model.inputTypeValue
                 foregroundColor = model.foregroundColor
                 backgroundColor = model.backgroundColor
+                if model.inputType == .contact {
+                    if let cm = ContactModel.parseVCard(vCardString: model.text) {
+                        c_fn = cm.fn
+                        c_org = cm.org
+                        c_tel = cm.tel
+                        c_email = cm.email
+                        text = ""
+                    }
+                }
             }
         }
     }

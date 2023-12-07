@@ -117,6 +117,16 @@
         }
       }
     },
+    "contact" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "연락처"
+          }
+        }
+      }
+    },
     "Continue with Apple" : {
       "localizations" : {
         "ko" : {
@@ -238,6 +248,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이메일"
+          }
+        }
+      }
+    },
+    "email :" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이메일 :"
           }
         }
       }
@@ -484,6 +504,26 @@
         }
       }
     },
+    "name" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이름"
+          }
+        }
+      }
+    },
+    "name :" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이름 :"
+          }
+        }
+      }
+    },
     "Not enough Point" : {
       "comment" : "Not enough Point",
       "localizations" : {
@@ -501,12 +541,42 @@
         }
       }
     },
+    "org" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "단체"
+          }
+        }
+      }
+    },
+    "organization name :" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "소속 단체 이름 :"
+          }
+        }
+      }
+    },
     "phone" : {
       "localizations" : {
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "전화번호"
+          }
+        }
+      }
+    },
+    "phone :" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "전화번호 :"
           }
         }
       }
