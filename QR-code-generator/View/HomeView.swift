@@ -111,6 +111,15 @@ struct HomeView: View {
             signin
         }
         .onReceive(NotificationCenter.default.publisher(for: .authDidSucessed), perform: { noti in
+            do {
+                let realm = Realm.shared
+                realm.beginWrite()
+                realm.deleteAll()
+                try realm.commitWrite()
+            } catch {
+                self.error = error
+            }
+            
             isSignIn = AuthManager.shared.isSignined
         })
         .navigationTitle(Text("Home"))

@@ -180,10 +180,6 @@ class AuthManager : NSObject {
             if auth.currentUser?.isAnonymous == true {
                 auth.currentUser?.delete()
             }
-            let realm = Realm.shared
-            realm.beginWrite()
-            realm.deleteAll()
-            try realm.commitWrite()
             try auth.signOut()
             
             NotificationCenter.default.post(name: .authDidSucessed, object: nil)
