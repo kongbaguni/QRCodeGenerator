@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -53,6 +53,16 @@
 		1B5865442B1090EA008D7289 /* MakeBarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5865432B1090EA008D7289 /* MakeBarCodeView.swift */; };
 		1B5865462B109636008D7289 /* CodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5865452B109636008D7289 /* CodeModel.swift */; };
 		1B58654A2B10991E008D7289 /* FirebaseFirestoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5865492B10991E008D7289 /* FirebaseFirestoreHelper.swift */; };
+		1B6DBF562B22E85F00A7D9BD /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 1B6DBF552B22E85F00A7D9BD /* GoogleMobileAds */; };
+		1B6DBF612B22EF5B00A7D9BD /* AdIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF582B22EF5B00A7D9BD /* AdIDs.swift */; };
+		1B6DBF622B22EF5B00A7D9BD /* GADNativeAd+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF5A2B22EF5B00A7D9BD /* GADNativeAd+Extensions.swift */; };
+		1B6DBF632B22EF5B00A7D9BD /* NativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF5B2B22EF5B00A7D9BD /* NativeAdView.swift */; };
+		1B6DBF642B22EF5B00A7D9BD /* UnifiedNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF5C2B22EF5B00A7D9BD /* UnifiedNativeAdView.swift */; };
+		1B6DBF652B22EF5B00A7D9BD /* UnifiedNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DBF5D2B22EF5B00A7D9BD /* UnifiedNativeAdView.xib */; };
+		1B6DBF662B22EF5B00A7D9BD /* AdLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF5E2B22EF5B00A7D9BD /* AdLoader.swift */; };
+		1B6DBF672B22EF5B00A7D9BD /* GoogleAdPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF5F2B22EF5B00A7D9BD /* GoogleAdPrompt.swift */; };
+		1B6DBF682B22EF5B00A7D9BD /* GoogleAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF602B22EF5B00A7D9BD /* GoogleAd.swift */; };
+		1B6DBF6B2B22EF9700A7D9BD /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 1B6DBF6A2B22EF9700A7D9BD /* ActivityIndicatorView */; };
 		1B7EB5C72B141C9300352857 /* ScrollTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EB5C62B141C9300352857 /* ScrollTabBarView.swift */; };
 		1B7EB5C92B144F1900352857 /* CodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EB5C82B144F1900352857 /* CodeDetailView.swift */; };
 		1B7EB5CC2B14539500352857 /* ActivityView in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7EB5CB2B14539500352857 /* ActivityView */; };
@@ -99,6 +109,14 @@
 		1B5865432B1090EA008D7289 /* MakeBarCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBarCodeView.swift; sourceTree = "<group>"; };
 		1B5865452B109636008D7289 /* CodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeModel.swift; sourceTree = "<group>"; };
 		1B5865492B10991E008D7289 /* FirebaseFirestoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreHelper.swift; sourceTree = "<group>"; };
+		1B6DBF582B22EF5B00A7D9BD /* AdIDs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdIDs.swift; sourceTree = "<group>"; };
+		1B6DBF5A2B22EF5B00A7D9BD /* GADNativeAd+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GADNativeAd+Extensions.swift"; sourceTree = "<group>"; };
+		1B6DBF5B2B22EF5B00A7D9BD /* NativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAdView.swift; sourceTree = "<group>"; };
+		1B6DBF5C2B22EF5B00A7D9BD /* UnifiedNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnifiedNativeAdView.swift; sourceTree = "<group>"; };
+		1B6DBF5D2B22EF5B00A7D9BD /* UnifiedNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnifiedNativeAdView.xib; sourceTree = "<group>"; };
+		1B6DBF5E2B22EF5B00A7D9BD /* AdLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdLoader.swift; sourceTree = "<group>"; };
+		1B6DBF5F2B22EF5B00A7D9BD /* GoogleAdPrompt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAdPrompt.swift; sourceTree = "<group>"; };
+		1B6DBF602B22EF5B00A7D9BD /* GoogleAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAd.swift; sourceTree = "<group>"; };
 		1B7EB5C62B141C9300352857 /* ScrollTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTabBarView.swift; sourceTree = "<group>"; };
 		1B7EB5C82B144F1900352857 /* CodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailView.swift; sourceTree = "<group>"; };
 		1B7EB5CD2B14614600352857 /* PointModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointModel.swift; sourceTree = "<group>"; };
@@ -141,12 +159,14 @@
 				1B5865292B10313D008D7289 /* GoogleSignInSwift in Frameworks */,
 				1B5865092B102D25008D7289 /* FirebaseFirestoreSwift in Frameworks */,
 				1B5864F52B102D25008D7289 /* FirebaseAppCheck in Frameworks */,
+				1B6DBF6B2B22EF9700A7D9BD /* ActivityIndicatorView in Frameworks */,
 				1B5864F32B102D25008D7289 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				1B5864F92B102D25008D7289 /* FirebaseAuth in Frameworks */,
 				1B5864FD2B102D25008D7289 /* FirebaseCrashlytics in Frameworks */,
 				1B58651D2B102D25008D7289 /* FirebaseRemoteConfigSwift in Frameworks */,
 				1B5865272B10313D008D7289 /* GoogleSignIn in Frameworks */,
 				1B58650F2B102D25008D7289 /* FirebaseInAppMessaging-Beta in Frameworks */,
+				1B6DBF562B22E85F00A7D9BD /* GoogleMobileAds in Frameworks */,
 				1B5865012B102D25008D7289 /* FirebaseDatabaseSwift in Frameworks */,
 				1BB6580E2B15DF5800A8C474 /* SwiftUIFlowLayout in Frameworks */,
 				1B58650B2B102D25008D7289 /* FirebaseFunctions in Frameworks */,
@@ -217,9 +237,33 @@
 			path = Firebase;
 			sourceTree = "<group>";
 		};
+		1B6DBF572B22EF5B00A7D9BD /* GoogleAd */ = {
+			isa = PBXGroup;
+			children = (
+				1B6DBF582B22EF5B00A7D9BD /* AdIDs.swift */,
+				1B6DBF592B22EF5B00A7D9BD /* nativeAd */,
+				1B6DBF5F2B22EF5B00A7D9BD /* GoogleAdPrompt.swift */,
+				1B6DBF602B22EF5B00A7D9BD /* GoogleAd.swift */,
+			);
+			path = GoogleAd;
+			sourceTree = "<group>";
+		};
+		1B6DBF592B22EF5B00A7D9BD /* nativeAd */ = {
+			isa = PBXGroup;
+			children = (
+				1B6DBF5A2B22EF5B00A7D9BD /* GADNativeAd+Extensions.swift */,
+				1B6DBF5B2B22EF5B00A7D9BD /* NativeAdView.swift */,
+				1B6DBF5C2B22EF5B00A7D9BD /* UnifiedNativeAdView.swift */,
+				1B6DBF5D2B22EF5B00A7D9BD /* UnifiedNativeAdView.xib */,
+				1B6DBF5E2B22EF5B00A7D9BD /* AdLoader.swift */,
+			);
+			path = nativeAd;
+			sourceTree = "<group>";
+		};
 		1B8F46B12B0EED0D0097CB9D = {
 			isa = PBXGroup;
 			children = (
+				1B6DBF572B22EF5B00A7D9BD /* GoogleAd */,
 				1BC7EBB92B1F007E000885E2 /* Launch Screen.storyboard */,
 				1B8F46D42B0F3CE00097CB9D /* InfoPlist.xcstrings */,
 				1B5865392B103B83008D7289 /* GoogleService-Info.plist */,
@@ -325,6 +369,8 @@
 				1B58652F2B1031BE008D7289 /* RealmSwift */,
 				1B7EB5CB2B14539500352857 /* ActivityView */,
 				1BB6580D2B15DF5800A8C474 /* SwiftUIFlowLayout */,
+				1B6DBF552B22E85F00A7D9BD /* GoogleMobileAds */,
+				1B6DBF6A2B22EF9700A7D9BD /* ActivityIndicatorView */,
 			);
 			productName = "QR-code-generator";
 			productReference = 1B8F46BA2B0EED0D0097CB9D /* QR-code-generator.app */;
@@ -346,7 +392,7 @@
 				};
 			};
 			buildConfigurationList = 1B8F46B52B0EED0D0097CB9D /* Build configuration list for PBXProject "QR-code-generator" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -361,6 +407,8 @@
 				1B58652C2B1031BE008D7289 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				1B7EB5CA2B14539500352857 /* XCRemoteSwiftPackageReference "ActivityView" */,
 				1BB6580C2B15DF5800A8C474 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */,
+				1B6DBF542B22E85F00A7D9BD /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				1B6DBF692B22EF9700A7D9BD /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */,
 			);
 			productRefGroup = 1B8F46BB2B0EED0D0097CB9D /* Products */;
 			projectDirPath = "";
@@ -381,6 +429,7 @@
 				1B8F46C22B0EED100097CB9D /* Assets.xcassets in Resources */,
 				1B58653A2B103B83008D7289 /* GoogleService-Info.plist in Resources */,
 				1B8F46D52B0F3CE00097CB9D /* InfoPlist.xcstrings in Resources */,
+				1B6DBF652B22EF5B00A7D9BD /* UnifiedNativeAdView.xib in Resources */,
 				1B8F46D32B0F3C380097CB9D /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,7 +474,9 @@
 				1BC7EBC42B219FA6000885E2 /* ConatctInputView.swift in Sources */,
 				1B8F46CF2B0F28460097CB9D /* CodeGenerator.swift in Sources */,
 				1B8F46D12B0F32B20097CB9D /* Color+Extensions.swift in Sources */,
+				1B6DBF632B22EF5B00A7D9BD /* NativeAdView.swift in Sources */,
 				1B5865422B108E59008D7289 /* MakeQRCodeView.swift in Sources */,
+				1B6DBF612B22EF5B00A7D9BD /* AdIDs.swift in Sources */,
 				1B7EB5CE2B14614600352857 /* PointModel.swift in Sources */,
 				1B5865342B10328E008D7289 /* CustomError.swift in Sources */,
 				1BC7EBC22B219930000885E2 /* ContactModel.swift in Sources */,
@@ -437,19 +488,24 @@
 				1BB6580B2B15DDCC00A8C474 /* TagCloudView.swift in Sources */,
 				1B5865442B1090EA008D7289 /* MakeBarCodeView.swift in Sources */,
 				1B7EB5D42B146E6400352857 /* ScrollSelectButtonView.swift in Sources */,
+				1B6DBF642B22EF5B00A7D9BD /* UnifiedNativeAdView.swift in Sources */,
 				1B7EB5D02B14628A00352857 /* TagModel.swift in Sources */,
+				1B6DBF622B22EF5B00A7D9BD /* GADNativeAd+Extensions.swift in Sources */,
 				1B58654A2B10991E008D7289 /* FirebaseFirestoreHelper.swift in Sources */,
 				1BC7EBBC2B2144F9000885E2 /* DeleteAccountConfirmView.swift in Sources */,
+				1B6DBF682B22EF5B00A7D9BD /* GoogleAd.swift in Sources */,
 				1B8F46C02B0EED0D0097CB9D /* ContentView.swift in Sources */,
 				1B58653C2B105C21008D7289 /* TableRowView.swift in Sources */,
 				1B58652B2B103179008D7289 /* UIApplication+Extensions.swift in Sources */,
 				1B5865402B1084B9008D7289 /* CheckboxView.swift in Sources */,
 				1B5865462B109636008D7289 /* CodeModel.swift in Sources */,
+				1B6DBF672B22EF5B00A7D9BD /* GoogleAdPrompt.swift in Sources */,
 				1BC7EBBE2B2151C0000885E2 /* AccountModel.swift in Sources */,
 				1BC7EBB82B1EF9AA000885E2 /* CodeView.swift in Sources */,
 				1B7EB5C72B141C9300352857 /* ScrollTabBarView.swift in Sources */,
 				1B5865362B10334D008D7289 /* SignInView.swift in Sources */,
 				1B8F46BE2B0EED0D0097CB9D /* QR_code_generatorApp.swift in Sources */,
+				1B6DBF662B22EF5B00A7D9BD /* AdLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +569,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -569,6 +626,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
@@ -589,6 +647,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "QR-code-generator/Info.plist";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -620,6 +679,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "QR-code-generator/Info.plist";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -684,6 +744,22 @@
 			requirement = {
 				branch = master;
 				kind = branch;
+			};
+		};
+		1B6DBF542B22E85F00A7D9BD /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.14.0;
+			};
+		};
+		1B6DBF692B22EF9700A7D9BD /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/ActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
 			};
 		};
 		1B7EB5CA2B14539500352857 /* XCRemoteSwiftPackageReference "ActivityView" */ = {
@@ -859,6 +935,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1B58652C2B1031BE008D7289 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		1B6DBF552B22E85F00A7D9BD /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B6DBF542B22E85F00A7D9BD /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+		1B6DBF6A2B22EF9700A7D9BD /* ActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B6DBF692B22EF9700A7D9BD /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */;
+			productName = ActivityIndicatorView;
 		};
 		1B7EB5CB2B14539500352857 /* ActivityView */ = {
 			isa = XCSwiftPackageProductDependency;
