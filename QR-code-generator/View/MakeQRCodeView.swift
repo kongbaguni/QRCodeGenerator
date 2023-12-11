@@ -212,7 +212,19 @@ struct MakeQRCodeView: View {
             }
         }
         .alert(isPresented: $isAlert) {
-            .init(title: .init("alert"), message: .init(error!.localizedDescription))
+            switch error as? CustomError {
+            case .notEnoughPoint:
+                return .init(
+                    title: .init("alert"),
+                    message: .init(error!.localizedDescription), primaryButton: .default(.init("watch ad"), action: {
+                        GoogleAd.shared.showAd { error in
+                            self.error = error
+                        }
+                    }), secondaryButton: .cancel())
+            default:
+                return .init(title: .init("alert"), message: .init(error!.localizedDescription))
+
+            }
         }
         .onAppear {
             if let model = model {

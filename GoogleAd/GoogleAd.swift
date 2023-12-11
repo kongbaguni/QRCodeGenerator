@@ -13,6 +13,7 @@ import AppTrackingTransparency
 
 
 class GoogleAd : NSObject {
+    static let shared = GoogleAd()
     
     var interstitial:GADRewardedAd? = nil
     

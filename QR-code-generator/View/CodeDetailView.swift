@@ -91,6 +91,13 @@ struct CodeDetailView: View {
         .activitySheet($activityItem)
         .alert(isPresented: $isAlert) {
             switch error as? CustomError {
+            case .notEnoughPoint:
+                return .init(title: .init("alert"),
+                             message: .init(error!.localizedDescription), primaryButton: .cancel(), secondaryButton: .default(.init("watch ad"), action: {
+                    GoogleAd.shared.showAd { error in
+                        self.error = error
+                    }
+                }))
             case .deleteCodeConfirm:
                 return .init(title: .init("alert"),
                              message: .init(error!.localizedDescription),

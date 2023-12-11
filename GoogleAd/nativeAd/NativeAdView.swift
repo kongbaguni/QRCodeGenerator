@@ -24,8 +24,10 @@ struct NativeAdView : View {
             ZStack(alignment: .center) {
                 if let view = nativeAd?.view {
                     view
+                        .frame(width:proxy.size.width)
                 }
-                ActivityIndicatorView(isVisible: $loading, type: .default()).frame(width: 50, height: 50)
+                ActivityIndicatorView(isVisible: $loading, type: .default())
+                    .frame(width: 50, height: 50)
                     .frame(width:proxy.size.width, height: 350)
             }
         }.frame(height:350)

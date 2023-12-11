@@ -10,9 +10,7 @@ import RealmSwift
 
 struct PointHistoryView: View {
     @ObservedResults(PointModel.self,sortDescriptor: .init(keyPath: "regTimeIntervalSince1970", ascending: false)) var points
-    
-    let googleAd = GoogleAd()
-    
+        
     @State var pointSum:Int = PointModel.sum
     
     @State var error:Error? = nil {
@@ -81,7 +79,7 @@ struct PointHistoryView: View {
                 return .init(
                     title: .init(error!.localizedDescription),
                     primaryButton: .default(.init("confirm"), action: {
-                        googleAd.showAd { error in
+                        GoogleAd.shared.showAd { error in
                             self.error = error
                         }
                     }), secondaryButton: .cancel())
