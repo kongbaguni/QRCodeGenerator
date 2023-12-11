@@ -86,6 +86,7 @@
 		1B8F46D12B0F32B20097CB9D /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F46D02B0F32B20097CB9D /* Color+Extensions.swift */; };
 		1B8F46D32B0F3C380097CB9D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F46D22B0F3C380097CB9D /* Localizable.xcstrings */; };
 		1B8F46D52B0F3CE00097CB9D /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F46D42B0F3CE00097CB9D /* InfoPlist.xcstrings */; };
+		1BB4DD552B26DB4900872E40 /* FavoriteCodeListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB4DD542B26DB4800872E40 /* FavoriteCodeListScrollView.swift */; };
 		1BB658092B15CCF700A8C474 /* CodeImageCacheModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB658082B15CCF700A8C474 /* CodeImageCacheModel.swift */; };
 		1BB6580B2B15DDCC00A8C474 /* TagCloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6580A2B15DDCC00A8C474 /* TagCloudView.swift */; };
 		1BB6580E2B15DF5800A8C474 /* SwiftUIFlowLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 1BB6580D2B15DF5800A8C474 /* SwiftUIFlowLayout */; };
@@ -147,6 +148,7 @@
 		1B8F46D02B0F32B20097CB9D /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		1B8F46D22B0F3C380097CB9D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1B8F46D42B0F3CE00097CB9D /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		1BB4DD542B26DB4800872E40 /* FavoriteCodeListScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCodeListScrollView.swift; sourceTree = "<group>"; };
 		1BB658082B15CCF700A8C474 /* CodeImageCacheModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeImageCacheModel.swift; sourceTree = "<group>"; };
 		1BB6580A2B15DDCC00A8C474 /* TagCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloudView.swift; sourceTree = "<group>"; };
 		1BB6580F2B16B8BE00A8C474 /* CodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeListView.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				1BC7EBB72B1EF9AA000885E2 /* CodeView.swift */,
 				1BC7EBBB2B2144F9000885E2 /* DeleteAccountConfirmView.swift */,
 				1BC7EBC32B219FA6000885E2 /* ConatctInputView.swift */,
+				1BB4DD542B26DB4800872E40 /* FavoriteCodeListScrollView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				1B6DBF7E2B26989700A7D9BD /* WebView.swift in Sources */,
 				1BC7EBB82B1EF9AA000885E2 /* CodeView.swift in Sources */,
 				1B7EB5C72B141C9300352857 /* ScrollTabBarView.swift in Sources */,
+				1BB4DD552B26DB4900872E40 /* FavoriteCodeListScrollView.swift in Sources */,
 				1B5865362B10334D008D7289 /* SignInView.swift in Sources */,
 				1B8F46BE2B0EED0D0097CB9D /* QR_code_generatorApp.swift in Sources */,
 				1B6DBF662B22EF5B00A7D9BD /* AdLoader.swift in Sources */,

@@ -75,6 +75,13 @@ struct HomeView: View {
                         }
                     }
                 }
+                
+                if CodeModel.favoriteCodes.count > 0 {
+                    Section("favorites") {
+                        FavoriteCodeListScrollView()
+                    }
+                }
+                
                 if codelist.count > 0 {
                     Section("my codes") {
                         ForEach(codelist.prefix(5), id:\.self) { code in

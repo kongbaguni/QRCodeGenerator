@@ -71,6 +71,13 @@ struct CodeDetailView: View {
         .navigationTitle(code.title)
         .toolbar {
             Button {
+                code.togglefavorites { error in
+                    self.error = error
+                }                
+            } label: {
+                code.isInfavorites ? Image(systemName: "star.fill") : Image(systemName: "star")
+            }
+            Button {
                 if let image = code.uiimage {
                     if shareUsePoint == false {
                         PointModel.use(useCase: .shareCode) { error in

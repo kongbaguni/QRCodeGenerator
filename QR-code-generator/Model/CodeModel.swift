@@ -28,6 +28,7 @@ class CodeModel : Object , ObjectKeyIdentifiable {
     
     @Persisted var regDtTimeIntervalSince1970:Double = Date().timeIntervalSince1970
     @Persisted var updateDtTimeIntervalSince1970:Double = Date().timeIntervalSince1970
+    @Persisted var isInfavorites:Bool = false
     
     enum CodeType:Int {
         case qr = 0
@@ -113,6 +114,9 @@ extension CodeModel {
         return result
     }
     
+    static var favoriteCodes:Results<CodeModel> {
+        Realm.shared.objects(CodeModel.self).filter("isInfavorites = %@", true).sorted(byKeyPath: "updateDtTimeIntervalSince1970", ascending: true)
+    }
    
     var regDt:Date {
         .init(timeIntervalSince1970: regDtTimeIntervalSince1970)
@@ -171,6 +175,28 @@ extension CodeModel {
 
 extension CodeModel {
     static var lastAddedDocumentId:String? = nil
+    
+    func togglefavorites(complete:@escaping (Error?)->Void) {
+        guard let collection = FirebaseFirestoreHelper.codesCollection else {
+            return
+        }
+        var data:[String:AnyHashable] = [
+            "isInfavorites" : !isInfavorites,
+            "updateDtTimeIntervalSince1970" : Date().timeIntervalSince1970
+        ]
+        let id = self.id
+        collection.document(id).updateData(data) { error in
+            if error == nil {
+                data["id"] = id
+                let realm = Realm.shared
+                realm.beginWrite()
+                realm.create(CodeModel.self, value: data, update: .modified)
+                try! realm.commitWrite()
+            }
+            complete(error)
+        }
+    }
+    
     static func add(codeType:CodeType , inputType:InputType, text:String, colors:(f:Color,b:Color), tags:String, complete:@escaping (_ error:Error?)->Void) {
         guard let collection = FirebaseFirestoreHelper.codesCollection else {
             return
@@ -192,7 +218,7 @@ extension CodeModel {
             "backgroundColorAlpha":bci.alpha,
             "codeTypeValue":codeType.rawValue,
             "regDtTimeIntervalSince1970":now,
-            "updateDtTimeIntervalSince1970":now
+            "updateDtTimeIntervalSince1970":now,
         ]
         
         PointModel.use(useCase: .createCode) { error in
