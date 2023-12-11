@@ -159,7 +159,9 @@ struct MakeQRCodeView: View {
             Section("tag input") {
                 TagInputView(tagsString: $tags)
             }
-
+            Section("ad") {
+                NativeAdView()
+            }
                        
         }
         .navigationTitle(model == nil ? .init("make QR code") : .init("edit QR code"))

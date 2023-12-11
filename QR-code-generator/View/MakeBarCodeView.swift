@@ -67,6 +67,9 @@ struct MakeBarCodeView: View {
                 TagInputView(tagsString: $tags)
             }
 
+            Section("ad") {
+                NativeAdView()
+            }
                        
         }
         .navigationTitle(model == nil ? .init("make Bar code") : .init("edit Bar code"))

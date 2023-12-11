@@ -101,6 +101,9 @@ struct HomeView: View {
                     AppTitleView()
                 }
             }
+            Section("ad") {
+                NativeAdView()
+            }
         }
         .onAppear {
             reload()

@@ -109,6 +109,11 @@ struct SignInView: View {
                 if let url = account?.photoURL {
                     AsyncImage(url: url)
                         .padding()
+                        .cornerRadius(20)
+                        .overlay{
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.primary,lineWidth: 2.0)
+                        }
                 }
                 if let userId = account?.userId {
                     TableRowView(header: .init("ID"), sub: .init(userId),

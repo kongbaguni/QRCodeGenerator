@@ -29,6 +29,9 @@ struct CodeListView: View {
                         .frame(maxHeight: 200)
                 }
             }
+            Section("ad") {
+                NativeAdView()
+            }
         }
         .navigationTitle(.init(tag ?? "code list"))
         .onAppear {

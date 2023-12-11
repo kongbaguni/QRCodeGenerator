@@ -43,7 +43,11 @@ struct CodeDetailView: View {
                         sub: .init(code.updateDt.formatted(date: .complete, time: .standard)), headWidth: 100)
                 }
             }.padding()
-         
+            
+            Section("ad") {
+                NativeAdView()
+            }
+            
             HStack {
                 NavigationLink {
                     switch code.codeType {

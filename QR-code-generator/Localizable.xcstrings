@@ -22,6 +22,16 @@
         }
       }
     },
+    "ad" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "광고"
+          }
+        }
+      }
+    },
     "alert" : {
       "localizations" : {
         "ko" : {
