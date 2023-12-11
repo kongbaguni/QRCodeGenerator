@@ -82,6 +82,14 @@ struct SignInView: View {
         }
     }
     
+    var pointView : some View {
+        NavigationLink {
+            PointHistoryView()
+        } label: {
+            RoundedTextView(text: .init("Point"), image: .init(systemName: "p.circle"), style: .weak)
+        }
+    }
+    
     var deleteAccount : some View {
         Group {
             if let account = account ?? AuthManager.shared.accountModel {
@@ -101,7 +109,19 @@ struct SignInView: View {
         self.error = AuthManager.shared.signout()
         checkSignin()
     }
-    
+    var appVersion : some View {
+        Group {
+            if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                HStack {
+                    Text("App Version :")
+                        .foregroundStyle(.secondary)
+                    Text(appVersion)
+                        .foregroundStyle(.primary)
+                    
+                }.padding(20)
+            }
+        }
+    }
     var profileImage: some View {
         Group {
             if let url = account?.photoURL {
@@ -156,15 +176,17 @@ struct SignInView: View {
     
     var navigationMenu : some View {
         Group {
+            pointView
             if let url = Bundle.main.url(forResource: "HTML/openSourceLicense", withExtension: "html") {
                 NavigationLink {
                     WebView(url: url, title: .init("OpenSorce License"))
                 } label: {
                     RoundedTextView(text: .init("OpenSorce License"), image: .init(systemName: "info.square"), style: .weak)
-                        .padding(10)
+                        
                 }
+                .padding(.bottom,10)
             }
-        }
+        }.padding(.horizontal,10)
     }
     var body: some View {
         ScrollView {
@@ -189,6 +211,7 @@ struct SignInView: View {
                 }
                 signinButtons
             }
+            appVersion
         }
         .onAppear {
             checkSignin()

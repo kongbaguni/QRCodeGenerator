@@ -1,6 +1,32 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@%2$lld"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "%lld" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
     "Account" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -76,6 +102,16 @@
         }
       }
     },
+    "App Version :" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱 버전 :"
+          }
+        }
+      }
+    },
     "background Color" : {
       "localizations" : {
         "ko" : {
@@ -117,6 +153,42 @@
         }
       }
     },
+    "combin point history" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "포인트 내역 결합"
+          }
+        }
+      }
+    },
+    "combine point" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "포인트 결합"
+          }
+        }
+      }
+    },
+    "combine point history alert" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Combine point history.\nWhen you combine, the point usage history so far will be added up and the point history will disappear.\nDo you want to run it?"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "포인트 이력을 결합합니다. \n결합을 실행하면 지금까지 포인트 사용 내역이 합산되어 포인트 내역이 사라지게 됩니다.\n실행하겠습니까? "
+          }
+        }
+      }
+    },
     "confirm" : {
       "localizations" : {
         "ko" : {
@@ -153,6 +225,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Google로 계속하기"
+          }
+        }
+      }
+    },
+    "Current Point :" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "현재 포인트 :"
           }
         }
       }
@@ -332,6 +414,17 @@
         }
       }
     },
+    "hours ago" : {
+      "comment" : "time",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "시간 전"
+          }
+        }
+      }
+    },
     "http" : {
       "localizations" : {
         "ko" : {
@@ -433,6 +526,17 @@
         }
       }
     },
+    "Just before" : {
+      "comment" : "time",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "방금전"
+          }
+        }
+      }
+    },
     "last sign in date" : {
       "localizations" : {
         "ko" : {
@@ -490,6 +594,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "QR 코드 만들기"
+          }
+        }
+      }
+    },
+    "minute ago" : {
+      "comment" : "time",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "분 전"
           }
         }
       }
@@ -552,7 +667,14 @@
       }
     },
     "OpenSorce License" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오픈소스 라이센스"
+          }
+        }
+      }
     },
     "org" : {
       "localizations" : {
@@ -604,6 +726,91 @@
         }
       }
     },
+    "Point" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "포인트"
+          }
+        }
+      }
+    },
+    "Point Description 1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Users can earn points by watching ads."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "사용자는 광고를 시청하여 포인트를 얻을 수 있습니다."
+          }
+        }
+      }
+    },
+    "Point Description 2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Points are consumed when creating, editing, deleting, or sharing code."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "포인트는 Code 를 생성, 수정, 삭제, 공유를 할 때 소모됩니다."
+          }
+        }
+      }
+    },
+    "Point Description 3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Point usage\n* Share Code : 1 * Create Code : 2\n* Edit Code : 3\n* Delete Code : 4"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "포인트 사용처 * 코드 공유하기 : 1 * 코드 생성하기 : 2 * 코드 수정하기 : 3 * 코드 삭제하기 : 4"
+          }
+        }
+      }
+    },
+    "Point Description title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What is Point?"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "포인트가 뭔가요?"
+          }
+        }
+      }
+    },
+    "points history" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "포인트 내역"
+          }
+        }
+      }
+    },
     "QR code" : {
       "localizations" : {
         "ko" : {
@@ -630,6 +837,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "저장"
+          }
+        }
+      }
+    },
+    "show ad" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "광고 보기"
           }
         }
       }
@@ -803,6 +1021,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "수정일시"
+          }
+        }
+      }
+    },
+    "watch ad" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Earn points by watching ads"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "광고보고 포인트 얻기"
+          }
+        }
+      }
+    },
+    "watchAddAndEarnPointPrompt" : {
+      "comment" : "watch ad",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Earn points by watching ads!"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "광고를 보고 포인트를 얻으세요!"
           }
         }
       }

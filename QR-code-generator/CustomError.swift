@@ -15,9 +15,11 @@ enum CustomError : Error {
     case notEnoughPoint
     /** 이미 등록된 태그*/
     case tagsAlreadyRegistered
-    
     /** 코드 삭제하기 확인창 띄우기 */
     case deleteCodeConfirm
+    
+    /** 광고를 보고 포인트를 얻으세요 프롬프트 띄우기*/
+    case watchAddAndEarnPointPrompt
 }
 
 extension CustomError {
@@ -33,6 +35,8 @@ extension CustomError {
             return "Tags already registered"
         case .deleteCodeConfirm:
             return "delete code confirm"
+        case .watchAddAndEarnPointPrompt:
+            return "watchAddAndEarnPointPrompt"
         }
     }
 }
@@ -50,6 +54,8 @@ extension CustomError : LocalizedError {
             return NSLocalizedString("Tags already registered", comment: "tag")
         case .deleteCodeConfirm:
             return NSLocalizedString("delete code confirm message", comment: "delete tag")
+        case .watchAddAndEarnPointPrompt:
+            return NSLocalizedString("watchAddAndEarnPointPrompt", comment: "watch ad")
         }
     }
 }

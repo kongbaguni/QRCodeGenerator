@@ -8,6 +8,8 @@
 import Foundation
 import RealmSwift
 import FirebaseFirestore
+import SwiftUI
+
 extension Notification.Name {
     static let pointDidChanged = Notification.Name("pointDidChanged_observer")
 }
@@ -33,14 +35,15 @@ extension PointModel {
 fileprivate var pointRegRefId:String? = nil
 
 extension PointModel {
-
+    var color:Color {
+        value < 0 ? .red : .blue
+    }
+    
     enum PointUseCase : Int {
-        case createProfile = 5
-        case deleteProfile = 10
-        case editProfile = 2
-        case inbodyDataInput = 1
-        case inbodyDataEdit = 3
-        case inbodyDataDelete = 4
+        case shareCode = 1
+        case createCode = 2
+        case editCode = 3
+        case deleteCode = 4
     }
     
     static func initPoint(complete:@escaping(_ error:Error?)->Void) {
@@ -136,18 +139,14 @@ extension PointModel {
     static func use(useCase:PointModel.PointUseCase, complete:@escaping(_ error:Error?)->Void) {
         var desc:String {
             switch useCase {
-            case .createProfile:
-                return "create profile"
-            case .deleteProfile:
-                return "delete profile"
-            case .editProfile:
-                return "edit profile"
-            case .inbodyDataInput:
-                return "inbody data input"
-            case .inbodyDataEdit:
-                return "inbody data edit"
-            case .inbodyDataDelete:
-                return "inbody data delete"
+            case .createCode:
+                return "create code"
+            case .deleteCode:
+                return "delete code"
+            case .editCode:
+                return "edit code"
+            case .shareCode:
+                return "share code"
             }
         }
         use(value: useCase.rawValue, desc: desc, complete: complete)

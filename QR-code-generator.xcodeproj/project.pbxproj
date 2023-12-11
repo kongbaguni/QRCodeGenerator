@@ -66,6 +66,11 @@
 		1B6DBF7E2B26989700A7D9BD /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF7D2B26989700A7D9BD /* WebView.swift */; };
 		1B6DBF802B2698B400A7D9BD /* HTML in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DBF7F2B2698B400A7D9BD /* HTML */; };
 		1B6DBF832B26B6B300A7D9BD /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1B6DBF822B26B6B300A7D9BD /* CachedAsyncImage */; };
+		1B6DBF852B26BDD500A7D9BD /* PointHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF842B26BDD500A7D9BD /* PointHistoryView.swift */; };
+		1B6DBF872B26BDE600A7D9BD /* PointHistoryCombineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF862B26BDE600A7D9BD /* PointHistoryCombineView.swift */; };
+		1B6DBF892B26BDFD00A7D9BD /* PointDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF882B26BDFD00A7D9BD /* PointDescriptionView.swift */; };
+		1B6DBF8B2B26BE4C00A7D9BD /* ImageTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF8A2B26BE4C00A7D9BD /* ImageTextView.swift */; };
+		1B6DBF8D2B26CD2A00A7D9BD /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF8C2B26CD2A00A7D9BD /* Date+Extensions.swift */; };
 		1B7EB5C72B141C9300352857 /* ScrollTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EB5C62B141C9300352857 /* ScrollTabBarView.swift */; };
 		1B7EB5C92B144F1900352857 /* CodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EB5C82B144F1900352857 /* CodeDetailView.swift */; };
 		1B7EB5CC2B14539500352857 /* ActivityView in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7EB5CB2B14539500352857 /* ActivityView */; };
@@ -122,6 +127,11 @@
 		1B6DBF602B22EF5B00A7D9BD /* GoogleAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAd.swift; sourceTree = "<group>"; };
 		1B6DBF7D2B26989700A7D9BD /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		1B6DBF7F2B2698B400A7D9BD /* HTML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTML; sourceTree = "<group>"; };
+		1B6DBF842B26BDD500A7D9BD /* PointHistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointHistoryView.swift; sourceTree = "<group>"; };
+		1B6DBF862B26BDE600A7D9BD /* PointHistoryCombineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointHistoryCombineView.swift; sourceTree = "<group>"; };
+		1B6DBF882B26BDFD00A7D9BD /* PointDescriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointDescriptionView.swift; sourceTree = "<group>"; };
+		1B6DBF8A2B26BE4C00A7D9BD /* ImageTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTextView.swift; sourceTree = "<group>"; };
+		1B6DBF8C2B26CD2A00A7D9BD /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		1B7EB5C62B141C9300352857 /* ScrollTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTabBarView.swift; sourceTree = "<group>"; };
 		1B7EB5C82B144F1900352857 /* CodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailView.swift; sourceTree = "<group>"; };
 		1B7EB5CD2B14614600352857 /* PointModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointModel.swift; sourceTree = "<group>"; };
@@ -199,6 +209,10 @@
 		1B5865372B103599008D7289 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1B6DBF8A2B26BE4C00A7D9BD /* ImageTextView.swift */,
+				1B6DBF842B26BDD500A7D9BD /* PointHistoryView.swift */,
+				1B6DBF862B26BDE600A7D9BD /* PointHistoryCombineView.swift */,
+				1B6DBF882B26BDFD00A7D9BD /* PointDescriptionView.swift */,
 				1B6DBF7D2B26989700A7D9BD /* WebView.swift */,
 				1B58653D2B106FA5008D7289 /* AuthorizationButton.swift */,
 				1BC7EBBF2B217C41000885E2 /* RoundedTextView.swift */,
@@ -319,6 +333,7 @@
 		1B8F46CB2B0EED750097CB9D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1B6DBF8C2B26CD2A00A7D9BD /* Date+Extensions.swift */,
 				1B5865312B103254008D7289 /* Realm+Extensions.swift */,
 				1B58652A2B103179008D7289 /* UIApplication+Extensions.swift */,
 				1B8F46D02B0F32B20097CB9D /* Color+Extensions.swift */,
@@ -487,6 +502,7 @@
 				1B8F46D12B0F32B20097CB9D /* Color+Extensions.swift in Sources */,
 				1B6DBF632B22EF5B00A7D9BD /* NativeAdView.swift in Sources */,
 				1B5865422B108E59008D7289 /* MakeQRCodeView.swift in Sources */,
+				1B6DBF8B2B26BE4C00A7D9BD /* ImageTextView.swift in Sources */,
 				1B6DBF612B22EF5B00A7D9BD /* AdIDs.swift in Sources */,
 				1B7EB5CE2B14614600352857 /* PointModel.swift in Sources */,
 				1B5865342B10328E008D7289 /* CustomError.swift in Sources */,
@@ -503,14 +519,18 @@
 				1B7EB5D02B14628A00352857 /* TagModel.swift in Sources */,
 				1B6DBF622B22EF5B00A7D9BD /* GADNativeAd+Extensions.swift in Sources */,
 				1B58654A2B10991E008D7289 /* FirebaseFirestoreHelper.swift in Sources */,
+				1B6DBF872B26BDE600A7D9BD /* PointHistoryCombineView.swift in Sources */,
 				1BC7EBBC2B2144F9000885E2 /* DeleteAccountConfirmView.swift in Sources */,
 				1B6DBF682B22EF5B00A7D9BD /* GoogleAd.swift in Sources */,
 				1B8F46C02B0EED0D0097CB9D /* ContentView.swift in Sources */,
+				1B6DBF892B26BDFD00A7D9BD /* PointDescriptionView.swift in Sources */,
 				1B58653C2B105C21008D7289 /* TableRowView.swift in Sources */,
+				1B6DBF8D2B26CD2A00A7D9BD /* Date+Extensions.swift in Sources */,
 				1B58652B2B103179008D7289 /* UIApplication+Extensions.swift in Sources */,
 				1B5865402B1084B9008D7289 /* CheckboxView.swift in Sources */,
 				1B5865462B109636008D7289 /* CodeModel.swift in Sources */,
 				1B6DBF672B22EF5B00A7D9BD /* GoogleAdPrompt.swift in Sources */,
+				1B6DBF852B26BDD500A7D9BD /* PointHistoryView.swift in Sources */,
 				1BC7EBBE2B2151C0000885E2 /* AccountModel.swift in Sources */,
 				1B6DBF7E2B26989700A7D9BD /* WebView.swift in Sources */,
 				1BC7EBB82B1EF9AA000885E2 /* CodeView.swift in Sources */,
