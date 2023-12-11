@@ -18,6 +18,7 @@ struct RoundedTextView: View {
     enum StyleType {
         case normal
         case cancel
+        case weak
         var styleValue:Style {
             switch self {
             case .normal:
@@ -30,6 +31,8 @@ struct RoundedTextView: View {
                              cornerRadius: 25,
                              foregroundColors: [.red, .orange, .white],
                              backgroundColor: .yellow)
+            case .weak:
+                return .init(font: .system(size: 10), cornerRadius: 15, foregroundColors: [.secondary, .primary,.teal], backgroundColor: .clear)
             }
         }
     }

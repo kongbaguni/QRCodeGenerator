@@ -7,7 +7,7 @@
 
 import SwiftUI
 import FirebaseAuth
-
+import CachedAsyncImage
 struct SignInView: View {
     
     
@@ -102,43 +102,67 @@ struct SignInView: View {
         checkSignin()
     }
     
+    var profileImage: some View {
+        Group {
+            if let url = account?.photoURL {
+                CachedAsyncImage(url: url)
+                    .cornerRadius(20)
+                    .overlay{
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.primary,lineWidth: 2.0)
+                    }
+                    .padding(10)
+            }
+        }
+    }
+    
     var accountInfoView : some View {
         Group {
-            VStack(spacing:0) {
-                let w:CGFloat = 70
-                if let url = account?.photoURL {
-                    AsyncImage(url: url)
-                        .padding()
-                        .cornerRadius(20)
-                        .overlay{
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.primary,lineWidth: 2.0)
-                        }
+            HStack {
+                VStack {
+                    profileImage
+                    Spacer()
                 }
-                if let userId = account?.userId {
-                    TableRowView(header: .init("ID"), sub: .init(userId),
-                                 headWidth: w)
-                }
-                if let dt = account?.accountRegDt {
-                    TableRowView(header: .init("account creation date"), sub: .init(dt.formatted(.dateTime)), headWidth: w)
-                }
-                if let dt = account?.accountLastSigninDt {
-                    TableRowView(header: .init("last sign in date"), sub: .init(dt.formatted(.dateTime)), headWidth: w)
+                VStack(spacing:0) {
+                    let w:CGFloat = 80
+                    if let userId = account?.userId {
+                        TableRowView(header: .init("ID"), sub: .init(userId),
+                                     headWidth: w)
+                    }
+                    if let dt = account?.accountRegDt {
+                        TableRowView(header: .init("account creation date"), sub: .init(dt.formatted(.dateTime)), headWidth: w)
+                    }
+                    if let dt = account?.accountLastSigninDt {
+                        TableRowView(header: .init("last sign in date"), sub: .init(dt.formatted(.dateTime)), headWidth: w)
+                        
+                    }
+                    if let email = account?.email {
+                        TableRowView(
+                            header: .init("email"),
+                            sub: .init(email), headWidth: w)
+                    }
+                    if let phone = account?.phoneNumber {
+                        TableRowView(
+                            header: .init("phone"),
+                            sub: .init(phone), headWidth: w)
+                        
+                    }
+                    
                     
                 }
-                if let email = account?.email {
-                    TableRowView(
-                        header: .init("email"),
-                        sub: .init(email), headWidth: w)
+            }
+        }
+    }
+    
+    var navigationMenu : some View {
+        Group {
+            if let url = Bundle.main.url(forResource: "HTML/openSourceLicense", withExtension: "html") {
+                NavigationLink {
+                    WebView(url: url, title: .init("OpenSorce License"))
+                } label: {
+                    RoundedTextView(text: .init("OpenSorce License"), image: .init(systemName: "info.square"), style: .weak)
+                        .padding(10)
                 }
-                if let phone = account?.phoneNumber {
-                    TableRowView(
-                        header: .init("phone"),
-                        sub: .init(phone), headWidth: w)
-                    
-                }
-                
-                
             }
         }
     }
@@ -147,6 +171,8 @@ struct SignInView: View {
             if isSignin {
                 accountInfoView
                     .padding()
+                navigationMenu
+
                 if account?.isAnonymous == true {
                     upgradeButtons
                 }

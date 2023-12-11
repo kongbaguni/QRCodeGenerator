@@ -63,6 +63,9 @@
 		1B6DBF672B22EF5B00A7D9BD /* GoogleAdPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF5F2B22EF5B00A7D9BD /* GoogleAdPrompt.swift */; };
 		1B6DBF682B22EF5B00A7D9BD /* GoogleAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF602B22EF5B00A7D9BD /* GoogleAd.swift */; };
 		1B6DBF6B2B22EF9700A7D9BD /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 1B6DBF6A2B22EF9700A7D9BD /* ActivityIndicatorView */; };
+		1B6DBF7E2B26989700A7D9BD /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF7D2B26989700A7D9BD /* WebView.swift */; };
+		1B6DBF802B2698B400A7D9BD /* HTML in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DBF7F2B2698B400A7D9BD /* HTML */; };
+		1B6DBF832B26B6B300A7D9BD /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1B6DBF822B26B6B300A7D9BD /* CachedAsyncImage */; };
 		1B7EB5C72B141C9300352857 /* ScrollTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EB5C62B141C9300352857 /* ScrollTabBarView.swift */; };
 		1B7EB5C92B144F1900352857 /* CodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EB5C82B144F1900352857 /* CodeDetailView.swift */; };
 		1B7EB5CC2B14539500352857 /* ActivityView in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7EB5CB2B14539500352857 /* ActivityView */; };
@@ -117,6 +120,8 @@
 		1B6DBF5E2B22EF5B00A7D9BD /* AdLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdLoader.swift; sourceTree = "<group>"; };
 		1B6DBF5F2B22EF5B00A7D9BD /* GoogleAdPrompt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAdPrompt.swift; sourceTree = "<group>"; };
 		1B6DBF602B22EF5B00A7D9BD /* GoogleAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAd.swift; sourceTree = "<group>"; };
+		1B6DBF7D2B26989700A7D9BD /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		1B6DBF7F2B2698B400A7D9BD /* HTML */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HTML; sourceTree = "<group>"; };
 		1B7EB5C62B141C9300352857 /* ScrollTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTabBarView.swift; sourceTree = "<group>"; };
 		1B7EB5C82B144F1900352857 /* CodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDetailView.swift; sourceTree = "<group>"; };
 		1B7EB5CD2B14614600352857 /* PointModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointModel.swift; sourceTree = "<group>"; };
@@ -170,6 +175,7 @@
 				1B5865012B102D25008D7289 /* FirebaseDatabaseSwift in Frameworks */,
 				1BB6580E2B15DF5800A8C474 /* SwiftUIFlowLayout in Frameworks */,
 				1B58650B2B102D25008D7289 /* FirebaseFunctions in Frameworks */,
+				1B6DBF832B26B6B300A7D9BD /* CachedAsyncImage in Frameworks */,
 				1B5865212B102D25008D7289 /* FirebaseStorageCombine-Community in Frameworks */,
 				1B58651B2B102D25008D7289 /* FirebaseRemoteConfig in Frameworks */,
 				1B7EB5CC2B14539500352857 /* ActivityView in Frameworks */,
@@ -193,6 +199,7 @@
 		1B5865372B103599008D7289 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1B6DBF7D2B26989700A7D9BD /* WebView.swift */,
 				1B58653D2B106FA5008D7289 /* AuthorizationButton.swift */,
 				1BC7EBBF2B217C41000885E2 /* RoundedTextView.swift */,
 				1B58653F2B1084B9008D7289 /* CheckboxView.swift */,
@@ -283,6 +290,7 @@
 		1B8F46BC2B0EED0D0097CB9D /* QR-code-generator */ = {
 			isa = PBXGroup;
 			children = (
+				1B6DBF7F2B2698B400A7D9BD /* HTML */,
 				1B5865482B109901008D7289 /* Firebase */,
 				1B5865332B10328E008D7289 /* CustomError.swift */,
 				1B5865232B10311A008D7289 /* AuthManager.swift */,
@@ -371,6 +379,7 @@
 				1BB6580D2B15DF5800A8C474 /* SwiftUIFlowLayout */,
 				1B6DBF552B22E85F00A7D9BD /* GoogleMobileAds */,
 				1B6DBF6A2B22EF9700A7D9BD /* ActivityIndicatorView */,
+				1B6DBF822B26B6B300A7D9BD /* CachedAsyncImage */,
 			);
 			productName = "QR-code-generator";
 			productReference = 1B8F46BA2B0EED0D0097CB9D /* QR-code-generator.app */;
@@ -409,6 +418,7 @@
 				1BB6580C2B15DF5800A8C474 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */,
 				1B6DBF542B22E85F00A7D9BD /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 				1B6DBF692B22EF9700A7D9BD /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */,
+				1B6DBF812B26B6B300A7D9BD /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
 			);
 			productRefGroup = 1B8F46BB2B0EED0D0097CB9D /* Products */;
 			projectDirPath = "";
@@ -425,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BC7EBBA2B1F007E000885E2 /* Launch Screen.storyboard in Resources */,
+				1B6DBF802B2698B400A7D9BD /* HTML in Resources */,
 				1B8F46C52B0EED100097CB9D /* Preview Assets.xcassets in Resources */,
 				1B8F46C22B0EED100097CB9D /* Assets.xcassets in Resources */,
 				1B58653A2B103B83008D7289 /* GoogleService-Info.plist in Resources */,
@@ -501,6 +512,7 @@
 				1B5865462B109636008D7289 /* CodeModel.swift in Sources */,
 				1B6DBF672B22EF5B00A7D9BD /* GoogleAdPrompt.swift in Sources */,
 				1BC7EBBE2B2151C0000885E2 /* AccountModel.swift in Sources */,
+				1B6DBF7E2B26989700A7D9BD /* WebView.swift in Sources */,
 				1BC7EBB82B1EF9AA000885E2 /* CodeView.swift in Sources */,
 				1B7EB5C72B141C9300352857 /* ScrollTabBarView.swift in Sources */,
 				1B5865362B10334D008D7289 /* SignInView.swift in Sources */,
@@ -762,6 +774,14 @@
 				minimumVersion = 1.1.1;
 			};
 		};
+		1B6DBF812B26B6B300A7D9BD /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-cached-async-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.1;
+			};
+		};
 		1B7EB5CA2B14539500352857 /* XCRemoteSwiftPackageReference "ActivityView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUI-Plus/ActivityView.git";
@@ -945,6 +965,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1B6DBF692B22EF9700A7D9BD /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */;
 			productName = ActivityIndicatorView;
+		};
+		1B6DBF822B26B6B300A7D9BD /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B6DBF812B26B6B300A7D9BD /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
 		};
 		1B7EB5CB2B14539500352857 /* ActivityView */ = {
 			isa = XCSwiftPackageProductDependency;
