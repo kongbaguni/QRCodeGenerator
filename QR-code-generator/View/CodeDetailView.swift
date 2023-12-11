@@ -13,6 +13,7 @@ struct CodeDetailView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     @ObservedRealmObject var code:CodeModel
+    @State var shareUsePoint:Bool = false
     @State var activityItem:ActivityItem? = nil
     @State var error:Error? = nil {
         didSet {
@@ -70,8 +71,18 @@ struct CodeDetailView: View {
         .navigationTitle(code.title)
         .toolbar {
             Button {
-                if let image = code.uiimage {                    
-                    activityItem = .init(itemsArray: [image])
+                if let image = code.uiimage {
+                    if shareUsePoint == false {
+                        PointModel.use(useCase: .shareCode) { error in
+                            if error == nil {
+                                activityItem = .init(itemsArray: [image])
+                            }
+                            self.error = error
+                            self.shareUsePoint = true
+                        }
+                    } else {
+                        activityItem = .init(itemsArray: [image])
+                    }
                 }
             } label : {
                 Image(systemName: "square.and.arrow.up")

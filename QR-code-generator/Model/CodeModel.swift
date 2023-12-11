@@ -195,20 +195,27 @@ extension CodeModel {
             "updateDtTimeIntervalSince1970":now
         ]
         
-        let document = collection.addDocument(data: data) { error in
-            if error == nil {
-                if let id = lastAddedDocumentId {
-                    data["id"] = id
-                }
-                let realm = Realm.shared
-                realm.beginWrite()
-                realm.create(CodeModel.self, value: data, update: .all)
-                try! realm.commitWrite()
+        PointModel.use(useCase: .createCode) { error in
+            guard error == nil else {
+                complete(error)
+                return
             }
-            complete(error)
-        }
-        
-        lastAddedDocumentId = document.documentID
+            
+            let document = collection.addDocument(data: data) { error in
+                if error == nil {
+                    if let id = lastAddedDocumentId {
+                        data["id"] = id
+                    }
+                    let realm = Realm.shared
+                    realm.beginWrite()
+                    realm.create(CodeModel.self, value: data, update: .all)
+                    try! realm.commitWrite()
+                }
+                complete(error)
+            }
+            
+            lastAddedDocumentId = document.documentID
+        }       
         
     }
     
@@ -244,21 +251,34 @@ extension CodeModel {
         guard let collection = FirebaseFirestoreHelper.codesCollection else {
             return
         }
-        let id = self.id
-        collection.document(id).setData([
-            "deleted":true,
-            "updateDtTimeIntervalSince1970":Date().timeIntervalSince1970
-        ]) { error in
-            if error == nil {
+        
+        PointModel.use(useCase: .deleteCode) { error in
+            guard error == nil else {
+                complete(error)
+                return
+            }
+            
+            let id = self.id
+            collection.document(id).setData([
+                "deleted":true,
+                "updateDtTimeIntervalSince1970":Date().timeIntervalSince1970
+            ]) { error in
+                guard error == nil else {
+                    complete(error)
+                    return
+                }
+                
                 let realm = Realm.shared
                 if let obj = realm.object(ofType: CodeModel.self, forPrimaryKey: id) {
                     realm.beginWrite()
                     realm.delete(obj)
                     try! realm.commitWrite()
                 }
+                complete(nil)
             }
-            complete(error)
         }
+        
+       
         
     }
     
@@ -284,15 +304,24 @@ extension CodeModel {
             "updateDtTimeIntervalSince1970":Date().timeIntervalSince1970
         ]
         let id = id
-        collection.document(id).updateData(data) { error in
-            if error == nil {
-                data["id"] = id
-                let realm = Realm.shared
-                realm.beginWrite()
-                realm.create(CodeModel.self, value: data, update: .modified)
-                try! realm.commitWrite()
+        
+        PointModel.use(useCase: .editCode) { error in
+            guard error == nil else {
+                complete(error)
+                return
             }
-            complete(error)
+            
+            collection.document(id).updateData(data) { error in
+                if error == nil {
+                    data["id"] = id
+                    let realm = Realm.shared
+                    realm.beginWrite()
+                    realm.create(CodeModel.self, value: data, update: .modified)
+                    try! realm.commitWrite()
+                }
+                complete(error)
+            }
+
         }
         
     }

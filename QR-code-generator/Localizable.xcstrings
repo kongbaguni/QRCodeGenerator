@@ -229,6 +229,17 @@
         }
       }
     },
+    "create code" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "코드 생성"
+          }
+        }
+      }
+    },
     "Current Point :" : {
       "localizations" : {
         "ko" : {
@@ -271,6 +282,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "계정을 삭제 합니다.\n이후 기존에 저장된 데이터에 다시 접근 할 수 없습니다.\n계정삭제에 동의하면 아래 텍스트필드를 작성후 확인버튼을 누르세요."
+          }
+        }
+      }
+    },
+    "delete code" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "코드 삭제"
           }
         }
       }
@@ -319,6 +341,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bar 코드 편집"
+          }
+        }
+      }
+    },
+    "edit code" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "코드 편집"
           }
         }
       }
@@ -837,6 +870,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "저장"
+          }
+        }
+      }
+    },
+    "share code" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "코드 공유"
           }
         }
       }
