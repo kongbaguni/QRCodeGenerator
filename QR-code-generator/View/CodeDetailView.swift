@@ -83,9 +83,9 @@ struct CodeDetailView: View {
                         PointModel.use(useCase: .shareCode) { error in
                             if error == nil {
                                 activityItem = .init(itemsArray: [image])
+                                self.shareUsePoint = true
                             }
-                            self.error = error
-                            self.shareUsePoint = true
+                            self.error = error                            
                         }
                     } else {
                         activityItem = .init(itemsArray: [image])
