@@ -1,31 +1,53 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "CFBundleDisplayName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR,Bar code"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR, 바코드"
+          }
+        }
+      }
+    },
     "CFBundleName" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "QR,Bar Code"
+            "value" : "QR,Bar code Generator"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "QR,Bar 코드"
+            "value" : "QR, 바코드 생성기"
           }
         }
       }
     },
     "NSUserTrackingUsageDescription" : {
-      "comment" : "Privacy - Tracking Usage Description",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "This identifier will be used to deliver personalized ads to you."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 식별자는 개인화된 광고를 제공하는 데 사용됩니다."
           }
         }
       }
