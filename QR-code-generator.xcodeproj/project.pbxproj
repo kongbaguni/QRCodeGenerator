@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B4D7ECE2B27DEC1002B7D58 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1B4D7ECD2B27DEC1002B7D58 /* InfoPlist.xcstrings */; };
 		1B5864E62B1027EF008D7289 /* AppTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5864E52B1027EF008D7289 /* AppTitleView.swift */; };
 		1B5864E82B10290A008D7289 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5864E72B10290A008D7289 /* HomeView.swift */; };
 		1B5864ED2B102D25008D7289 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1B5864EC2B102D25008D7289 /* FirebaseAnalytics */; };
@@ -101,6 +102,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B4D7ECD2B27DEC1002B7D58 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		1B5864E22B0F40A7008D7289 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1B5864E52B1027EF008D7289 /* AppTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitleView.swift; sourceTree = "<group>"; };
 		1B5864E72B10290A008D7289 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				1B8F46CE2B0F28460097CB9D /* CodeGenerator.swift */,
 				1B8F46D22B0F3C380097CB9D /* Localizable.xcstrings */,
 				1B5865472B109709008D7289 /* Model */,
+				1B4D7ECD2B27DEC1002B7D58 /* InfoPlist.xcstrings */,
 			);
 			path = "QR-code-generator";
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				1BC7EBBA2B1F007E000885E2 /* Launch Screen.storyboard in Resources */,
 				1B6DBF802B2698B400A7D9BD /* HTML in Resources */,
 				1B8F46C52B0EED100097CB9D /* Preview Assets.xcassets in Resources */,
+				1B4D7ECE2B27DEC1002B7D58 /* InfoPlist.xcstrings in Resources */,
 				1B8F46C22B0EED100097CB9D /* Assets.xcassets in Resources */,
 				1B58653A2B103B83008D7289 /* GoogleService-Info.plist in Resources */,
 				1B8F46D52B0F3CE00097CB9D /* InfoPlist.xcstrings in Resources */,
