@@ -55,16 +55,20 @@ extension TagModel {
             return
         }
         
+        let tag = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard tag.isEmpty == false else {
+            return
+        }
         
         let data:[String:AnyHashable] = [
-            "text":text,
+            "text":tag,
             "regDtTimeIntervalSince1970":Date().timeIntervalSince1970,
             "regUserId":userId
         ]
     
         sync { error in
             if Realm.shared.objects(TagModel.self).filter("text = %@",text).count == 0 {
-                collection.document(text).setData(data) { error in
+                collection.document(tag).setData(data) { error in
                     complete(error)
                     let realm = Realm.shared
                     realm.beginWrite()
