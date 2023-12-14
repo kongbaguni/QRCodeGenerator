@@ -38,18 +38,18 @@ struct TextFieldView: View {
 
                 case .texteditor:
                     TextEditor(text: $value)
+                        .toolbar {
+                            ToolbarItemGroup(placement: .keyboard) {
+                                Button {
+                                    UIApplication.shared.endEditing()
+                                } label: {
+                                    Text("confirm")
+                                }
+                            }
+                        }
                 }
             }
             .focused($focused)
-            .toolbar {
-                ToolbarItemGroup(placement: .keyboard) {
-                    Button {
-                        UIApplication.shared.endEditing()
-                    } label: {
-                        Text("confirm")
-                    }
-                }
-            }
             .keyboardType(keyboardType)
             .padding(5)
             .background {

@@ -2,7 +2,14 @@
   "sourceLanguage" : "en",
   "strings" : {
     "!!" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "%@%lld" : {
       "localizations" : {
@@ -31,7 +38,14 @@
       }
     },
     "010-1234-1234" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "Account" : {
       "extractionState" : "manual",
@@ -383,13 +397,36 @@
         }
       }
     },
-    "email :" : {
-      "extractionState" : "stale",
+    "empty name error msg" : {
+      "comment" : "text input",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No name entered."
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "이메일 :"
+            "value" : "이름을 입력하지 않았습니다."
+          }
+        }
+      }
+    },
+    "empty phonenumber error msg" : {
+      "comment" : "text input",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You did not enter a phone number."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "전화번호를 입력하지 않았습니다."
           }
         }
       }
@@ -723,17 +760,6 @@
         }
       }
     },
-    "name :" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "이름 :"
-          }
-        }
-      }
-    },
     "Not enough Point" : {
       "comment" : "Not enough Point",
       "localizations" : {
@@ -772,15 +798,11 @@
       }
     },
     "organization name" : {
-
-    },
-    "organization name :" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "소속 단체 이름 :"
+            "value" : "소속단체 (회사) 이름"
           }
         }
       }
@@ -795,17 +817,6 @@
         }
       }
     },
-    "phone :" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "전화번호 :"
-          }
-        }
-      }
-    },
     "phonenumber" : {
       "localizations" : {
         "ko" : {
@@ -815,9 +826,6 @@
           }
         }
       }
-    },
-    "phonenumber id" : {
-
     },
     "Point" : {
       "localizations" : {
@@ -1089,8 +1097,7 @@
         }
       }
     },
-    "tel:" : {
-      "extractionState" : "stale",
+    "tel.com/" : {
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1099,9 +1106,6 @@
           }
         }
       }
-    },
-    "tel.com/" : {
-
     },
     "text" : {
       "localizations" : {
@@ -1124,7 +1128,20 @@
       }
     },
     "text input placeholder" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "text input"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "문자 입력"
+          }
+        }
+      }
     },
     "updateDt" : {
       "localizations" : {

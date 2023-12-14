@@ -59,6 +59,31 @@ struct MakeQRCodeView: View {
         CodeModel.InputType(rawValue: tabIndex) ?? .text
     }
     
+    var inputTest:CustomError? {
+        let c = [
+            text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+            c_fn.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+            c_tel.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        ]
+        
+        switch inputType {
+        case .contact:
+            if c[1] {
+                return .emptyName
+            }
+            if c[2] {
+                return .emptyPhoneNumber
+            }
+                                        
+        default:
+            if c[0] {
+                return .emptyText
+            }
+            
+        }
+        return nil
+    }
+    
     var body: some View {
         List {
             Section("QR code") {
@@ -161,7 +186,7 @@ struct MakeQRCodeView: View {
                     TextFieldView(
                         id: "code",
                         title: .init("tel.com/"),
-                        placeHolder: .init("phonenumber id"),
+                        placeHolder: .init("phonenumber"),
                         inputType: .textfield,
                         keyboardType: .default,
                         value: $text)
@@ -190,10 +215,11 @@ struct MakeQRCodeView: View {
         .navigationTitle(model == nil ? .init("make QR code") : .init("edit QR code"))
         .toolbar {
             Button {
-                guard text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false else {
-                    self.error = CustomError.emptyText
+                if let err = inputTest {
+                    self.error = err
                     return
                 }
+                
                 TagModel.addNewTags(text: tags) { progress in
                     
                 } complete: { error in
@@ -248,7 +274,7 @@ struct MakeQRCodeView: View {
                             self.error = error
                         }
                     }), secondaryButton: .cancel())
-            case .emptyText:
+            case .emptyText, .emptyName:
                 return .init(
                     title: .init("alert"),
                     message : .init(error!.localizedDescription),
@@ -256,6 +282,15 @@ struct MakeQRCodeView: View {
                         NotificationCenter.default.post(name: .textfieldSetFocus, object: "code")
                     })
                 )
+            case .emptyPhoneNumber:
+                return .init(
+                    title: .init("alert"),
+                    message : .init(error!.localizedDescription),
+                    dismissButton: .default(.init("confirm"), action: {
+                        NotificationCenter.default.post(name: .textfieldSetFocus, object: "phone")
+                    })
+                )
+                
             default:
                 return .init(title: .init("alert"), message: .init(error!.localizedDescription))
 
