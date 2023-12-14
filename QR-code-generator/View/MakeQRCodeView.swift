@@ -134,7 +134,7 @@ struct MakeQRCodeView: View {
                         title: .init("https://"),
                         placeHolder: .init("website"),
                         inputType: .textfield,
-                        keyboardType: .webSearch,
+                        keyboardType: .URL,
                         value: $text)
 
                 case .http:
@@ -143,7 +143,7 @@ struct MakeQRCodeView: View {
                         title: .init("http://"),
                         placeHolder: .init("website"),
                         inputType: .textfield,
-                        keyboardType: .webSearch,
+                        keyboardType: .URL,
                         value: $text)
 
                 case .facebook:
