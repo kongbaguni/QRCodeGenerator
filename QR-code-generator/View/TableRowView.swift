@@ -14,20 +14,27 @@ struct TableRowView: View {
     var body: some View {
         HStack(spacing: 10) {
             VStack(alignment: .center) {
-                header
-                    .frame(width: headWidth)
+                HStack {
+                    header
+                        .lineLimit(.max)
+                        .padding(.leading,5)
+                    Spacer()
+                }
                 Spacer()
             }
-            .foregroundStyle(.white)
+            .foregroundStyle(.primary)
             .padding(5)
-            .background(.teal)
+            .frame(width: headWidth)
+            .background(.teal.opacity(0.25))
             .bold()
             .overlay {
                 Rectangle()
                     .stroke(.primary)
             }
+            
             VStack {
                 sub
+                    .lineLimit(.max)
                     .padding(5)
                     .foregroundStyle(.primary)
                 Spacer()
@@ -42,7 +49,7 @@ struct TableRowView: View {
 
 #Preview {
     List {
-        TableRowView(header: .init("title1"), sub: Text("testjkl djkl djsakl djskal  djklj  djkl jkljkl "), headWidth: 100)
+        TableRowView(header: .init("title1"), sub: Text("testjkl djkl djsakl djskal  djklj  djkl jkljkl dsjm,a.jsdajdlkasjdlkasjdklasjdskladjaskldjaskljdslkajd "), headWidth: 100)
         TableRowView(header: .init("title2 asd asd"), sub: Text("test"), headWidth: 100)
         TableRowView(header: .init("title3"), sub: Text("test"), headWidth: 100)
     }
