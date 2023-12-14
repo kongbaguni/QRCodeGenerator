@@ -47,6 +47,7 @@ struct TextFieldView: View {
                                 }
                             }
                         }
+                        .frame(minHeight: 50)
                 }
             }
             .focused($focused)
