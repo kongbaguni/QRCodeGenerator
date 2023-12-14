@@ -15,7 +15,7 @@ struct TagCloudView: View {
                    items: tags,
                    itemSpacing: 4) { data in
             if data.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                EmptyView()                
+                EmptyView()
             } else {
                 NavigationLink {
                     CodeListView(tag: data)
@@ -35,7 +35,12 @@ struct TagCloudView: View {
                     
                 }
             }
-        }.padding()
+        }
+        .padding(5)
+        .overlay {
+            RoundedRectangle(cornerRadius: 25)
+                .stroke(lineWidth: 1.0)
+        }
         
     }
 }

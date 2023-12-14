@@ -30,7 +30,10 @@ struct CodeDetailView: View {
                 .padding()
 
             VStack {
-                TagCloudView(tags: code.tagsValue.components(separatedBy: ","))
+                if code.tagsValue.components(separatedBy: ",").count > 0 {
+                    TagCloudView(tags: code.tagsValue.components(separatedBy: ","))
+                }
+            
                 TableRowView(
                     header: .init("id"),
                     sub: .init(code.id),
@@ -135,7 +138,7 @@ struct CodeDetailView: View {
             let data:[String:AnyHashable] = [
                 "id":"123asdjkl",
                 "text":"text",
-                "tagsValue":"ㅋㅋㅋ,바보",
+                "tagsValue":"ㅋㅋㅋ,바보,멍청이,똥개,매롱,약오르지,김삿갓,나는 좋다",
                 "codeTypeValue":1,
                 "inputTypeValue":1,
                 "foregroundColorRed":1,
