@@ -10,9 +10,20 @@ import SwiftUIFlowLayout
 
 struct TagCloudView: View {
     let tags:[String]
+    var vaildTags:[String] {
+        var result:[String] = []
+        for tag in tags {
+            let str = tag.trimmingCharacters(in: .whitespacesAndNewlines)
+            if str.isEmpty == false {
+                result.append(str)
+            }
+        }
+        return result
+    }
+    
     var body: some View {
         FlowLayout(mode: .scrollable,
-                   items: tags,
+                   items: vaildTags,
                    itemSpacing: 4) { data in
             if data.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                 EmptyView()
@@ -39,7 +50,7 @@ struct TagCloudView: View {
         .padding(5)
         .overlay {
             RoundedRectangle(cornerRadius: 25)
-                .stroke(lineWidth: tags.count > 0 ? 1.0 : 0.0)
+                .stroke(lineWidth: vaildTags.count > 0 ? 1.0 : 0.0)
         }
         
     }
@@ -54,6 +65,7 @@ struct TagCloudView: View {
                 "test1","da","asdf","rand"
                 ,"zzasd d z","test1"
                 ,"금강산도 식후겸","asdf","rand","zzz"])
+            TagCloudView(tags: [""])
         }
     }
 }
