@@ -39,7 +39,7 @@ struct TagCloudView: View {
         .padding(5)
         .overlay {
             RoundedRectangle(cornerRadius: 25)
-                .stroke(lineWidth: 1.0)
+                .stroke(lineWidth: tags.count > 0 ? 1.0 : 0.0)
         }
         
     }
