@@ -45,17 +45,7 @@ struct MakeBarCodeView: View {
                     .frame(height: 100)
             }
             Section("text input") {
-                TextEditor(text: $text)
-                    .toolbar {
-                        ToolbarItemGroup(placement: .keyboard) {
-                            Button {
-                                UIApplication.shared.endEditing()
-                            } label: {
-                                Text("confirm")
-                            }
-                        }
-                    }                    
-                    .keyboardType(.asciiCapable)
+                TextFieldView(id: "code", title: .init("text input"), placeHolder: .init("text input"), inputType: .texteditor, keyboardType: .asciiCapable, value: $text)
             }
             
             Section("color") {
@@ -117,6 +107,16 @@ struct MakeBarCodeView: View {
                             self.error = error
                         }
                     }), secondaryButton: .cancel())
+
+            case .invalidBarcode:
+                return .init(
+                    title: .init("alert"),
+                    message : .init(error!.localizedDescription),
+                    dismissButton: .default(.init("confirm"), action: {
+                        NotificationCenter.default.post(name: .textfieldSetFocus, object: "code")
+                    })
+                )
+                
             default:
                 return .init(title: .init("alert"), message: .init(error!.localizedDescription))
 

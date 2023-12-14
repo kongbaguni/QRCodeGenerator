@@ -86,66 +86,89 @@ struct MakeQRCodeView: View {
                 ScrollTabBarView(titles: CodeModel.InputType.allTexts, selectedIndex: $tabIndex)
                 switch CodeModel.InputType(rawValue: tabIndex) {
                 case .text:
-                    TextEditor(text: $text)
-                        .toolbar {
-                            ToolbarItemGroup(placement: .keyboard) {
-                                Button {
-                                    UIApplication.shared.endEditing()
-                                } label: {
-                                    Text("confirm")
-                                }
-                            }
-                        }
+                    TextFieldView(
+                        id: "code",
+                        title: .init("text input"),
+                        placeHolder: .init("text input placeholder"),
+                        inputType: .texteditor,
+                        keyboardType: .default,
+                        value: $text)
+                    
                 case .mailto:
-                    HStack(spacing:0) {
-                        Text("mailto:")
-                        TextField("email", text: $text)
-                            .keyboardType(.emailAddress)
-                    }
+                    TextFieldView(
+                        id: "code",
+                        title: .init("mailto:"),
+                        placeHolder: .init("email"),
+                        inputType: .textfield,
+                        keyboardType: .emailAddress,
+                        value: $text)
+                                     
                 case .https:
-                    HStack(spacing:0) {
-                        Text("https://")
-                        TextField("website", text: $text)
-                            .keyboardType(.webSearch)
-                    }
+                    TextFieldView(
+                        id: "code",
+                        title: .init("https://"),
+                        placeHolder: .init("website"),
+                        inputType: .textfield,
+                        keyboardType: .webSearch,
+                        value: $text)
+
                 case .http:
-                    HStack(spacing:0) {
-                        Text("http://")
-                        TextField("website", text: $text)
-                            .keyboardType(.webSearch)
-                    }
+                    TextFieldView(
+                        id: "code",
+                        title: .init("http://"),
+                        placeHolder: .init("website"),
+                        inputType: .textfield,
+                        keyboardType: .webSearch,
+                        value: $text)
+
                 case .facebook:
-                    HStack(spacing:0) {
-                        Text("facebook.com/")
-                        TextField("facebook id", text: $text)
-                            .keyboardType(.webSearch)
-                    }
+                    TextFieldView(
+                        id: "code",
+                        title: .init("facebook.com/"),
+                        placeHolder: .init("facebook id"),
+                        inputType: .textfield,
+                        keyboardType: .default,
+                        value: $text)
+
                 case .instagram:
-                    HStack(spacing:0) {
-                        Text("instagram.com/")
-                        TextField("instagram id", text: $text)
-                            .keyboardType(.webSearch)
-                    }
+                    TextFieldView(
+                        id: "code",
+                        title: .init("instagram.com/"),
+                        placeHolder: .init("instagram id"),
+                        inputType: .textfield,
+                        keyboardType: .default,
+                        value: $text)
+
                 case .x:
-                    HStack(spacing:0) {
-                        Text("x.com/")
-                        TextField("X id", text: $text)
-                            .keyboardType(.webSearch)
-                    }
+                    TextFieldView(
+                        id: "code",
+                        title: .init("x.com/"),
+                        placeHolder: .init("X id"),
+                        inputType: .textfield,
+                        keyboardType: .twitter,
+                        value: $text)
+
                 case .youtube:
-                    HStack(spacing:0) {
-                        Text("youtube.com/")
-                        TextField("youtube id", text: $text)
-                            .keyboardType(.webSearch)
-                    }
+                    TextFieldView(
+                        id: "code",
+                        title: .init("youtube.com/"),
+                        placeHolder: .init("youtube id"),
+                        inputType: .textfield,
+                        keyboardType: .default,
+                        value: $text)
+
                 case .phonenumber:
-                    HStack(spacing:0) {
-                        Text("tel:")
-                        TextField("phonenumber", text: $text)
-                            .keyboardType(.phonePad)
-                    }
+                    TextFieldView(
+                        id: "code",
+                        title: .init("tel.com/"),
+                        placeHolder: .init("phonenumber id"),
+                        inputType: .textfield,
+                        keyboardType: .default,
+                        value: $text)
+
                 case .contact:
                     ContactInputView(fn: $c_fn, org: $c_org, tel: $c_tel, email: $c_email)
+                    
                 default:
                     Text("error")
                 }
@@ -225,6 +248,14 @@ struct MakeQRCodeView: View {
                             self.error = error
                         }
                     }), secondaryButton: .cancel())
+            case .emptyText:
+                return .init(
+                    title: .init("alert"),
+                    message : .init(error!.localizedDescription),
+                    dismissButton: .default(.init("confirm"), action: {
+                        NotificationCenter.default.post(name: .textfieldSetFocus, object: "code")
+                    })
+                )
             default:
                 return .init(title: .init("alert"), message: .init(error!.localizedDescription))
 

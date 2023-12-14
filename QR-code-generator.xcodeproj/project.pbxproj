@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B48F3C62B2A930F00FEB95B /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B48F3C52B2A930F00FEB95B /* TextFieldView.swift */; };
 		1B5864E62B1027EF008D7289 /* AppTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5864E52B1027EF008D7289 /* AppTitleView.swift */; };
 		1B5864E82B10290A008D7289 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5864E72B10290A008D7289 /* HomeView.swift */; };
 		1B5864ED2B102D25008D7289 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1B5864EC2B102D25008D7289 /* FirebaseAnalytics */; };
@@ -101,6 +102,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B48F3C52B2A930F00FEB95B /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		1B5864E22B0F40A7008D7289 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1B5864E52B1027EF008D7289 /* AppTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitleView.swift; sourceTree = "<group>"; };
 		1B5864E72B10290A008D7289 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				1BC7EBBB2B2144F9000885E2 /* DeleteAccountConfirmView.swift */,
 				1BC7EBC32B219FA6000885E2 /* ConatctInputView.swift */,
 				1BB4DD542B26DB4800872E40 /* FavoriteCodeListScrollView.swift */,
+				1B48F3C52B2A930F00FEB95B /* TextFieldView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 			files = (
 				1B58653E2B106FA5008D7289 /* AuthorizationButton.swift in Sources */,
 				1B5864E62B1027EF008D7289 /* AppTitleView.swift in Sources */,
+				1B48F3C62B2A930F00FEB95B /* TextFieldView.swift in Sources */,
 				1BB658092B15CCF700A8C474 /* CodeImageCacheModel.swift in Sources */,
 				1B5865322B103254008D7289 /* Realm+Extensions.swift in Sources */,
 				1B5865242B10311A008D7289 /* AuthManager.swift in Sources */,

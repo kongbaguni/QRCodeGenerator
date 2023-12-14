@@ -19,24 +19,37 @@ struct ContactInputView : View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text("name :")
-                TextField("name", text:$fn)
-                    .keyboardType(.default)
-            }
-            HStack {
-                Text("phone :")
-                TextField("phone", text:$tel)
-            }
-            HStack {
-                Text("email :")
-                TextField("email", text:$email)
-                    .keyboardType(.emailAddress)
-            }
-            HStack {
-                Text("organization name :")
-                TextField("org", text:$org)
-            }
+            TextFieldView(
+                id: "code",
+                title: .init("name"),
+                placeHolder: .init("name"),
+                inputType: .textfield,
+                keyboardType: .default,
+                value: $fn)
+
+            TextFieldView(
+                id: "phone",
+                title: .init("phone"),
+                placeHolder: .init("010-1234-1234"),
+                inputType: .textfield,
+                keyboardType: .phonePad,
+                value: $tel)
+
+            TextFieldView(
+                id: "email",
+                title: .init("email"),
+                placeHolder: .init("email"),
+                inputType: .textfield,
+                keyboardType: .emailAddress,
+                value: $email)
+
+            TextFieldView(
+                id: "org",
+                title: .init("organization name"),
+                placeHolder: .init("org"),
+                inputType: .textfield,
+                keyboardType: .default,
+                value: $org)
             
         }
     }

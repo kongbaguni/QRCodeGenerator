@@ -36,18 +36,27 @@ struct TagInputView: View {
                     tagsString = inputTags.sorted().joined(separator: ",")
                 }
             }
-            if #available(iOS 17.0, *) {
-                TextField("Tag input: separated by commas", text: $tagsString)
-                    .textFieldStyle(.roundedBorder)
-                    .onChange(of: tagsString) {
-                        changeTextCheck()
-                    }
-            } else {
-                TextField("Tag input: separated by commas", text: $tagsString)
-                    .textFieldStyle(.roundedBorder)
-                    .onChange(of: tagsString, perform: { value in
-                        changeTextCheck()
-                    })
+            Group {
+                if #available(iOS 17.0, *) {
+                    TextField("Tag input: separated by commas", text: $tagsString)
+                        .onChange(of: tagsString) {
+                            changeTextCheck()
+                        }
+                } else {
+                    TextField("Tag input: separated by commas", text: $tagsString)
+                        .onChange(of: tagsString, perform: { value in
+                            changeTextCheck()
+                        })
+                }
+            }
+            .padding(5)
+            .background {
+                RoundedRectangle(cornerRadius: 5)
+                    .foregroundColor(.black.opacity(0.2))
+            }
+            .overlay {
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(lineWidth: 1.0)
             }
         }
         .onAppear {

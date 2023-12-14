@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "!!" : {
+
+    },
     "%@%lld" : {
       "localizations" : {
         "en" : {
@@ -26,6 +29,9 @@
           }
         }
       }
+    },
+    "010-1234-1234" : {
+
     },
     "Account" : {
       "extractionState" : "manual",
@@ -378,6 +384,7 @@
       }
     },
     "email :" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -717,6 +724,7 @@
       }
     },
     "name :" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -763,7 +771,11 @@
         }
       }
     },
+    "organization name" : {
+
+    },
     "organization name :" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -784,6 +796,7 @@
       }
     },
     "phone :" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -802,6 +815,9 @@
           }
         }
       }
+    },
+    "phonenumber id" : {
+
     },
     "Point" : {
       "localizations" : {
@@ -1074,6 +1090,7 @@
       }
     },
     "tel:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1082,6 +1099,9 @@
           }
         }
       }
+    },
+    "tel.com/" : {
+
     },
     "text" : {
       "localizations" : {
@@ -1102,6 +1122,9 @@
           }
         }
       }
+    },
+    "text input placeholder" : {
+
     },
     "updateDt" : {
       "localizations" : {
