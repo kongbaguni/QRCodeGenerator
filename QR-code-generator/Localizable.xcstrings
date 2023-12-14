@@ -387,6 +387,23 @@
         }
       }
     },
+    "empty text error msg" : {
+      "comment" : "text input",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There is no text input."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "문자 입력이 없습니다."
+          }
+        }
+      }
+    },
     "error" : {
       "localizations" : {
         "ko" : {
@@ -565,6 +582,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : ""
+          }
+        }
+      }
+    },
+    "invalid Barcode error msg" : {
+      "comment" : "text input",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is a string from which a barcode cannot be created."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "바코드를 생성할 수 없는 문자열입니다."
           }
         }
       }

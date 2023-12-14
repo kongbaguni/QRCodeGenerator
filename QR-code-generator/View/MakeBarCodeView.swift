@@ -75,6 +75,10 @@ struct MakeBarCodeView: View {
         .navigationTitle(model == nil ? .init("make Bar code") : .init("edit Bar code"))
         .toolbar {
             Button {
+                guard CodeGenerator.canUseBarcode(text: text) else {
+                    error = CustomError.invalidBarcode
+                    return
+                }
                 for tag in tags.components(separatedBy: ",") {
                     if tag.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false {
                         TagModel.addNewTag(text: tag) { error in

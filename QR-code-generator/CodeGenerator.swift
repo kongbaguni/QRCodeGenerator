@@ -102,4 +102,8 @@ struct CodeGenerator {
         }
         return .init(systemName: "x.square")
     }
+    
+    static func canUseBarcode(text:String)->Bool {
+        makeBarcodeUiImage(text: text, foreground: .black, background: .white) != nil
+    }
 }

@@ -167,6 +167,10 @@ struct MakeQRCodeView: View {
         .navigationTitle(model == nil ? .init("make QR code") : .init("edit QR code"))
         .toolbar {
             Button {
+                guard text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false else {
+                    self.error = CustomError.emptyText
+                    return
+                }
                 TagModel.addNewTags(text: tags) { progress in
                     
                 } complete: { error in

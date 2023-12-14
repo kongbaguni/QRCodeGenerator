@@ -17,9 +17,13 @@ enum CustomError : Error {
     case tagsAlreadyRegistered
     /** 코드 삭제하기 확인창 띄우기 */
     case deleteCodeConfirm
-    
     /** 광고를 보고 포인트를 얻으세요 프롬프트 띄우기*/
     case watchAddAndEarnPointPrompt
+    /** 텍스트가 비어있다 */
+    case emptyText
+    /** 유효하지 않은 바코드 */
+    case invalidBarcode
+
 }
 
 extension CustomError {
@@ -37,6 +41,10 @@ extension CustomError {
             return "delete code confirm"
         case .watchAddAndEarnPointPrompt:
             return "watchAddAndEarnPointPrompt"
+        case .emptyText:
+            return "emptyText"
+        case .invalidBarcode:
+            return "invalidBarcode"
         }
     }
 }
@@ -56,6 +64,10 @@ extension CustomError : LocalizedError {
             return NSLocalizedString("delete code confirm message", comment: "delete tag")
         case .watchAddAndEarnPointPrompt:
             return NSLocalizedString("watchAddAndEarnPointPrompt", comment: "watch ad")
+        case .emptyText:
+            return NSLocalizedString("empty text error msg", comment: "text input")
+        case .invalidBarcode:
+            return NSLocalizedString("invalid Barcode error msg", comment: "text input")
         }
     }
 }
