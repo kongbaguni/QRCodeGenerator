@@ -15,14 +15,14 @@ import AppTrackingTransparency
 class GoogleAd : NSObject {
     static let shared = GoogleAd()
     
-    var interstitial:GADRewardedAd? = nil
+    var interstitial:GADRewardedInterstitialAd? = nil
     
     private func loadAd(complete:@escaping(_ error:Error?)->Void) {
         let request = GADRequest()
         
         ATTrackingManager.requestTrackingAuthorization { status in
             print("google ad tracking status : \(status)")
-            GADRewardedAd.load(withAdUnitID: AdIDs.rewardAd, request: request) { [weak self] ad, error in
+            GADRewardedInterstitialAd.load(withAdUnitID: AdIDs.rewardAd, request: request) { [weak self] ad, error in
                 if let err = error {
                     print("google ad load error : \(err.localizedDescription)")
                 }
