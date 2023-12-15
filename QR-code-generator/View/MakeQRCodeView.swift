@@ -185,7 +185,7 @@ struct MakeQRCodeView: View {
                 case .phonenumber:
                     TextFieldView(
                         id: "code",
-                        title: .init("tel.com/"),
+                        title: .init("tel:"),
                         placeHolder: .init("phonenumber"),
                         inputType: .textfield,
                         keyboardType: .default,

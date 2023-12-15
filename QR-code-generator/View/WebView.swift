@@ -54,7 +54,7 @@ struct WebView : View {
     NavigationView {
         NavigationStack {
             WebView(url: URL(string: "https://google.com")!,
-                    title:.init("we bview"))
+                    title:.init("webview"))
             .navigationTitle(Text("webview"))
         }
     }.toolbar(content: {

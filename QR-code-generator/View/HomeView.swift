@@ -35,6 +35,9 @@ struct HomeView: View {
     
     var body: some View {
         List {
+            Text("test")
+                .foregroundStyle(Color.makeDynamicColor(light: .brown, dark: .yellow))
+            
             if isSignIn {
                 Section {
                     NavigationLink {

@@ -90,6 +90,14 @@ struct SignInView: View {
         }
     }
     
+    var themeListView : some View {
+        NavigationLink {
+            ThemeListView()
+        } label: {
+            RoundedTextView(text: .init("theme list"), image: .init(systemName: "paintbrush.fill"), style: .weak)
+        }
+    }
+    
     var deleteAccount : some View {
         Group {
             if let account = account ?? AuthManager.shared.accountModel {
@@ -184,8 +192,10 @@ struct SignInView: View {
                     RoundedTextView(text: .init("OpenSorce License"), image: .init(systemName: "info.square"), style: .weak)
                         
                 }
-                .padding(.bottom,10)
             }
+            themeListView
+                .padding(.bottom,10)
+            
         }.padding(.horizontal,10)
     }
     var body: some View {

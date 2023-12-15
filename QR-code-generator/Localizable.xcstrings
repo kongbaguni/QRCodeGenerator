@@ -37,6 +37,36 @@
         }
       }
     },
+    "01" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "02" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "03" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
     "010-1234-1234" : {
       "localizations" : {
         "ko" : {
@@ -132,6 +162,9 @@
         }
       }
     },
+    "background color" : {
+
+    },
     "background Color" : {
       "localizations" : {
         "ko" : {
@@ -151,6 +184,33 @@
           }
         }
       }
+    },
+    "btn1" : {
+
+    },
+    "btn1 background color" : {
+
+    },
+    "btn1 foreground color" : {
+
+    },
+    "btn2" : {
+
+    },
+    "btn2 background color" : {
+
+    },
+    "btn2 foreground color" : {
+
+    },
+    "btn3" : {
+
+    },
+    "btn3 background color" : {
+
+    },
+    "btn3 foreground color" : {
+
     },
     "code list" : {
       "extractionState" : "manual",
@@ -269,6 +329,9 @@
           }
         }
       }
+    },
+    "dark mode" : {
+
     },
     "delete" : {
       "localizations" : {
@@ -600,6 +663,16 @@
         }
       }
     },
+    "input name" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이름 입력"
+          }
+        }
+      }
+    },
     "instagram" : {
       "localizations" : {
         "ko" : {
@@ -668,6 +741,9 @@
         }
       }
     },
+    "light mode" : {
+
+    },
     "mailto" : {
       "localizations" : {
         "ko" : {
@@ -708,6 +784,9 @@
           }
         }
       }
+    },
+    "make new theme" : {
+
     },
     "make QR code" : {
       "localizations" : {
@@ -827,6 +906,16 @@
         }
       }
     },
+    "plus" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
     "Point" : {
       "localizations" : {
         "ko" : {
@@ -912,6 +1001,12 @@
         }
       }
     },
+    "primary" : {
+
+    },
+    "primary color" : {
+
+    },
     "QR code" : {
       "localizations" : {
         "ko" : {
@@ -941,6 +1036,12 @@
           }
         }
       }
+    },
+    "secondary" : {
+
+    },
+    "secondary color" : {
+
     },
     "share code" : {
       "extractionState" : "manual",
@@ -1097,7 +1198,27 @@
         }
       }
     },
-    "tel.com/" : {
+    "tel:" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "test" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "테스트"
+          }
+        }
+      }
+    },
+    "testjkl djkl djsakl djskal  djklj  djkl jkljkl dsjm,a.jsdajdlkasjdlkasjdklasjdskladjaskldjaskljdslkajd " : {
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1139,6 +1260,51 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "문자 입력"
+          }
+        }
+      }
+    },
+    "textfield background color" : {
+
+    },
+    "textfiled foreground color" : {
+
+    },
+    "theme list" : {
+
+    },
+    "title" : {
+
+    },
+    "title input" : {
+
+    },
+    "title1" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "title2 asd asd" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "title3" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
           }
         }
       }
@@ -1192,6 +1358,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "웹사이트"
+          }
+        }
+      }
+    },
+    "webview" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "웹뷰"
           }
         }
       }

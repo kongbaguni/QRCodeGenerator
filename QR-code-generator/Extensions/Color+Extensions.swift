@@ -24,4 +24,23 @@ extension Color {
         let a = rgbaValue
         return .init(red: a.red, green: a.green, blue: a.blue, alpha: a.alpha)
     }
+    
+    var uiColorValue:UIColor {
+        let v = rgbaValue
+        return .init(red: v.red, green: v.green, blue: v.blue, alpha: v.alpha)
+    }
+    
+    static func makeDynamicColor(light:UIColor, dark:UIColor)->Color {
+        let dynamicColor = UIColor { traitCollection in
+            switch traitCollection.userInterfaceStyle {
+            case .dark:
+                return dark
+            default:
+                return light
+            }
+        }
+        return Color(dynamicColor)
+    }
 }
+
+
