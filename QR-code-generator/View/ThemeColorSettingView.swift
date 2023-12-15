@@ -21,6 +21,7 @@ struct ThemeColorSettingView: View {
         let btn3Foreground:Color
         let btn3Background:Color
     }
+    
     @Binding var colors:Colors
     let title:Text
 
@@ -55,6 +56,21 @@ struct ThemeColorSettingView: View {
         btn3background = colors.btn3Background
         btn3Foreground = colors.btn3Foreground
         isLoadFirst = true
+    }
+    
+    func apply() {
+        colors = .init(
+            backgroundColor: backgroundColor,
+            primaryColor: primaryColor,
+            secondaryColor: secondaryColor,
+            textFieldForeground: textFieldForeground,
+            textFieldBackground: textFieldBackground,
+            btn1Foreground: btn1Foreground,
+            btn1Background: btn1background,
+            btn2Foreground: btn2Foreground,
+            btn2Background: btn2background,
+            btn3Foreground: btn3Foreground,
+            btn3Background: btn3background)
     }
     
     func makeTextField(title:String, text:String)-> some View {
@@ -112,12 +128,9 @@ struct ThemeColorSettingView: View {
     var preview : some View {
         VStack {
             Group {
-                Text("primary")
-                    .foregroundStyle(primaryColor)
-                Text("secondary")
-                    .foregroundStyle(secondaryColor)
-            }
-            .font(.system(size: 20))
+                Text("primary").foregroundStyle(primaryColor)
+                Text("secondary").foregroundStyle(secondaryColor)
+            }.font(.system(size: 20))
             makeTextField(title: "empty textField", text: "")
 
             makeTextField(title: "textField", text: "textField")
@@ -143,19 +156,50 @@ struct ThemeColorSettingView: View {
     var settingView : some View {
         Group {
             ColorPicker("background color", selection: $backgroundColor)
+                .onChange(of: backgroundColor, perform: { value in
+                    apply()
+                })
             ColorPicker("primary color", selection: $primaryColor)
+                .onChange(of: primaryColor, perform: { value in
+                    apply()
+                })
             ColorPicker("secondary color", selection: $secondaryColor)
+                .onChange(of: secondaryColor, perform: { value in
+                    apply()
+                })
             ColorPicker("textfield background color", selection: $textFieldBackground)
+                .onChange(of: textFieldBackground, perform: { value in
+                    apply()
+                })
             ColorPicker("textfiled foreground color", selection: $textFieldForeground)
+                .onChange(of: textFieldForeground, perform: { value in
+                    apply()
+                })
             
             ColorPicker("btn1 foreground color", selection: $btn1Foreground)
+                .onChange(of: btn1background, perform: { value in
+                    apply()
+                })
             ColorPicker("btn1 background color", selection: $btn1background)
-
+                .onChange(of: btn1Foreground, perform: { value in
+                    apply()
+                })
             ColorPicker("btn2 foreground color", selection: $btn2Foreground)
+                .onChange(of: btn2Foreground, perform: { value in
+                    apply()
+                })
             ColorPicker("btn2 background color", selection: $btn2background)
-
+                .onChange(of: btn2background, perform: { value in
+                    apply()
+                })
             ColorPicker("btn3 foreground color", selection: $btn3Foreground)
+                .onChange(of: btn3Foreground, perform: { value in
+                    apply()
+                })
             ColorPicker("btn3 background color", selection: $btn3background)
+                .onChange(of: btn3background, perform: { value in
+                    apply()
+                })
             
         }
     }

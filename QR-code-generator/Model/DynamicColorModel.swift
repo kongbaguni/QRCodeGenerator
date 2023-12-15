@@ -19,16 +19,17 @@ extension DynamicColorModel {
     var color:Color {
         .makeDynamicColor(light: light?.uiColor ?? .clear, dark: dark?.uiColor ?? .clear)
     }
-    func makeColor(id:String,light:Color,dark:Color)->DynamicColorModel{
+    
+    static func makeColor(light:Color,dark:Color)->DynamicColorModel{
         let l = ColorModel.makeColor(color: light)
         let d = ColorModel.makeColor(color: dark)
         let realm = Realm.shared
         realm.beginWrite()
         let model = realm.create(DynamicColorModel.self, value: [
-            "id":id,
+            "id": "\(light.stringValue) \(dark.stringValue)",
             "dark":d,
             "light":l
-        ])
+        ], update: .all)
         try! realm.commitWrite()
         return model
     }

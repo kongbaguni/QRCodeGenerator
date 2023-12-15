@@ -9,6 +9,10 @@ import Foundation
 import SwiftUI
 
 extension Color {
+    var stringValue:String {
+        let v = rgbaValue    
+        return "[\(v.red):\(v.green):\(v.blue):\(v.alpha)]"
+    }
     var rgbaValue:(red:CGFloat,green:CGFloat,blue:CGFloat,alpha:CGFloat) {
         let uiColor = UIColor(self)
         var red:CGFloat = 0

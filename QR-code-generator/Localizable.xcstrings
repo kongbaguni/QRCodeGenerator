@@ -163,7 +163,14 @@
       }
     },
     "background color" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "배경색"
+          }
+        }
+      }
     },
     "background Color" : {
       "localizations" : {
@@ -186,31 +193,94 @@
       }
     },
     "btn1" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "버튼1"
+          }
+        }
+      }
     },
     "btn1 background color" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "버튼1 배경색"
+          }
+        }
+      }
     },
     "btn1 foreground color" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "버튼1 전경색"
+          }
+        }
+      }
     },
     "btn2" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "버튼2"
+          }
+        }
+      }
     },
     "btn2 background color" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "버튼2 배경색"
+          }
+        }
+      }
     },
     "btn2 foreground color" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "버튼2 전경색"
+          }
+        }
+      }
     },
     "btn3" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "버튼3"
+          }
+        }
+      }
     },
     "btn3 background color" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "버튼3 배경색"
+          }
+        }
+      }
     },
     "btn3 foreground color" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "버튼3 전경색"
+          }
+        }
+      }
     },
     "code list" : {
       "extractionState" : "manual",
@@ -331,7 +401,14 @@
       }
     },
     "dark mode" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다크모드"
+          }
+        }
+      }
     },
     "delete" : {
       "localizations" : {
@@ -507,6 +584,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "문자 입력이 없습니다."
+          }
+        }
+      }
+    },
+    "empty title error msg" : {
+      "comment" : "text input",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No title entered."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "재목을 입력하지 않았습니다."
           }
         }
       }
@@ -742,7 +836,14 @@
       }
     },
     "light mode" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "라이트 모드"
+          }
+        }
+      }
     },
     "mailto" : {
       "localizations" : {
@@ -786,7 +887,14 @@
       }
     },
     "make new theme" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "테마 만들기"
+          }
+        }
+      }
     },
     "make QR code" : {
       "localizations" : {
@@ -1002,10 +1110,24 @@
       }
     },
     "primary" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "첫번째"
+          }
+        }
+      }
     },
     "primary color" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "첫번째 색"
+          }
+        }
+      }
     },
     "QR code" : {
       "localizations" : {
@@ -1038,10 +1160,24 @@
       }
     },
     "secondary" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "두번째"
+          }
+        }
+      }
     },
     "secondary color" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "두번째 색"
+          }
+        }
+      }
     },
     "share code" : {
       "extractionState" : "manual",
@@ -1265,19 +1401,64 @@
       }
     },
     "textfield background color" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "textfiled foreground color" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "텍스트필드 전경색"
+          }
+        }
+      }
     },
     "theme list" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "테마 목록"
+          }
+        }
+      }
+    },
+    "themes" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "테마"
+          }
+        }
+      }
     },
     "title" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "제목"
+          }
+        }
+      }
     },
     "title input" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "제목 입력"
+          }
+        }
+      }
     },
     "title1" : {
       "localizations" : {

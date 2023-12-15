@@ -31,21 +31,21 @@ class ThemeModel : Object, ObjectKeyIdentifiable {
 }
 
 extension ThemeModel {
-    static func create(title:String, dark:ThemeColorSettingView.Colors, light:ThemeColorSettingView.Colors) {    
+    static func create(id:String?, title:String, dark:ThemeColorSettingView.Colors, light:ThemeColorSettingView.Colors) {
         let value:[String:AnyHashable] = [
-            "id" : "\(UUID().uuidString):\(Date().timeIntervalSince1970)",
+            "id" : id ?? "\(UUID().uuidString):\(Date().timeIntervalSince1970)",
             "title" : title,
-            "background" : ColorModel.makeColor(light: light.backgroundColor, dark: dark.backgroundColor),
-            "primary" : ColorModel.makeColor(light: light.primaryColor, dark: dark.primaryColor),
-            "secondary" : ColorModel.makeColor(light: light.secondaryColor, dark: dark.secondaryColor),
-            "textFieldBackground" : ColorModel.makeColor(light: light.textFieldBackground, dark: dark.textFieldBackground),
-            "textFieldForeground" : ColorModel.makeColor(light: light.textFieldForeground, dark: dark.textFieldForeground),
-            "btn1Background" : ColorModel.makeColor(light: light.btn1Background, dark: dark.btn1Background),
-            "btn1Foreground" : ColorModel.makeColor(light: light.btn1Foreground, dark: dark.btn1Foreground),
-            "btn2Background" : ColorModel.makeColor(light: light.btn2Background, dark: dark.btn2Background),
-            "btn2Foreground" : ColorModel.makeColor(light: light.btn2Foreground, dark: dark.btn2Foreground),
-            "btn3Background" : ColorModel.makeColor(light: light.btn3Background, dark: dark.btn3Background),
-            "btn3Foreground" : ColorModel.makeColor(light: light.btn3Foreground, dark: dark.btn3Foreground),
+            "background" : DynamicColorModel.makeColor(light: light.backgroundColor, dark: dark.backgroundColor),
+            "primary" : DynamicColorModel.makeColor(light: light.primaryColor, dark: dark.primaryColor),
+            "secondary" : DynamicColorModel.makeColor(light: light.secondaryColor, dark: dark.secondaryColor),
+            "textFieldBackground" : DynamicColorModel.makeColor(light: light.textFieldBackground, dark: dark.textFieldBackground),
+            "textFieldForeground" : DynamicColorModel.makeColor(light: light.textFieldForeground, dark: dark.textFieldForeground),
+            "btn1Background" : DynamicColorModel.makeColor(light: light.btn1Background, dark: dark.btn1Background),
+            "btn1Foreground" : DynamicColorModel.makeColor(light: light.btn1Foreground, dark: dark.btn1Foreground),
+            "btn2Background" : DynamicColorModel.makeColor(light: light.btn2Background, dark: dark.btn2Background),
+            "btn2Foreground" : DynamicColorModel.makeColor(light: light.btn2Foreground, dark: dark.btn2Foreground),
+            "btn3Background" : DynamicColorModel.makeColor(light: light.btn3Background, dark: dark.btn3Background),
+            "btn3Foreground" : DynamicColorModel.makeColor(light: light.btn3Foreground, dark: dark.btn3Foreground),
             "regDt" : Date(),
             "updateDt" : Date()
         ]
@@ -55,4 +55,36 @@ extension ThemeModel {
         realm.create(ThemeModel.self, value: value, update: .all)
         try! realm.commitWrite()
     }
+    
+    var dark:ThemeColorSettingView.Colors {
+        .init(
+            backgroundColor: background?.dark?.color ?? .black,
+            primaryColor: primary?.dark?.color ?? .white,
+            secondaryColor: secondary?.dark?.color ?? .gray,
+            textFieldForeground: textFieldForeground?.dark?.color ?? .black,
+            textFieldBackground: textFieldBackground?.dark?.color ?? .white,
+            btn1Foreground: btn1Foreground?.dark?.color ?? .black,
+            btn1Background: btn1Background?.dark?.color ?? .white,
+            btn2Foreground: btn2Foreground?.dark?.color ?? .black,
+            btn2Background: btn2Background?.dark?.color ?? .white,
+            btn3Foreground: btn3Foreground?.dark?.color ?? .black,
+            btn3Background: btn3Background?.dark?.color ?? .black)
+    }
+    
+    var light:ThemeColorSettingView.Colors {
+        .init(
+            backgroundColor: background?.light?.color ?? .black,
+            primaryColor: primary?.light?.color ?? .white,
+            secondaryColor: secondary?.light?.color ?? .gray,
+            textFieldForeground: textFieldForeground?.light?.color ?? .black,
+            textFieldBackground: textFieldBackground?.light?.color ?? .white,
+            btn1Foreground: btn1Foreground?.light?.color ?? .black,
+            btn1Background: btn1Background?.light?.color ?? .white,
+            btn2Foreground: btn2Foreground?.light?.color ?? .black,
+            btn2Background: btn2Background?.light?.color ?? .white,
+            btn3Foreground: btn3Foreground?.light?.color ?? .black,
+            btn3Background: btn3Background?.light?.color ?? .black)
+
+    }
+    
 }

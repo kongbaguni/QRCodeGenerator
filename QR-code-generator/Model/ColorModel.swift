@@ -41,7 +41,7 @@ extension ColorModel {
             "green":v.green,
             "blue":v.blue,
             "alpha":v.alpha
-        ])
+        ], update: .all)
         try! realm.commitWrite()
         return result
     }

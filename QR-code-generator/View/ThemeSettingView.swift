@@ -6,12 +6,23 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ThemeSettingView: View {
+    let themeId:String?
+
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    
+    var themeModel:ThemeModel? {
+        if let id = themeId {
+            return Realm.shared.object(ofType: ThemeModel.self, forPrimaryKey: id)
+        }
+        return nil
+    }
 
     @State var dark:ThemeColorSettingView.Colors = .init(
-        backgroundColor: .black,
+        backgroundColor: .red,
         primaryColor: .white,
         secondaryColor: .gray,
         textFieldForeground: .white,
@@ -38,7 +49,32 @@ struct ThemeSettingView: View {
         btn3Background: .yellow
     )
     
+    @State var isLoaded:Bool = false
+    
     @State var title:String = ""
+    @State var error:Error? = nil {
+        didSet {
+            if error != nil {
+                isAlert = true
+            }
+        }
+    }
+    
+    @State var isAlert:Bool = false
+    
+    func load() {
+        if isLoaded {
+            return
+        }
+        guard let model = themeModel else {
+            return
+        }
+        dark = model.dark
+        light = model.light
+        title = model.title
+        isLoaded = true
+    }
+    
     var body: some View {
         List {
             ThemeColorSettingView(colors: $dark, title: .init("dark mode"))
@@ -67,16 +103,40 @@ struct ThemeSettingView: View {
                 }
             })
         }
+        .alert(isPresented: $isAlert, content: {
+            switch error as? CustomError {
+            case .emptyTitle:
+                return .init(
+                    title: .init("alert"),
+                    message: .init(error!.localizedDescription),
+                    dismissButton: .default(.init("confirm"), action: {
+                        NotificationCenter.default.post(name: .textfieldSetFocus, object: "title")
+                    })
+                )
+            default:
+                return .init(
+                    title: .init("alert"),
+                    message: .init(error!.localizedDescription))
+
+            }
+        })
+        .onAppear {
+            load()
+        }
     }
     
     func save() {
-        ThemeModel.create(title: title, dark: dark, light: light)
-        presentationMode.wrappedValue.dismiss()        
+        if title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            error = CustomError.emptyTitle
+            return
+        }
+        ThemeModel.create(id: themeId,title: title, dark: dark, light: light)
+        presentationMode.wrappedValue.dismiss()
     }
 }
 
 #Preview {
     NavigationView {
-        ThemeSettingView()
+        ThemeSettingView(themeId:nil)
     }
 }
