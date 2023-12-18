@@ -15,6 +15,7 @@ struct HomeView: View {
             keyPath: "updateDtTimeIntervalSince1970",
             ascending: false)
     ) var codelist
+    @State var backgroundColor:Color? = .themeBackground
     @State var error:Error? = nil {
         didSet {
             if error != nil {
@@ -24,6 +25,9 @@ struct HomeView: View {
     }
     @State var isAlert:Bool = false
     @State var isSignIn = AuthManager.shared.isSignined
+    @State var strongColor = Color.themeStrong
+    @State var qr:String = "qr"
+    @State var barcode:String = "barcode"
     
     var signin : some View {
         NavigationLink {
@@ -35,85 +39,86 @@ struct HomeView: View {
     
     var body: some View {
         List {
-            Text("test")
-                .foregroundStyle(Color.makeDynamicColor(light: .brown, dark: .yellow))
-            
-            if isSignIn {
-                Section {
-                    NavigationLink {
-                        MakeQRCodeView(id:nil)
-                    } label: {
-                        HStack {
-                            CodeGenerator.makeQRImage(
-                                text: "QR",
-                                foreground: .teal,
-                                background: .clear,
-                                useCache: true
-                                                      
-                            )
+            Group {
+                if isSignIn {
+                    Section {
+                        NavigationLink {
+                            MakeQRCodeView(id:nil)
+                        } label: {
+                            HStack {
+                                CodeGenerator.makeQRImage(
+                                    text: qr,
+                                    foreground: strongColor,
+                                    background: .clear,
+                                    useCache: false
+                                    
+                                )
                                 .resizable()
                                 .scaledToFit()
                                 .padding(20)
                                 .frame(width:100,height: 100)
-                            Text("make QR code")
-                            
+                                Text("make QR code")
+                                
+                            }
                         }
-                    }
-                    
-                    NavigationLink {
-                        MakeBarCodeView(id:nil)
-                    } label : {
-                        HStack {
-                            CodeGenerator.makeBarcodeImage(
-                                text: "barcode", 
-                                forground: .teal,
-                                background: .clear,
-                                useCache: true
-                            )
+                        
+                        NavigationLink {
+                            MakeBarCodeView(id:nil)
+                        } label : {
+                            HStack {
+                                CodeGenerator.makeBarcodeImage(
+                                    text: barcode,
+                                    forground: .themeStrong,
+                                    background: .clear,
+                                    useCache: false
+                                )
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width:100,height: 100)
-                            
-                            Text("make Bar codce")
-                        }
-                    }
-                }
-                
-                if CodeModel.favoriteCodes.count > 0 {
-                    Section("favorites") {
-                        FavoriteCodeListScrollView()
-                    }
-                }
-                
-                if codelist.count > 0 {
-                    Section("my codes") {
-                        ForEach(codelist.prefix(5), id:\.self) { code in
-                            NavigationLink {
-                                CodeDetailView(code: code)
-                            } label: {
-                                CodeView(code: code)
-                                    .frame(maxHeight: 200)
-                            }
-                        }
-                        if codelist.count > 5 {
-                            NavigationLink {
-                                CodeListView(tag:nil)
-                            } label: {
-                                Text("more....")
+                                
+                                Text("make Bar codce")
                             }
                         }
                     }
+                    
+                    if CodeModel.favoriteCodes.count > 0 {
+                        Section("favorites") {
+                            FavoriteCodeListScrollView()
+                        }
+                    }
+                    
+                    if codelist.count > 0 {
+                        Section("my codes") {
+                            ForEach(codelist.prefix(5), id:\.self) { code in
+                                NavigationLink {
+                                    CodeDetailView(code: code)
+                                } label: {
+                                    CodeView(code: code)
+                                        .frame(maxHeight: 200)
+                                }
+                            }
+                            if codelist.count > 5 {
+                                NavigationLink {
+                                    CodeListView(tag:nil)
+                                } label: {
+                                    Text("more....")
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    NavigationLink {
+                        SignInView()
+                    } label: {
+                        AppTitleView()
+                    }
                 }
-            } else {
-                NavigationLink {
-                    SignInView()
-                } label: {
-                    AppTitleView()
+                Section("ad") {
+                    NativeAdView()
                 }
+                .background(backgroundColor)
             }
-            Section("ad") {
-                NativeAdView()
-            }
+            .listRowBackground(Color.themeBackground)
         }
         .onAppear {
             reload()
@@ -127,6 +132,14 @@ struct HomeView: View {
         .toolbar {
             signin
         }
+        .listStyle(.plain)
+        .background(Color.themeBackground)
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification), perform: { noti in
+//            setColor()
+        })
+        .onReceive(NotificationCenter.default.publisher(for: .themeSettingChanged), perform: { noti in
+           setColor()
+        })
         .onReceive(NotificationCenter.default.publisher(for: .authDidSucessed), perform: { noti in
             do {
                 let realm = Realm.shared
@@ -149,6 +162,15 @@ struct HomeView: View {
             TagModel.sync { error in
                 self.error = error
             }
+        }
+    }
+    
+    func setColor() {
+        DispatchQueue.main.async {
+            backgroundColor = .themeBackground
+            strongColor = .themeStrong
+            qr = strongColor.stringValue
+            barcode = strongColor.stringValue
         }
     }
 }

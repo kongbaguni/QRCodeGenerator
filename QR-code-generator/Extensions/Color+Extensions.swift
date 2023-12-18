@@ -48,3 +48,20 @@ extension Color {
 }
 
 
+
+extension Color {
+    static var themeBackground:Color {
+        ThemeManager.shared.background
+    }
+    static var themePrimary:Color {
+        ThemeManager.shared.primary
+    }
+    static var themeSecondary:Color {
+        ThemeManager.shared.secondary
+    }
+    
+    static var themeStrong:Color {
+        ThemeManager.shared.themeModel?.strong?.color ?? .teal
+    }
+    
+}

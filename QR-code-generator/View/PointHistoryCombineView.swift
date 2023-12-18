@@ -44,6 +44,8 @@ struct PointHistoryCombineView: View {
             }
 
         }
+        .listStyle(.plain)
+        .background(Color.themeBackground)
         .navigationSplitViewStyle(.prominentDetail)
         .navigationTitle("combin point history")
     }

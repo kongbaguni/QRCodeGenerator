@@ -24,15 +24,28 @@ struct RoundedTextView: View {
             case .normal:
                 return .init(font: .system(size: 12),
                              cornerRadius: 25,
-                             foregroundColors: [.primary, .secondary],
-                             backgroundColor: .teal)
+                             foregroundColors: [
+                                ThemeManager.shared.btn1Foreground,
+                                ThemeManager.shared.btn1Foreground.opacity(0.5),
+                                ThemeManager.shared.btn1Foreground.opacity(0.2)
+                             ],
+                             backgroundColor: ThemeManager.shared.btn1Background)
             case .cancel:
                 return .init(font: .system(size:12),
                              cornerRadius: 25,
-                             foregroundColors: [.red, .orange, .white],
-                             backgroundColor: .yellow)
+                             foregroundColors: [
+                                ThemeManager.shared.btn2Foreground,
+                                ThemeManager.shared.btn2Foreground.opacity(0.5),
+                                ThemeManager.shared.btn2Foreground.opacity(0.2)
+                             ],
+                             backgroundColor: ThemeManager.shared.btn2Background)
             case .weak:
-                return .init(font: .system(size: 10), cornerRadius: 15, foregroundColors: [.secondary, .primary,.teal], backgroundColor: .clear)
+                return .init(font: .system(size: 10), cornerRadius: 15,
+                             foregroundColors: [
+                                ThemeManager.shared.btn3Foreground,
+                                ThemeManager.shared.btn3Foreground.opacity(0.5),
+                                ThemeManager.shared.btn3Foreground.opacity(0.2)
+                             ], backgroundColor: ThemeManager.shared.btn3Background)
             }
         }
     }

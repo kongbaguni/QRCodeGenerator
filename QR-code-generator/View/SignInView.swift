@@ -9,8 +9,6 @@ import SwiftUI
 import FirebaseAuth
 import CachedAsyncImage
 struct SignInView: View {
-    
-    
     @AppStorage("readSigninDesc") var readSigninDesc = false
     @State var readCheck = false
     
@@ -92,7 +90,7 @@ struct SignInView: View {
     
     var themeListView : some View {
         NavigationLink {
-            ThemeListView()
+            ThemeListView()                
         } label: {
             RoundedTextView(text: .init("theme list"), image: .init(systemName: "paintbrush.fill"), style: .weak)
         }
@@ -223,6 +221,7 @@ struct SignInView: View {
             }
             appVersion
         }
+        .background(Color.themeBackground)
         .onAppear {
             checkSignin()
         }

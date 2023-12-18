@@ -6,13 +6,52 @@
 //
 
 import SwiftUI
-
-struct ThemeManager: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+import RealmSwift
+struct ThemeManager {
+    static let shared = ThemeManager()
+    @AppStorage("selectThemeId") var selectThemeId:String = ""
+       
+    
+    var themeModel:ThemeModel? {
+        guard selectThemeId.isEmpty == false else {
+            return nil
+        }
+        
+        return Realm.shared.object(ofType: ThemeModel.self, forPrimaryKey: selectThemeId)
     }
+    
+    
+    var background:Color {
+        themeModel?.background?.color ?? .makeDynamicColor(light: .yellow, dark: .blue)
+    }
+    var primary:Color {
+        themeModel?.primary?.color ?? .primary
+    }
+    var secondary:Color {
+        themeModel?.secondary?.color ?? .secondary
+    }
+    
+    var btn1Background:Color {
+        themeModel?.btn1Background?.color ?? .teal
+    }
+    var btn1Foreground:Color {
+        themeModel?.btn1Foreground?.color ?? .primary
+    }
+    
+    var btn2Background:Color {
+        themeModel?.btn2Background?.color ?? .orange
+    }
+    var btn2Foreground:Color {
+        themeModel?.btn2Foreground?.color ?? .primary
+    }
+
+    var btn3Background:Color {
+        themeModel?.btn3Background?.color ?? .clear
+    }
+    var btn3Foreground:Color {
+        themeModel?.btn3Foreground?.color ?? .secondary
+    }
+
+    
 }
 
-#Preview {
-    ThemeManager()
-}

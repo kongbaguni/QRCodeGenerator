@@ -71,6 +71,7 @@ struct CodeDetailView: View {
                 }
             }.padding(.horizontal,10)
         }
+        .background(Color.themeBackground)
         .navigationTitle(code.title)
         .toolbar {
             Button {

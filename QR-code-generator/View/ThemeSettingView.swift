@@ -8,9 +8,16 @@
 import SwiftUI
 import RealmSwift
 
+extension Notification.Name {
+    static let themeSettingChanged = Notification.Name("themeSettingChanged_observer")
+}
+
 struct ThemeSettingView: View {
     let themeId:String?
 
+    @AppStorage("selectThemeId") var selectThemeId:String = ""
+    @State var oldThemeId:String = ""
+    @State var isSelected:Bool = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     
@@ -32,7 +39,8 @@ struct ThemeSettingView: View {
         btn2Foreground: .orange,
         btn2Background: .white,
         btn3Foreground: .white,
-        btn3Background: .teal
+        btn3Background: .teal,
+        strong: .yellow
     )
     
     @State var light:ThemeColorSettingView.Colors = .init(
@@ -46,7 +54,8 @@ struct ThemeSettingView: View {
         btn2Foreground: .black,
         btn2Background: .white,
         btn3Foreground: .red,
-        btn3Background: .yellow
+        btn3Background: .yellow,
+        strong: .teal
     )
     
     @State var isLoaded:Bool = false
@@ -73,27 +82,55 @@ struct ThemeSettingView: View {
         light = model.light
         title = model.title
         isLoaded = true
+        isSelected = themeId == selectThemeId
+        oldThemeId = selectThemeId
     }
     
     var body: some View {
         List {
-            ThemeColorSettingView(colors: $dark, title: .init("dark mode"))
-            
-            ThemeColorSettingView(colors: $light, title: .init("light mode"))
-            
-            Section {
-                TextFieldView(id: "title", title: .init("title"), placeHolder: .init("title input"), inputType: .textfield, keyboardType: .default, value: $title)
-            }
-            Section {
-                Button {
-                    save()
-                } label: {
-                    RoundedTextView(text: .init("save"), image: .init(systemName: "square.and.arrow.down"), style: .normal)
+            Group {
+                Section {
+                    TextFieldView(id: "title", title: .init("title"), placeHolder: .init("title input"), inputType: .textfield, keyboardType: .default, value: $title)
+                    if let id = themeId {
+                        Toggle(isOn: $isSelected, label: {
+                            Text("Activate this theme")
+                        })
+                        .onChange(of: isSelected) { value in
+                            if isSelected == true {
+                                selectThemeId = id
+                            } else {
+                                selectThemeId = oldThemeId
+                            }
+                            NotificationCenter.default.post(name: .themeSettingChanged, object: nil)
+                        }
+                    }
+                }
+                
+                
+                ThemeColorSettingView(colors: $dark, title: .init("dark mode"))
+                
+                ThemeColorSettingView(colors: $light, title: .init("light mode"))
+                
+                
+                Section {
+                    Button {
+                        save()
+                    } label: {
+                        RoundedTextView(text: .init("save"), image: .init(systemName: "square.and.arrow.down"), style: .normal)
+                    }
                 }
             }
+            .listRowBackground(Color.themeBackground)
 
         }
-        .navigationTitle(.init("make new theme"))
+        .navigationTitle(
+            themeId == nil 
+            ? .init("make new theme")
+            : .init("edit theme")
+        )
+        .listStyle(.plain)
+        .background(Color.themeBackground)
+
         .toolbar {
             Button(action: {
                 save()
@@ -131,6 +168,7 @@ struct ThemeSettingView: View {
             return
         }
         ThemeModel.create(id: themeId,title: title, dark: dark, light: light)
+        NotificationCenter.default.post(name: .themeSettingChanged, object: nil)
         presentationMode.wrappedValue.dismiss()
     }
 }

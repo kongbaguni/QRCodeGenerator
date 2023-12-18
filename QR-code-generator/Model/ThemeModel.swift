@@ -16,6 +16,8 @@ class ThemeModel : Object, ObjectKeyIdentifiable {
     @Persisted var background:DynamicColorModel?
     @Persisted var primary:DynamicColorModel?
     @Persisted var secondary:DynamicColorModel?
+    @Persisted var strong:DynamicColorModel?
+    
     @Persisted var textFieldBackground:DynamicColorModel?
     @Persisted var textFieldForeground:DynamicColorModel?
     
@@ -38,6 +40,7 @@ extension ThemeModel {
             "background" : DynamicColorModel.makeColor(light: light.backgroundColor, dark: dark.backgroundColor),
             "primary" : DynamicColorModel.makeColor(light: light.primaryColor, dark: dark.primaryColor),
             "secondary" : DynamicColorModel.makeColor(light: light.secondaryColor, dark: dark.secondaryColor),
+            "strong" : DynamicColorModel.makeColor(light: light.strong, dark: dark.strong),
             "textFieldBackground" : DynamicColorModel.makeColor(light: light.textFieldBackground, dark: dark.textFieldBackground),
             "textFieldForeground" : DynamicColorModel.makeColor(light: light.textFieldForeground, dark: dark.textFieldForeground),
             "btn1Background" : DynamicColorModel.makeColor(light: light.btn1Background, dark: dark.btn1Background),
@@ -68,7 +71,9 @@ extension ThemeModel {
             btn2Foreground: btn2Foreground?.dark?.color ?? .black,
             btn2Background: btn2Background?.dark?.color ?? .white,
             btn3Foreground: btn3Foreground?.dark?.color ?? .black,
-            btn3Background: btn3Background?.dark?.color ?? .black)
+            btn3Background: btn3Background?.dark?.color ?? .black,
+            strong :strong?.dark?.color ?? .yellow
+        )
     }
     
     var light:ThemeColorSettingView.Colors {
@@ -83,7 +88,9 @@ extension ThemeModel {
             btn2Foreground: btn2Foreground?.light?.color ?? .black,
             btn2Background: btn2Background?.light?.color ?? .white,
             btn3Foreground: btn3Foreground?.light?.color ?? .black,
-            btn3Background: btn3Background?.light?.color ?? .black)
+            btn3Background: btn3Background?.light?.color ?? .black,
+            strong :strong?.dark?.color ?? .teal
+        )
 
     }
     

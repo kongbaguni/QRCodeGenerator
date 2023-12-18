@@ -66,6 +66,8 @@ struct DeleteAccountConfirmView: View {
             
                         
         }
+        .listStyle(.plain)
+        .background(Color.themeBackground)
         .navigationTitle(.init("delete account"))
         .onAppear {
             #if DEBUG

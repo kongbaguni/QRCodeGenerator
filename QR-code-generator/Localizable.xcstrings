@@ -98,6 +98,16 @@
         }
       }
     },
+    "Activate this theme" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "테마 활성화"
+          }
+        }
+      }
+    },
     "ad" : {
       "localizations" : {
         "ko" : {
@@ -527,6 +537,17 @@
         }
       }
     },
+    "edit theme" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "테마 수정"
+          }
+        }
+      }
+    },
     "email" : {
       "localizations" : {
         "ko" : {
@@ -824,6 +845,9 @@
           }
         }
       }
+    },
+    "Key" : {
+      "extractionState" : "manual"
     },
     "last sign in date" : {
       "localizations" : {
@@ -1293,6 +1317,26 @@
         }
       }
     },
+    "strong" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "강함"
+          }
+        }
+      }
+    },
+    "strong color" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "강조색"
+          }
+        }
+      }
+    },
     "tag input" : {
       "localizations" : {
         "ko" : {
@@ -1405,7 +1449,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ""
+            "value" : "텍스트필드 배경색"
           }
         }
       }

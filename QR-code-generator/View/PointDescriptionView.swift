@@ -18,8 +18,10 @@ struct PointDescriptionView: View {
             Text("Point Description 1")
             Text("Point Description 2")
             Text("Point Description 3")
-        }.listStyle(.plain)
-            .navigationTitle(Text("Point Description title"))
+        }
+        .listStyle(.plain)
+        .background(Color.themeBackground)
+        .navigationTitle(Text("Point Description title"))
     }
 }
 

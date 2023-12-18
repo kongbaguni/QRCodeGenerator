@@ -20,6 +20,7 @@ struct ThemeColorSettingView: View {
         let btn2Background:Color
         let btn3Foreground:Color
         let btn3Background:Color
+        let strong:Color
     }
     
     @Binding var colors:Colors
@@ -36,6 +37,7 @@ struct ThemeColorSettingView: View {
     @State var btn2background:Color = .black
     @State var btn3Foreground:Color = .white
     @State var btn3background:Color = .black
+    @State var strong:Color = .yellow
 
     @State var test:String = ""
 
@@ -55,6 +57,7 @@ struct ThemeColorSettingView: View {
         btn2Foreground = colors.btn2Foreground
         btn3background = colors.btn3Background
         btn3Foreground = colors.btn3Foreground
+        strong = colors.strong
         isLoadFirst = true
     }
     
@@ -70,7 +73,9 @@ struct ThemeColorSettingView: View {
             btn2Foreground: btn2Foreground,
             btn2Background: btn2background,
             btn3Foreground: btn3Foreground,
-            btn3Background: btn3background)
+            btn3Background: btn3background,
+            strong: strong
+        )
     }
     
     func makeTextField(title:String, text:String)-> some View {
@@ -130,6 +135,7 @@ struct ThemeColorSettingView: View {
             Group {
                 Text("primary").foregroundStyle(primaryColor)
                 Text("secondary").foregroundStyle(secondaryColor)
+                Text("strong").foregroundStyle(strong)
             }.font(.system(size: 20))
             makeTextField(title: "empty textField", text: "")
 
@@ -167,6 +173,12 @@ struct ThemeColorSettingView: View {
                 .onChange(of: secondaryColor, perform: { value in
                     apply()
                 })
+            
+            ColorPicker("strong color", selection: $strong)
+                .onChange(of: strong, perform: { value in
+                    apply()
+                })
+
             ColorPicker("textfield background color", selection: $textFieldBackground)
                 .onChange(of: textFieldBackground, perform: { value in
                     apply()
@@ -227,7 +239,8 @@ struct ThemeColorSettingView: View {
                 btn2Foreground: .black,
                 btn2Background: .orange,
                 btn3Foreground: .white,
-                btn3Background: .brown
+                btn3Background: .brown,
+                strong: .yellow
             )), title: .init("dark mode"))
         }
     }

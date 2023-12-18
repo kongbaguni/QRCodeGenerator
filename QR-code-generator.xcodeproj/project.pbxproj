@@ -54,6 +54,7 @@
 		1B5865442B1090EA008D7289 /* MakeBarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5865432B1090EA008D7289 /* MakeBarCodeView.swift */; };
 		1B5865462B109636008D7289 /* CodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5865452B109636008D7289 /* CodeModel.swift */; };
 		1B58654A2B10991E008D7289 /* FirebaseFirestoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5865492B10991E008D7289 /* FirebaseFirestoreHelper.swift */; };
+		1B652A0E2B2FD07E0063B079 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B652A0D2B2FD07E0063B079 /* ThemeManager.swift */; };
 		1B6DBF562B22E85F00A7D9BD /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 1B6DBF552B22E85F00A7D9BD /* GoogleMobileAds */; };
 		1B6DBF612B22EF5B00A7D9BD /* AdIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF582B22EF5B00A7D9BD /* AdIDs.swift */; };
 		1B6DBF622B22EF5B00A7D9BD /* GADNativeAd+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBF5A2B22EF5B00A7D9BD /* GADNativeAd+Extensions.swift */; };
@@ -126,6 +127,7 @@
 		1B5865432B1090EA008D7289 /* MakeBarCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBarCodeView.swift; sourceTree = "<group>"; };
 		1B5865452B109636008D7289 /* CodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeModel.swift; sourceTree = "<group>"; };
 		1B5865492B10991E008D7289 /* FirebaseFirestoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreHelper.swift; sourceTree = "<group>"; };
+		1B652A0D2B2FD07E0063B079 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		1B6DBF582B22EF5B00A7D9BD /* AdIDs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdIDs.swift; sourceTree = "<group>"; };
 		1B6DBF5A2B22EF5B00A7D9BD /* GADNativeAd+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GADNativeAd+Extensions.swift"; sourceTree = "<group>"; };
 		1B6DBF5B2B22EF5B00A7D9BD /* NativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAdView.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 				1B8F46CE2B0F28460097CB9D /* CodeGenerator.swift */,
 				1B8F46D22B0F3C380097CB9D /* Localizable.xcstrings */,
 				1B5865472B109709008D7289 /* Model */,
+				1B652A0D2B2FD07E0063B079 /* ThemeManager.swift */,
 			);
 			path = "QR-code-generator";
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				1B6DBF622B22EF5B00A7D9BD /* GADNativeAd+Extensions.swift in Sources */,
 				1B9BBF912B2C1F8300C982E6 /* ThemeListView.swift in Sources */,
 				1B58654A2B10991E008D7289 /* FirebaseFirestoreHelper.swift in Sources */,
+				1B652A0E2B2FD07E0063B079 /* ThemeManager.swift in Sources */,
 				1B6DBF872B26BDE600A7D9BD /* PointHistoryCombineView.swift in Sources */,
 				1BC7EBBC2B2144F9000885E2 /* DeleteAccountConfirmView.swift in Sources */,
 				1B6DBF682B22EF5B00A7D9BD /* GoogleAd.swift in Sources */,

@@ -33,6 +33,8 @@ struct CodeListView: View {
                 NativeAdView()
             }
         }
+        .listStyle(.plain)
+        .background(Color.themeBackground)
         .navigationTitle(.init(tag ?? "code list"))
         .onAppear {
             if let tag = tag {

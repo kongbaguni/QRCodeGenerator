@@ -30,7 +30,7 @@ struct PointHistoryView: View {
                     .foregroundStyle(.secondary)
                 Text("\(pointSum)")
                     .bold()
-                    .foregroundStyle(.primary)
+                    .foregroundStyle(ThemeManager.shared.primary)
                 
             }
             
@@ -45,7 +45,7 @@ struct PointHistoryView: View {
                     HStack {
                         Text("\(point.value > 0 ? "+" : "")\(point.value)")
                             .bold()
-                            .foregroundStyle(point.value < 0 ? .red : .primary)
+                            .foregroundStyle(point.value < 0 ? .red : ThemeManager.shared.primary)
                         Text(point.regDt.simpleString)
                             .foregroundStyle(.secondary)
                         Spacer()
@@ -70,6 +70,8 @@ struct PointHistoryView: View {
                 }
             }
         }
+        .listStyle(.plain)
+        .background(Color.themeBackground)
         .refreshable {
             sync()
         }

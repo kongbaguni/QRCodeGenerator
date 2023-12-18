@@ -33,35 +33,40 @@ struct MakeBarCodeView: View {
     @State var backgroundColor:Color = .white
     var body: some View {
         List {
-            Section("Bar code") {
-                CodeGenerator.makeBarcodeImage(
-                    text: text,
-                    forground: foregroundColor,
-                    background: backgroundColor,
-                    useCache: false
-                )
+            Group {
+                Section("Bar code") {
+                    CodeGenerator.makeBarcodeImage(
+                        text: text,
+                        forground: foregroundColor,
+                        background: backgroundColor,
+                        useCache: false
+                    )
                     .resizable()
                     .scaledToFit()
                     .frame(height: 100)
+                }
+                Section("text input") {
+                    TextFieldView(id: "code", title: .init("text input"), placeHolder: .init("text input"), inputType: .texteditor, keyboardType: .asciiCapable, value: $text)
+                }
+                
+                Section("color") {
+                    ColorPicker("foreground Color", selection: $foregroundColor)
+                    ColorPicker("background Color", selection: $backgroundColor)
+                }
+                
+                Section("tag input") {
+                    TagInputView(tagsString: $tags)
+                }
+                
+                Section("ad") {
+                    NativeAdView()
+                }
             }
-            Section("text input") {
-                TextFieldView(id: "code", title: .init("text input"), placeHolder: .init("text input"), inputType: .texteditor, keyboardType: .asciiCapable, value: $text)
-            }
-            
-            Section("color") {
-                ColorPicker("foreground Color", selection: $foregroundColor)
-                ColorPicker("background Color", selection: $backgroundColor)
-            }
-            
-            Section("tag input") {
-                TagInputView(tagsString: $tags)
-            }
-
-            Section("ad") {
-                NativeAdView()
-            }
+            .listRowBackground(Color.themeBackground)
                        
         }
+        .listStyle(.plain)
+        .background(Color.themeBackground)
         .navigationTitle(model == nil ? .init("make Bar code") : .init("edit Bar code"))
         .toolbar {
             Button {

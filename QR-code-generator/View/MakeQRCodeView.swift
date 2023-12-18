@@ -86,132 +86,137 @@ struct MakeQRCodeView: View {
     
     var body: some View {
         List {
-            Section("QR code") {
-                VStack {
-                    CodeGenerator.makeQRImage(text: outputText, foreground: foregroundColor, background: backgroundColor, useCache: false)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 200)
-                    Text(outputText)
-                        .foregroundStyle(foregroundColor)
+            Group {
+                Section("QR code") {
+                    VStack {
+                        CodeGenerator.makeQRImage(text: outputText, foreground: foregroundColor, background: backgroundColor, useCache: false)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 200)
+                        Text(outputText)
+                            .foregroundStyle(foregroundColor)
                         
+                    }
+                    .padding(10)
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .foregroundStyle(backgroundColor)
+                    )
+                    .overlay{
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(foregroundColor, lineWidth:2)
+                    }
+                    .padding(10)
                 }
-                .padding(10)
-                .background(
-                    RoundedRectangle(cornerRadius: 20)
-                        .foregroundStyle(backgroundColor)
-                )
-                .overlay{
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(foregroundColor, lineWidth:2)
+                Section("text input") {
+                    ScrollTabBarView(titles: CodeModel.InputType.allTexts, selectedIndex: $tabIndex)
+                    switch CodeModel.InputType(rawValue: tabIndex) {
+                    case .text:
+                        TextFieldView(
+                            id: "code",
+                            title: .init("text input"),
+                            placeHolder: .init("text input placeholder"),
+                            inputType: .texteditor,
+                            keyboardType: .default,
+                            value: $text)
+                        
+                    case .mailto:
+                        TextFieldView(
+                            id: "code",
+                            title: .init("mailto:"),
+                            placeHolder: .init("email"),
+                            inputType: .textfield,
+                            keyboardType: .emailAddress,
+                            value: $text)
+                        
+                    case .https:
+                        TextFieldView(
+                            id: "code",
+                            title: .init("https://"),
+                            placeHolder: .init("website"),
+                            inputType: .textfield,
+                            keyboardType: .URL,
+                            value: $text)
+                        
+                    case .http:
+                        TextFieldView(
+                            id: "code",
+                            title: .init("http://"),
+                            placeHolder: .init("website"),
+                            inputType: .textfield,
+                            keyboardType: .URL,
+                            value: $text)
+                        
+                    case .facebook:
+                        TextFieldView(
+                            id: "code",
+                            title: .init("facebook.com/"),
+                            placeHolder: .init("facebook id"),
+                            inputType: .textfield,
+                            keyboardType: .default,
+                            value: $text)
+                        
+                    case .instagram:
+                        TextFieldView(
+                            id: "code",
+                            title: .init("instagram.com/"),
+                            placeHolder: .init("instagram id"),
+                            inputType: .textfield,
+                            keyboardType: .default,
+                            value: $text)
+                        
+                    case .x:
+                        TextFieldView(
+                            id: "code",
+                            title: .init("x.com/"),
+                            placeHolder: .init("X id"),
+                            inputType: .textfield,
+                            keyboardType: .twitter,
+                            value: $text)
+                        
+                    case .youtube:
+                        TextFieldView(
+                            id: "code",
+                            title: .init("youtube.com/"),
+                            placeHolder: .init("youtube id"),
+                            inputType: .textfield,
+                            keyboardType: .default,
+                            value: $text)
+                        
+                    case .phonenumber:
+                        TextFieldView(
+                            id: "code",
+                            title: .init("tel:"),
+                            placeHolder: .init("phonenumber"),
+                            inputType: .textfield,
+                            keyboardType: .default,
+                            value: $text)
+                        
+                    case .contact:
+                        ContactInputView(fn: $c_fn, org: $c_org, tel: $c_tel, email: $c_email)
+                        
+                    default:
+                        Text("error")
+                    }
                 }
-                .padding(10)
-            }
-            Section("text input") {
-                ScrollTabBarView(titles: CodeModel.InputType.allTexts, selectedIndex: $tabIndex)
-                switch CodeModel.InputType(rawValue: tabIndex) {
-                case .text:
-                    TextFieldView(
-                        id: "code",
-                        title: .init("text input"),
-                        placeHolder: .init("text input placeholder"),
-                        inputType: .texteditor,
-                        keyboardType: .default,
-                        value: $text)
-                    
-                case .mailto:
-                    TextFieldView(
-                        id: "code",
-                        title: .init("mailto:"),
-                        placeHolder: .init("email"),
-                        inputType: .textfield,
-                        keyboardType: .emailAddress,
-                        value: $text)
-                                     
-                case .https:
-                    TextFieldView(
-                        id: "code",
-                        title: .init("https://"),
-                        placeHolder: .init("website"),
-                        inputType: .textfield,
-                        keyboardType: .URL,
-                        value: $text)
-
-                case .http:
-                    TextFieldView(
-                        id: "code",
-                        title: .init("http://"),
-                        placeHolder: .init("website"),
-                        inputType: .textfield,
-                        keyboardType: .URL,
-                        value: $text)
-
-                case .facebook:
-                    TextFieldView(
-                        id: "code",
-                        title: .init("facebook.com/"),
-                        placeHolder: .init("facebook id"),
-                        inputType: .textfield,
-                        keyboardType: .default,
-                        value: $text)
-
-                case .instagram:
-                    TextFieldView(
-                        id: "code",
-                        title: .init("instagram.com/"),
-                        placeHolder: .init("instagram id"),
-                        inputType: .textfield,
-                        keyboardType: .default,
-                        value: $text)
-
-                case .x:
-                    TextFieldView(
-                        id: "code",
-                        title: .init("x.com/"),
-                        placeHolder: .init("X id"),
-                        inputType: .textfield,
-                        keyboardType: .twitter,
-                        value: $text)
-
-                case .youtube:
-                    TextFieldView(
-                        id: "code",
-                        title: .init("youtube.com/"),
-                        placeHolder: .init("youtube id"),
-                        inputType: .textfield,
-                        keyboardType: .default,
-                        value: $text)
-
-                case .phonenumber:
-                    TextFieldView(
-                        id: "code",
-                        title: .init("tel:"),
-                        placeHolder: .init("phonenumber"),
-                        inputType: .textfield,
-                        keyboardType: .default,
-                        value: $text)
-
-                case .contact:
-                    ContactInputView(fn: $c_fn, org: $c_org, tel: $c_tel, email: $c_email)
-                    
-                default:
-                    Text("error")
+                
+                Section("color") {
+                    ColorPicker("foreground Color", selection: $foregroundColor)
+                    ColorPicker("background Color", selection: $backgroundColor)
+                }
+                
+                Section("tag input") {
+                    TagInputView(tagsString: $tags)
+                }
+                Section("ad") {
+                    NativeAdView()
                 }
             }
-            
-            Section("color") {
-                ColorPicker("foreground Color", selection: $foregroundColor)
-                ColorPicker("background Color", selection: $backgroundColor)
-            }
-            
-            Section("tag input") {
-                TagInputView(tagsString: $tags)
-            }
-            Section("ad") {
-                NativeAdView()
-            }
-                       
+            .listRowBackground(Color.themeBackground)
         }
+        .listStyle(.plain)
+        .background(Color.themeBackground)
+
         .navigationTitle(model == nil ? .init("make QR code") : .init("edit QR code"))
         .toolbar {
             Button {
