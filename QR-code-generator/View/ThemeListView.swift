@@ -16,28 +16,54 @@ struct ThemeListView: View {
             ascending: false)
         
     ) var themeList
+    
+    @State var selected:[Bool] = []
 
     @AppStorage("selectThemeId") var selectThemeId:String = ""
+    @State var isinited:Bool = false
 
+    
+    func refrashSelecton() {
+        selected.removeAll()
+        for theme in themeList {
+            let isSelected = selectThemeId == theme.id
+            selected.append(isSelected)
+        }
+        isinited = selected.count == themeList.count
+    }
+
+    func makeThemeItem(idx:Int, theme:ThemeModel)-> some View {
+        NavigationLink {
+            ThemeSettingView(themeId: theme.id)
+        } label: {
+            HStack {
+                Text(theme.title)
+                Spacer()
+                if isinited {
+                    Toggle(isOn: $selected[idx], label: {
+                    })
+                    .onChange(of: selected[idx]) { value in
+                        if selected[idx] == true {
+                            selectThemeId = theme.id
+                        }
+                        refrashSelecton()
+                        NotificationCenter.default.post(name: .themeSettingChanged, object: nil)
+                    }
+                }
+                
+            }
+        }
+        
+    }
 
     var body: some View {
         List {
             Group {
                 if themeList.count > 0 {
                     Section("themes") {
-                        ForEach(themeList, id:\.self) { theme in
-                            NavigationLink {
-                                ThemeSettingView(themeId: theme.id)
-                            } label: {
-                                HStack {
-                                    if theme.id == selectThemeId {
-                                        Image(systemName: "checkmark.seal")
-                                            .foregroundStyle(.yellow,.teal, .orange)
-                                    }
-                                    Text(theme.title)
-                                }
-                            }
-                            
+                        ForEach(0..<themeList.count, id:\.self) { idx in
+                            let theme = themeList[idx]
+                            makeThemeItem(idx: idx, theme:theme)
                         }
                     }
                 }
@@ -49,6 +75,9 @@ struct ThemeListView: View {
                 }
             }
             .listRowBackground(Color.themeBackground)
+        }
+        .onAppear {
+            refrashSelecton()
         }
         .listStyle(.plain)
         .background(Color.themeBackground)

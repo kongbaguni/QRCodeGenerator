@@ -15,9 +15,6 @@ extension Notification.Name {
 struct ThemeSettingView: View {
     let themeId:String?
 
-    @AppStorage("selectThemeId") var selectThemeId:String = ""
-    @State var oldThemeId:String = ""
-    @State var isSelected:Bool = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     
@@ -82,8 +79,6 @@ struct ThemeSettingView: View {
         light = model.light
         title = model.title
         isLoaded = true
-        isSelected = themeId == selectThemeId
-        oldThemeId = selectThemeId
     }
     
     var body: some View {
@@ -91,19 +86,6 @@ struct ThemeSettingView: View {
             Group {
                 Section {
                     TextFieldView(id: "title", title: .init("title"), placeHolder: .init("title input"), inputType: .textfield, keyboardType: .default, value: $title)
-                    if let id = themeId {
-                        Toggle(isOn: $isSelected, label: {
-                            Text("Activate this theme")
-                        })
-                        .onChange(of: isSelected) { value in
-                            if isSelected == true {
-                                selectThemeId = id
-                            } else {
-                                selectThemeId = oldThemeId
-                            }
-                            NotificationCenter.default.post(name: .themeSettingChanged, object: nil)
-                        }
-                    }
                 }
                 
                 
@@ -167,7 +149,7 @@ struct ThemeSettingView: View {
             error = CustomError.emptyTitle
             return
         }
-        ThemeModel.create(id: themeId,title: title, dark: dark, light: light)
+        let model = ThemeModel.create(id: themeId,title: title, dark: dark, light: light)
         NotificationCenter.default.post(name: .themeSettingChanged, object: nil)
         presentationMode.wrappedValue.dismiss()
     }

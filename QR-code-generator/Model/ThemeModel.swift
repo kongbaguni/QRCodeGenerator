@@ -33,7 +33,7 @@ class ThemeModel : Object, ObjectKeyIdentifiable {
 }
 
 extension ThemeModel {
-    static func create(id:String?, title:String, dark:ThemeColorSettingView.Colors, light:ThemeColorSettingView.Colors) {
+    static func create(id:String?, title:String, dark:ThemeColorSettingView.Colors, light:ThemeColorSettingView.Colors)->ThemeModel {
         let value:[String:AnyHashable] = [
             "id" : id ?? "\(UUID().uuidString):\(Date().timeIntervalSince1970)",
             "title" : title,
@@ -55,8 +55,9 @@ extension ThemeModel {
         
         let realm = Realm.shared
         realm.beginWrite()
-        realm.create(ThemeModel.self, value: value, update: .all)
+        let model = realm.create(ThemeModel.self, value: value, update: .all)
         try! realm.commitWrite()
+        return model
     }
     
     var dark:ThemeColorSettingView.Colors {

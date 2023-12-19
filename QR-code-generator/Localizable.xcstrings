@@ -99,6 +99,7 @@
       }
     },
     "Activate this theme" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
