@@ -48,6 +48,7 @@ struct WebView : View {
     var body: some View {
         _WebView(url: url, allowBackForwardNavigationGesture: true)
             .navigationTitle(title)
+            .background(Color.themeBackground)
     }
 }
 #Preview {

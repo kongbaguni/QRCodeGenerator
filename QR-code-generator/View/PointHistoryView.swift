@@ -25,50 +25,53 @@ struct PointHistoryView: View {
     
     var body: some View {
         List {
-            HStack {
-                Text("Current Point :")
-                    .foregroundStyle(.secondary)
-                Text("\(pointSum)")
-                    .bold()
-                    .foregroundStyle(ThemeManager.shared.primary)
+            Group {
+                HStack {
+                    Text("Current Point :")
+                        .foregroundStyle(.secondary)
+                    Text("\(pointSum)")
+                        .bold()
+                        .foregroundStyle(ThemeManager.shared.primary)
+                    
+                }
                 
-            }
-            
-            NavigationLink {
-                PointDescriptionView()
-            } label: {
-                Text("Point Description title")
-            }
-
-            Section {
-                ForEach(points, id:\.self) { point in
-                    HStack {
-                        Text("\(point.value > 0 ? "+" : "")\(point.value)")
-                            .bold()
-                            .foregroundStyle(point.value < 0 ? .red : ThemeManager.shared.primary)
-                        Text(point.regDt.simpleString)
-                            .foregroundStyle(.secondary)
-                        Spacer()
-                        Text(point.localizedDesc)
-                            .foregroundStyle(.secondary)
-                    }
+                NavigationLink {
+                    PointDescriptionView()
+                } label: {
+                    Text("Point Description title")
                 }
-            }
-            
-            Button {
-                self.error = CustomError.watchAddAndEarnPointPrompt
-            } label: {
-                ImageTextView(image: .init(systemName: "play.tv"), text: .init("watch ad"))
-            }
-            if points.count > 1 {
+                
                 Section {
-                    NavigationLink {
-                        PointHistoryCombineView()
-                    } label: {
-                        Text("combin point history")
+                    ForEach(points, id:\.self) { point in
+                        HStack {
+                            Text("\(point.value > 0 ? "+" : "")\(point.value)")
+                                .bold()
+                                .foregroundStyle(point.value < 0 ? .red : ThemeManager.shared.primary)
+                            Text(point.regDt.simpleString)
+                                .foregroundStyle(.secondary)
+                            Spacer()
+                            Text(point.localizedDesc)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+                
+                Button {
+                    self.error = CustomError.watchAddAndEarnPointPrompt
+                } label: {
+                    ImageTextView(image: .init(systemName: "play.tv"), text: .init("watch ad"))
+                }
+                if points.count > 1 {
+                    Section {
+                        NavigationLink {
+                            PointHistoryCombineView()
+                        } label: {
+                            Text("combin point history")
+                        }
                     }
                 }
             }
+            .listRowBackground(Color.themeBackground)
         }
         .listStyle(.plain)
         .background(Color.themeBackground)

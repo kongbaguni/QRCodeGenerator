@@ -68,7 +68,7 @@ struct HomeView: View {
                             HStack {
                                 CodeGenerator.makeBarcodeImage(
                                     text: barcode,
-                                    forground: .themeStrong,
+                                    forground: strongColor,
                                     background: .clear,
                                     useCache: false
                                 )
@@ -135,7 +135,7 @@ struct HomeView: View {
         .listStyle(.plain)
         .background(Color.themeBackground)
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification), perform: { noti in
-//            setColor()
+            setColor()
         })
         .onReceive(NotificationCenter.default.publisher(for: .themeSettingChanged), perform: { noti in
            setColor()
@@ -169,8 +169,8 @@ struct HomeView: View {
         DispatchQueue.main.async {
             backgroundColor = .themeBackground
             strongColor = .themeStrong
-            qr = strongColor.stringValue
-            barcode = strongColor.stringValue
+            qr = Date().formatting(format: "hhmmss")
+            barcode = Date().formatting(format: "hhmmss")
         }
     }
 }
