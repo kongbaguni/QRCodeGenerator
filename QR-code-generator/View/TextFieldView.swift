@@ -34,7 +34,9 @@ struct TextFieldView: View {
                 case .textfield:
                     TextField(text: $value, prompt: placeHolder) {
                         Text("!!")
+                            .foregroundStyle(Color.themeTextfieldForground)
                     }
+                    .foregroundStyle(Color.themeTextfieldForground)
 
                 case .texteditor:
                     TextEditor(text: $value)
@@ -48,6 +50,8 @@ struct TextFieldView: View {
                             }
                         }
                         .frame(minHeight: 50)
+                        .foregroundStyle(Color.themeTextfieldForground)
+                        .background(Color.themeBackground)
                 }
             }
             .focused($focused)
@@ -55,11 +59,11 @@ struct TextFieldView: View {
             .padding(5)
             .background {
                 RoundedRectangle(cornerRadius: 5)
-                    .foregroundColor(.black.opacity(0.2))
+                    .foregroundColor(Color.themeTextFieldBackground)
             }
             .overlay {
                 RoundedRectangle(cornerRadius: 5)
-                    .stroke(lineWidth: 1.0)
+                    .stroke(Color.themeTextfieldForground, lineWidth: 1.0)
             }
         }
         .padding(.vertical,5)

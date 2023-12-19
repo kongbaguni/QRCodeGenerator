@@ -133,19 +133,92 @@ struct ThemeColorSettingView: View {
     var preview : some View {
         VStack {
             Group {
-                Text("primary").foregroundStyle(primaryColor)
-                Text("secondary").foregroundStyle(secondaryColor)
-                Text("strong").foregroundStyle(strong)
-            }.font(.system(size: 20))
-            makeTextField(title: "empty textField", text: "")
+                NavigationLink {
+                    ColorPickerView(title1: .init("primary"), title2: nil, foreground: $primaryColor, background: $primaryColor) {
+                        apply()
+                    }
+                    
+                } label: {
+                    Text("primary").foregroundStyle(primaryColor)
+                }
 
-            makeTextField(title: "textField", text: "textField")
-            
-        
+                NavigationLink {
+                    ColorPickerView(title1: .init("secondary"), title2: nil, foreground: $secondaryColor, background: $secondaryColor) {
+                        apply()
+                    }
+                } label: {
+                    Text("secondary").foregroundStyle(secondaryColor)
+                }
+
+                NavigationLink {
+                    ColorPickerView(
+                        title1: .init("strong"),
+                        title2: nil,
+                        foreground: $strong,
+                        background: $strong) {
+                            apply()
+                        }
+                } label: {
+                    Text("strong").foregroundStyle(strong)
+                }
+            }
+            .font(.system(size: 20))
+            .padding(10)
+            .overlay {
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.themeBtn1Foreground, lineWidth: 2)
+            }
+            .padding(5)
+            NavigationLink {
+                ColorPickerView(
+                    title1: .init("textField foreground"),
+                    title2: .init("textField background"),
+                    foreground: $textFieldForeground,
+                    background: $textFieldBackground) {
+                        apply()
+                    }
+            } label: {
+                makeTextField(title: "empty textField", text: "")
+                makeTextField(title: "textField", text: "textField")
+            }
+
+                    
             HStack {
-                makeButton(text: .init("btn1"), background: btn1background, foreground: btn1Foreground)
-                makeButton(text: .init("btn2"), background: btn2background, foreground: btn2Foreground)
-                makeButton(text: .init("btn3"), background: btn3background, foreground: btn3Foreground)
+                NavigationLink {
+                    ColorPickerView(
+                        title1: .init("foreground"),
+                        title2: .init("background"),
+                        foreground: $btn1Foreground,
+                        background: $btn1background) {
+                            apply()
+                        }
+                } label: {
+                    makeButton(text: .init("btn1"), background: btn1background, foreground: btn1Foreground)
+                }
+
+                NavigationLink {
+                    ColorPickerView(
+                        title1: .init("foreground"),
+                        title2: .init("background"),
+                        foreground: $btn2Foreground,
+                        background: $btn2background) {
+                            apply()
+                        }
+                } label: {
+                    makeButton(text: .init("btn2"), background: btn2background, foreground: btn2Foreground)
+                }
+                
+                NavigationLink {
+                    ColorPickerView(
+                        title1: .init("foreground"),
+                        title2: .init("background"),
+                        foreground: $btn3Foreground,
+                        background: $btn3background) {
+                            apply()
+                        }
+                } label: {
+                    makeButton(text: .init("btn3"), background: btn3background, foreground: btn3Foreground)
+                }
             }
                 
         }
@@ -217,8 +290,21 @@ struct ThemeColorSettingView: View {
     }
     var body: some View {
         Section {
-            preview
-            settingView
+            ScrollView(.horizontal) {
+                HStack {
+                    preview
+                        .frame(width:250)
+                    VStack {
+                        settingView
+                    }
+                }
+            }
+            .padding(5)
+            .overlay {
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.primary, lineWidth: 2)
+            }
+            .padding(5)
         } header: {
             title
         }

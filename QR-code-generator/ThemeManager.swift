@@ -22,7 +22,7 @@ struct ThemeManager {
     
     
     var background:Color {
-        themeModel?.background?.color ?? .makeDynamicColor(light: .yellow, dark: .blue)
+        themeModel?.background?.color ?? .makeDynamicColor(light: .white, dark: .black)
     }
     var primary:Color {
         themeModel?.primary?.color ?? .primary

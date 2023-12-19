@@ -88,6 +88,8 @@
 		1B8F46D12B0F32B20097CB9D /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F46D02B0F32B20097CB9D /* Color+Extensions.swift */; };
 		1B8F46D32B0F3C380097CB9D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F46D22B0F3C380097CB9D /* Localizable.xcstrings */; };
 		1B8F46D52B0F3CE00097CB9D /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F46D42B0F3CE00097CB9D /* InfoPlist.xcstrings */; };
+		1B962AE42B314DC400C5F1ED /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B962AE32B314DC400C5F1ED /* View+Extensions.swift */; };
+		1B962AE62B3157CB00C5F1ED /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B962AE52B3157CB00C5F1ED /* ColorPickerView.swift */; };
 		1B9BBF872B2C025900C982E6 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9BBF862B2C025900C982E6 /* ColorModel.swift */; };
 		1B9BBF892B2C057200C982E6 /* DynamicColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9BBF882B2C057200C982E6 /* DynamicColorModel.swift */; };
 		1B9BBF8B2B2C0F3100C982E6 /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9BBF8A2B2C0F3100C982E6 /* ThemeModel.swift */; };
@@ -158,6 +160,8 @@
 		1B8F46D02B0F32B20097CB9D /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		1B8F46D22B0F3C380097CB9D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1B8F46D42B0F3CE00097CB9D /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		1B962AE32B314DC400C5F1ED /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		1B962AE52B3157CB00C5F1ED /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		1B9BBF862B2C025900C982E6 /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
 		1B9BBF882B2C057200C982E6 /* DynamicColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicColorModel.swift; sourceTree = "<group>"; };
 		1B9BBF8A2B2C0F3100C982E6 /* ThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 				1B9BBF8C2B2C103100C982E6 /* ThemeColorSettingView.swift */,
 				1B9BBF8E2B2C1AD100C982E6 /* ThemeSettingView.swift */,
 				1B9BBF902B2C1F8300C982E6 /* ThemeListView.swift */,
+				1B962AE52B3157CB00C5F1ED /* ColorPickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				1B5865312B103254008D7289 /* Realm+Extensions.swift */,
 				1B58652A2B103179008D7289 /* UIApplication+Extensions.swift */,
 				1B8F46D02B0F32B20097CB9D /* Color+Extensions.swift */,
+				1B962AE32B314DC400C5F1ED /* View+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -548,6 +554,7 @@
 				1B7EB5D42B146E6400352857 /* ScrollSelectButtonView.swift in Sources */,
 				1B6DBF642B22EF5B00A7D9BD /* UnifiedNativeAdView.swift in Sources */,
 				1B7EB5D02B14628A00352857 /* TagModel.swift in Sources */,
+				1B962AE62B3157CB00C5F1ED /* ColorPickerView.swift in Sources */,
 				1B6DBF622B22EF5B00A7D9BD /* GADNativeAd+Extensions.swift in Sources */,
 				1B9BBF912B2C1F8300C982E6 /* ThemeListView.swift in Sources */,
 				1B58654A2B10991E008D7289 /* FirebaseFirestoreHelper.swift in Sources */,
@@ -557,6 +564,7 @@
 				1B6DBF682B22EF5B00A7D9BD /* GoogleAd.swift in Sources */,
 				1B9BBF8D2B2C103100C982E6 /* ThemeColorSettingView.swift in Sources */,
 				1B8F46C02B0EED0D0097CB9D /* ContentView.swift in Sources */,
+				1B962AE42B314DC400C5F1ED /* View+Extensions.swift in Sources */,
 				1B6DBF892B26BDFD00A7D9BD /* PointDescriptionView.swift in Sources */,
 				1B58653C2B105C21008D7289 /* TableRowView.swift in Sources */,
 				1B6DBF8D2B26CD2A00A7D9BD /* Date+Extensions.swift in Sources */,

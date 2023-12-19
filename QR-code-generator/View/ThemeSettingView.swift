@@ -26,7 +26,7 @@ struct ThemeSettingView: View {
     }
 
     @State var dark:ThemeColorSettingView.Colors = .init(
-        backgroundColor: .red,
+        backgroundColor: .init(red: 0.1, green: 0.2, blue: 0.3),
         primaryColor: .white,
         secondaryColor: .gray,
         textFieldForeground: .white,
@@ -41,7 +41,7 @@ struct ThemeSettingView: View {
     )
     
     @State var light:ThemeColorSettingView.Colors = .init(
-        backgroundColor: .teal.opacity(0.5),
+        backgroundColor: .init(red: 0.9, green: 0.95, blue: 0.98),
         primaryColor: .black,
         secondaryColor: .gray,
         textFieldForeground: .red,
@@ -82,29 +82,26 @@ struct ThemeSettingView: View {
     }
     
     var body: some View {
-        List {
-            Group {
-                Section {
-                    TextFieldView(id: "title", title: .init("title"), placeHolder: .init("title input"), inputType: .textfield, keyboardType: .default, value: $title)
-                }
-                
-                
-                ThemeColorSettingView(colors: $dark, title: .init("dark mode"))
-                
-                ThemeColorSettingView(colors: $light, title: .init("light mode"))
-                
-                
-                Section {
-                    Button {
-                        save()
-                    } label: {
-                        RoundedTextView(text: .init("save"), image: .init(systemName: "square.and.arrow.down"), style: .normal)
-                    }
+        ScrollView {
+            Section {
+                TextFieldView(id: "title", title: .init("title"), placeHolder: .init("title input"), inputType: .textfield, keyboardType: .default, value: $title)
+            }
+            
+            
+            ThemeColorSettingView(colors: $dark, title: .init("dark mode"))
+            
+            ThemeColorSettingView(colors: $light, title: .init("light mode"))
+            
+            
+            Section {
+                Button {
+                    save()
+                } label: {
+                    RoundedTextView(text: .init("save"), image: .init(systemName: "square.and.arrow.down"), style: .normal)
                 }
             }
-            .listRowBackground(Color.themeBackground)
-
         }
+        .padding(20)
         .navigationTitle(
             themeId == nil 
             ? .init("make new theme")
@@ -145,12 +142,14 @@ struct ThemeSettingView: View {
     }
     
     func save() {
+        
         if title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             error = CustomError.emptyTitle
             return
         }
         let model = ThemeModel.create(id: themeId,title: title, dark: dark, light: light)
-        NotificationCenter.default.post(name: .themeSettingChanged, object: nil)
+
+        NotificationCenter.default.post(name: .themeSettingChanged, object: model.id)
         presentationMode.wrappedValue.dismiss()
     }
 }
