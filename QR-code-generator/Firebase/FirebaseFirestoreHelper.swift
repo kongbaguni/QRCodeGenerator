@@ -29,4 +29,8 @@ struct FirebaseFirestoreHelper {
     static var tagsCollection:CollectionReference? {
         rootDocument?.collection("tags")
     }
+    
+    static var themeCollection:CollectionReference? {
+        rootDocument?.collection("theme")
+    }
 }

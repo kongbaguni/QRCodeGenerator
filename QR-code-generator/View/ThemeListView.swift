@@ -12,7 +12,7 @@ struct ThemeListView: View {
     @ObservedResults (
         ThemeModel.self,
         sortDescriptor: .init(
-            keyPath: "updateDt",
+            keyPath: "updateDateTmeIntervalSince1970",
             ascending: false)
         
     ) var themeList
@@ -22,8 +22,12 @@ struct ThemeListView: View {
     @AppStorage("selectThemeId") var selectThemeId:String = ""
     @State var isinited:Bool = false
 
-    
+    @State var error:Error? = nil
+    @State var isAlert:Bool = false
     func refrashSelecton() {
+        ThemeModel.sync { error in
+            self.error = error
+        }
         selected.removeAll()
         for theme in themeList {
             let isSelected = selectThemeId == theme.id
@@ -59,7 +63,7 @@ struct ThemeListView: View {
     var body: some View {
         List {
             Group {
-                if themeList.count > 0 {
+                if themeList.count > 0 && selected.count > 0 {
                     Section("themes") {
                         ForEach(0..<themeList.count, id:\.self) { idx in
                             let theme = themeList[idx]

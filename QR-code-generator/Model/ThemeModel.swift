@@ -28,12 +28,12 @@ class ThemeModel : Object, ObjectKeyIdentifiable {
     @Persisted var btn3Background:DynamicColorModel?
     @Persisted var btn3Foreground:DynamicColorModel?
     
-    @Persisted var regDt:Date = Date()
-    @Persisted var updateDt:Date = Date()
+    @Persisted var regDateTimeIntervalSince1970:Double = Date().timeIntervalSince1970
+    @Persisted var updateDateTmeIntervalSince1970:Double = Date().timeIntervalSince1970
 }
 
 extension ThemeModel {
-    static func create(id:String?, title:String, dark:ThemeColorSettingView.Colors, light:ThemeColorSettingView.Colors)->ThemeModel {
+    static func create(id:String?, title:String, dark:ThemeColorSettingView.Colors, light:ThemeColorSettingView.Colors, complete:@escaping(_ error : Error?,_ id:String?)->Void) {
         let value:[String:AnyHashable] = [
             "id" : id ?? "\(UUID().uuidString):\(Date().timeIntervalSince1970)",
             "title" : title,
@@ -49,15 +49,26 @@ extension ThemeModel {
             "btn2Foreground" : DynamicColorModel.makeColor(light: light.btn2Foreground, dark: dark.btn2Foreground),
             "btn3Background" : DynamicColorModel.makeColor(light: light.btn3Background, dark: dark.btn3Background),
             "btn3Foreground" : DynamicColorModel.makeColor(light: light.btn3Foreground, dark: dark.btn3Foreground),
-            "regDt" : Date(),
-            "updateDt" : Date()
+            "regDateTimeIntervalSince1970" : Date().timeIntervalSince1970,
+            "updateDateTmeIntervalSince1970" : Date().timeIntervalSince1970
         ]
         
         let realm = Realm.shared
         realm.beginWrite()
         let model = realm.create(ThemeModel.self, value: value, update: .all)
         try! realm.commitWrite()
-        return model
+        
+        print(model.stringValue ?? "없다")
+        if let string = model.stringValue {
+            let json:[String:AnyHashable] = [
+                "data" : string,
+                "updateDateTmeIntervalSince1970" : model.updateDateTmeIntervalSince1970
+            ]
+            FirebaseFirestoreHelper.themeCollection?.document(model.id)
+                .setData(json) { error in
+                    complete(error, model.id)
+            }
+        }
     }
     
     var dark:ThemeColorSettingView.Colors {
@@ -95,4 +106,31 @@ extension ThemeModel {
 
     }
     
+    
+    static func sync(complete:@escaping(Error?)->Void) {
+        guard let collection = FirebaseFirestoreHelper.themeCollection else {
+            return
+        }
+        let lastDt = Realm.shared.objects(ThemeModel.self).sorted(byKeyPath: "updateDateTmeIntervalSince1970", ascending: true).last?.updateDateTmeIntervalSince1970 ?? 0
+        collection.whereField("updateDateTmeIntervalSince1970", isGreaterThan: lastDt).getDocuments { snapshot, error in
+            for document in snapshot?.documents ?? [] {
+                let data = document.data()
+                print(data)
+                if let string = data["data"] as? String,
+                    let dic = string.dictionaryValue {
+                    do {
+                        let realm = Realm.shared
+                        realm.beginWrite()
+                        realm.create(ThemeModel.self, value: dic, update: .all)
+                        try realm.commitWrite()
+                        
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+            complete(error)
+        }
+        
+    }
 }

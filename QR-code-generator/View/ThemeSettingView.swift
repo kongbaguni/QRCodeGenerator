@@ -147,10 +147,15 @@ struct ThemeSettingView: View {
             error = CustomError.emptyTitle
             return
         }
-        let model = ThemeModel.create(id: themeId,title: title, dark: dark, light: light)
+        ThemeModel.create(id: themeId,title: title, dark: dark, light: light) { error, id in
+            if error == nil {
+                NotificationCenter.default.post(name: .themeSettingChanged, object: id)
+                presentationMode.wrappedValue.dismiss()
+            }
+            self.error = error
 
-        NotificationCenter.default.post(name: .themeSettingChanged, object: model.id)
-        presentationMode.wrappedValue.dismiss()
+        }
+
     }
 }
 

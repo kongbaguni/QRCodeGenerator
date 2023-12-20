@@ -101,6 +101,8 @@
 		1BB6580B2B15DDCC00A8C474 /* TagCloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6580A2B15DDCC00A8C474 /* TagCloudView.swift */; };
 		1BB6580E2B15DF5800A8C474 /* SwiftUIFlowLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 1BB6580D2B15DF5800A8C474 /* SwiftUIFlowLayout */; };
 		1BB658102B16B8BE00A8C474 /* CodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6580F2B16B8BE00A8C474 /* CodeListView.swift */; };
+		1BC21A162B32737F00EA6531 /* Realm.Object+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC21A152B32737F00EA6531 /* Realm.Object+Extensions.swift */; };
+		1BC21A182B32835600EA6531 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC21A172B32835600EA6531 /* String+Extensions.swift */; };
 		1BC7EBB82B1EF9AA000885E2 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7EBB72B1EF9AA000885E2 /* CodeView.swift */; };
 		1BC7EBBA2B1F007E000885E2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BC7EBB92B1F007E000885E2 /* Launch Screen.storyboard */; };
 		1BC7EBBC2B2144F9000885E2 /* DeleteAccountConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC7EBBB2B2144F9000885E2 /* DeleteAccountConfirmView.swift */; };
@@ -172,6 +174,8 @@
 		1BB658082B15CCF700A8C474 /* CodeImageCacheModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeImageCacheModel.swift; sourceTree = "<group>"; };
 		1BB6580A2B15DDCC00A8C474 /* TagCloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloudView.swift; sourceTree = "<group>"; };
 		1BB6580F2B16B8BE00A8C474 /* CodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeListView.swift; sourceTree = "<group>"; };
+		1BC21A152B32737F00EA6531 /* Realm.Object+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm.Object+Extensions.swift"; sourceTree = "<group>"; };
+		1BC21A172B32835600EA6531 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		1BC7EBB72B1EF9AA000885E2 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		1BC7EBB92B1F007E000885E2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		1BC7EBBB2B2144F9000885E2 /* DeleteAccountConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountConfirmView.swift; sourceTree = "<group>"; };
@@ -367,9 +371,11 @@
 			children = (
 				1B6DBF8C2B26CD2A00A7D9BD /* Date+Extensions.swift */,
 				1B5865312B103254008D7289 /* Realm+Extensions.swift */,
+				1BC21A152B32737F00EA6531 /* Realm.Object+Extensions.swift */,
 				1B58652A2B103179008D7289 /* UIApplication+Extensions.swift */,
 				1B8F46D02B0F32B20097CB9D /* Color+Extensions.swift */,
 				1B962AE32B314DC400C5F1ED /* View+Extensions.swift */,
+				1BC21A172B32835600EA6531 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -554,12 +560,14 @@
 				1B7EB5D42B146E6400352857 /* ScrollSelectButtonView.swift in Sources */,
 				1B6DBF642B22EF5B00A7D9BD /* UnifiedNativeAdView.swift in Sources */,
 				1B7EB5D02B14628A00352857 /* TagModel.swift in Sources */,
+				1BC21A162B32737F00EA6531 /* Realm.Object+Extensions.swift in Sources */,
 				1B962AE62B3157CB00C5F1ED /* ColorPickerView.swift in Sources */,
 				1B6DBF622B22EF5B00A7D9BD /* GADNativeAd+Extensions.swift in Sources */,
 				1B9BBF912B2C1F8300C982E6 /* ThemeListView.swift in Sources */,
 				1B58654A2B10991E008D7289 /* FirebaseFirestoreHelper.swift in Sources */,
 				1B652A0E2B2FD07E0063B079 /* ThemeManager.swift in Sources */,
 				1B6DBF872B26BDE600A7D9BD /* PointHistoryCombineView.swift in Sources */,
+				1BC21A182B32835600EA6531 /* String+Extensions.swift in Sources */,
 				1BC7EBBC2B2144F9000885E2 /* DeleteAccountConfirmView.swift in Sources */,
 				1B6DBF682B22EF5B00A7D9BD /* GoogleAd.swift in Sources */,
 				1B9BBF8D2B2C103100C982E6 /* ThemeColorSettingView.swift in Sources */,
