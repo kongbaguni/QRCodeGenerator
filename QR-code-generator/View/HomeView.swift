@@ -113,8 +113,10 @@ struct HomeView: View {
                         AppTitleView()
                     }
                 }
-                Section("ad") {
-                    NativeAdView()
+                if isSignIn {
+                    Section("ad") {
+                        NativeAdView()
+                    }
                 }
             }
             .listRowBackground(backgroundColor)
