@@ -1125,13 +1125,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Points are consumed when creating, editing, deleting, or sharing code."
+            "value" : "Points are used for the following purposes."
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "포인트는 Code 를 생성, 수정, 삭제, 공유를 할 때 소모됩니다."
+            "value" : "포인트는 다음의 목적을 위해 사용됩니다."
           }
         }
       }
