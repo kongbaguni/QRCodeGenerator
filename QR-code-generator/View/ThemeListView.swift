@@ -55,7 +55,7 @@ struct ThemeListView: View {
             HStack {
                 Text(theme.title)
                 Spacer()
-                if isinited {
+                if isinited && selected.count == themeList.count {
                     Toggle(isOn: $selected[idx], label: {
                     })
                     .onChange(of: selected[idx]) { value in
