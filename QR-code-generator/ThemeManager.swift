@@ -10,7 +10,14 @@ import RealmSwift
 struct ThemeManager {
     static let shared = ThemeManager()
     @AppStorage("selectThemeId") var selectThemeId:String = ""
-       
+    
+    init() {
+        NotificationCenter.default.addObserver(forName: .themeSettingChanged, object: nil, queue: nil) {[self] noti in
+            if let id = noti.object as? String {
+                selectThemeId = id
+            }
+        }
+    }
     
     var themeModel:ThemeModel? {
         guard selectThemeId.isEmpty == false else {

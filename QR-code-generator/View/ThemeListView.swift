@@ -61,13 +61,18 @@ struct ThemeListView: View {
                     .onChange(of: selected[idx]) { value in
                         if selected[idx] == true {
                             selectThemeId = theme.id
-                        } else if selectThemeId == theme.id {         selectThemeId = ""
+                        } else if selectThemeId == theme.id {         
+                            selectThemeId = ""
                         }
                         refrashSelecton()
+                        
                         ThemeModel.setTheme(id: selectThemeId) { error in
                             self.error = error
+                            print(selectThemeId)
+
                         }
-                        NotificationCenter.default.post(name: .themeSettingChanged, object: nil)
+                        
+                        NotificationCenter.default.post(name: .themeSettingChanged, object: selectThemeId)
                     }
                 }
                 
