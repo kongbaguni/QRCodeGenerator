@@ -135,6 +135,9 @@ struct ThemeSettingView: View {
                     secondaryButton: .default(.init("delete"), action: {
                         themeModel?.delete(complete: { error in
                             self.error = error
+                            if error == nil {
+                                presentationMode.wrappedValue.dismiss()
+                            }
                         })
                     }))
                 

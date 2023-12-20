@@ -113,15 +113,24 @@ extension ThemeModel {
         }
         let lastDt = Realm.shared.objects(ThemeModel.self).sorted(byKeyPath: "updateDateTmeIntervalSince1970", ascending: true).last?.updateDateTmeIntervalSince1970 ?? 0
         collection.whereField("updateDateTmeIntervalSince1970", isGreaterThan: lastDt).getDocuments { snapshot, error in
+            let realm = Realm.shared
+            
             for document in snapshot?.documents ?? [] {
                 let data = document.data()
+                let id = document.documentID
+                
                 if data["data"] == nil || (data["data"] as? String)?.isEmpty == true {
+                    if let model = realm.object(ofType: ThemeModel.self, forPrimaryKey: id) {
+                        realm.beginWrite()
+                        realm.delete(model)
+                        try! realm.commitWrite()
+                    }
                     continue
                 }
+                
                 if let string = data["data"] as? String,
                     let dic = string.dictionaryValue {
                     do {
-                        let realm = Realm.shared
                         realm.beginWrite()
                         realm.create(ThemeModel.self, value: dic, update: .all)
                         try realm.commitWrite()
