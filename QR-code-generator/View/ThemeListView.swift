@@ -51,6 +51,7 @@ struct ThemeListView: View {
                     .onChange(of: selected[idx]) { value in
                         if selected[idx] == true {
                             selectThemeId = theme.id
+                        } else if selectThemeId == theme.id {         selectThemeId = ""
                         }
                         refrashSelecton()
                         NotificationCenter.default.post(name: .themeSettingChanged, object: nil)

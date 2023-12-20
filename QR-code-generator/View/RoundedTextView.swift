@@ -54,6 +54,14 @@ struct RoundedTextView: View {
     let image:Image?
     let style:StyleType
   
+    @State var foregroundColors:[Color] = [.primary,.secondary,.teal]
+    @State var backgroundColor:Color = .clear
+    
+    func loadColor() {
+        foregroundColors = style.styleValue.foregroundColors
+        backgroundColor = style.styleValue.backgroundColor
+    }
+    
     var styledImg: some View {
         Group {
             if let img = image {
@@ -63,7 +71,7 @@ struct RoundedTextView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(height: 30)
-                        .foregroundStyle(style.styleValue.foregroundColors[0])
+                        .foregroundStyle(foregroundColors[0])
                         
                 case 2:
                     img
@@ -71,8 +79,8 @@ struct RoundedTextView: View {
                         .scaledToFit()
                         .frame(height: 30)
                         .foregroundStyle(
-                            style.styleValue.foregroundColors[0]
-                            ,style.styleValue.foregroundColors[1]
+                            foregroundColors[0]
+                            ,foregroundColors[1]
                         )
                 case 3:
                     img
@@ -80,9 +88,9 @@ struct RoundedTextView: View {
                         .scaledToFit()
                         .frame(height: 30)
                         .foregroundStyle(
-                            style.styleValue.foregroundColors[0]
-                            ,style.styleValue.foregroundColors[1]
-                            ,style.styleValue.foregroundColors[2]
+                            foregroundColors[0]
+                            ,foregroundColors[1]
+                            ,foregroundColors[2]
                         )
                 default:
                      img
@@ -93,7 +101,6 @@ struct RoundedTextView: View {
             } else {
                 EmptyView()
             }
-
             
         }
         
@@ -106,14 +113,19 @@ struct RoundedTextView: View {
             Spacer()
         }
         .padding()
-        .foregroundStyle(style.styleValue.foregroundColors[0])
+        .foregroundStyle(foregroundColors[0])
         .background{
             RoundedRectangle(cornerRadius: style.styleValue.cornerRadius)
-                .foregroundStyle(style.styleValue.backgroundColor)
+                .foregroundStyle(backgroundColor)
         }
         .overlay {
             RoundedRectangle(cornerRadius: style.styleValue.cornerRadius)
-                .stroke(style.styleValue.foregroundColors[0], lineWidth: 2)
+                .stroke(foregroundColors[0], lineWidth: 2)
+        }.onReceive(NotificationCenter.default.publisher(for: .themeSettingChanged, object: nil), perform: { _ in
+            loadColor()
+        })
+        .onAppear {
+            loadColor()
         }
             
     }
