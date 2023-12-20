@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Marquee
 
 struct TableRowView: View {
     let header:Text
@@ -33,11 +34,15 @@ struct TableRowView: View {
             }
             
             VStack {
-                sub
-                    .lineLimit(.max)
-                    .padding(5)
-                    .foregroundStyle(.primary)
-                Spacer()
+                Marquee {
+                    sub
+                        .lineLimit(.max)
+//                        .padding(5)
+                        .foregroundStyle(.primary)
+                }
+                .marqueeDirection(.left2right)
+                .marqueeWhenNotFit(true)
+                .marqueeDuration(10)
             }
             Spacer()
         }.overlay {

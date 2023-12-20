@@ -25,45 +25,48 @@ struct DeleteAccountConfirmView: View {
     
     var body: some View {
         List {
-            HStack {
-                Spacer()
-                Image(systemName: "person.text.rectangle.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .padding()
-                    .frame(height: 200)
-                    .foregroundStyle(.blue,.yellow,.teal)
-                Image(systemName: "arrow.right")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 100)
-                    .foregroundStyle(.teal)
-                Image(systemName: "trash")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 200)
-                    .foregroundStyle(.red)
-                Spacer()
+            Group {
+                HStack {
+                    Spacer()
+                    Image(systemName: "person.text.rectangle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .padding()
+                        .frame(height: 200)
+                        .foregroundStyle(.blue,.yellow,.teal)
+                    Image(systemName: "arrow.right")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 100)
+                        .foregroundStyle(.teal)
+                    Image(systemName: "trash")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 200)
+                        .foregroundStyle(.red)
+                    Spacer()
                     
-            }
-            Text("delete account desc1")
-            TextField(accountModel.email ?? accountModel.userId, text: $text)
-                .textFieldStyle(.roundedBorder)
-                .onChange(of: text) { text in
-                    test = accountModel.email ?? accountModel.userId == text.trimmingCharacters(in: .whitespacesAndNewlines)
                 }
-            Button {
-                AuthManager.shared.leave { error in
-                    self.error = error
-                    if error == nil {
-                        presentationMode.wrappedValue.dismiss()
+                Text("delete account desc1")
+                
+                TextFieldView(id: "confirm", title: .init("input"), placeHolder: .init(accountModel.email ?? accountModel.userId), inputType: .textfield, keyboardType: .default, value: $text)
+                    .onChange(of: text) { text in
+                        test = accountModel.email ?? accountModel.userId == text.trimmingCharacters(in: .whitespacesAndNewlines)
                     }
-                }
-
-            } label: {
-                Text("confirm")
-            }.disabled(!test)
-            
+                
+                Button {
+                    AuthManager.shared.leave { error in
+                        self.error = error
+                        if error == nil {
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    }
+                    
+                } label: {
+                    Text("confirm")
+                }.disabled(!test)
+            }
+            .listRowBackground(Color.themeBackground)
                         
         }
         .listStyle(.plain)

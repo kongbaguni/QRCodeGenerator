@@ -153,7 +153,7 @@ struct SignInView: View {
                     Spacer()
                 }
                 VStack(spacing:0) {
-                    let w:CGFloat = 130
+                    let w:CGFloat = 150
                     if let userId = account?.userId {
                         TableRowView(header: .init("ID"), sub: .init(userId),
                                      headWidth: w)

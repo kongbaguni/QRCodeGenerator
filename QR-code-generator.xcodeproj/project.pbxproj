@@ -90,6 +90,7 @@
 		1B8F46D52B0F3CE00097CB9D /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1B8F46D42B0F3CE00097CB9D /* InfoPlist.xcstrings */; };
 		1B962AE42B314DC400C5F1ED /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B962AE32B314DC400C5F1ED /* View+Extensions.swift */; };
 		1B962AE62B3157CB00C5F1ED /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B962AE52B3157CB00C5F1ED /* ColorPickerView.swift */; };
+		1B96E7CE2B32C86D00EE33B8 /* Marquee in Frameworks */ = {isa = PBXBuildFile; productRef = 1B96E7CD2B32C86D00EE33B8 /* Marquee */; };
 		1B9BBF872B2C025900C982E6 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9BBF862B2C025900C982E6 /* ColorModel.swift */; };
 		1B9BBF892B2C057200C982E6 /* DynamicColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9BBF882B2C057200C982E6 /* DynamicColorModel.swift */; };
 		1B9BBF8B2B2C0F3100C982E6 /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9BBF8A2B2C0F3100C982E6 /* ThemeModel.swift */; };
@@ -200,6 +201,7 @@
 				1B5865292B10313D008D7289 /* GoogleSignInSwift in Frameworks */,
 				1B5865092B102D25008D7289 /* FirebaseFirestoreSwift in Frameworks */,
 				1B5864F52B102D25008D7289 /* FirebaseAppCheck in Frameworks */,
+				1B96E7CE2B32C86D00EE33B8 /* Marquee in Frameworks */,
 				1B6DBF6B2B22EF9700A7D9BD /* ActivityIndicatorView in Frameworks */,
 				1B5864F32B102D25008D7289 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				1B5864F92B102D25008D7289 /* FirebaseAuth in Frameworks */,
@@ -434,6 +436,7 @@
 				1B6DBF552B22E85F00A7D9BD /* GoogleMobileAds */,
 				1B6DBF6A2B22EF9700A7D9BD /* ActivityIndicatorView */,
 				1B6DBF822B26B6B300A7D9BD /* CachedAsyncImage */,
+				1B96E7CD2B32C86D00EE33B8 /* Marquee */,
 			);
 			productName = "QR-code-generator";
 			productReference = 1B8F46BA2B0EED0D0097CB9D /* QR-code-generator.app */;
@@ -473,6 +476,7 @@
 				1B6DBF542B22E85F00A7D9BD /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 				1B6DBF692B22EF9700A7D9BD /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */,
 				1B6DBF812B26B6B300A7D9BD /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+				1B96E7CC2B32C86D00EE33B8 /* XCRemoteSwiftPackageReference "Marquee" */,
 			);
 			productRefGroup = 1B8F46BB2B0EED0D0097CB9D /* Products */;
 			projectDirPath = "";
@@ -862,6 +866,14 @@
 				minimumVersion = 1.2.0;
 			};
 		};
+		1B96E7CC2B32C86D00EE33B8 /* XCRemoteSwiftPackageReference "Marquee" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIKit/Marquee";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
 		1BB6580C2B15DF5800A8C474 /* XCRemoteSwiftPackageReference "swiftui-flow-layout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/globulus/swiftui-flow-layout";
@@ -1047,6 +1059,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1B7EB5CA2B14539500352857 /* XCRemoteSwiftPackageReference "ActivityView" */;
 			productName = ActivityView;
+		};
+		1B96E7CD2B32C86D00EE33B8 /* Marquee */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B96E7CC2B32C86D00EE33B8 /* XCRemoteSwiftPackageReference "Marquee" */;
+			productName = Marquee;
 		};
 		1BB6580D2B15DF5800A8C474 /* SwiftUIFlowLayout */ = {
 			isa = XCSwiftPackageProductDependency;
