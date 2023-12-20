@@ -15,7 +15,7 @@ struct HomeView: View {
             keyPath: "updateDtTimeIntervalSince1970",
             ascending: false)
     ) var codelist
-    @State var backgroundColor:Color? = .themeBackground
+    @State var backgroundColor:Color = .themeBackground
     @State var error:Error? = nil {
         didSet {
             if error != nil {
@@ -116,9 +116,8 @@ struct HomeView: View {
                 Section("ad") {
                     NativeAdView()
                 }
-                .background(backgroundColor)
             }
-            .listRowBackground(Color.themeBackground)
+            .listRowBackground(backgroundColor)
         }
         .onAppear {
             reload()
@@ -135,10 +134,16 @@ struct HomeView: View {
         .listStyle(.plain)
         .background(Color.themeBackground)
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification), perform: { noti in
-            setColor()
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                setColor()
+            }
         })
         .onReceive(NotificationCenter.default.publisher(for: .themeSettingChanged), perform: { noti in
-           setColor()
+            isSignIn = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
+                isSignIn = AuthManager.shared.isSignined
+            }
+            setColor()
         })
         .onReceive(NotificationCenter.default.publisher(for: .authDidSucessed), perform: { noti in
             do {
@@ -166,12 +171,10 @@ struct HomeView: View {
     }
     
     func setColor() {
-        DispatchQueue.main.async {
-            backgroundColor = .themeBackground
-            strongColor = .themeStrong
-            qr = Date().formatting(format: "hhmmss")
-            barcode = Date().formatting(format: "hhmmss")
-        }
+        backgroundColor = .themeBackground
+        strongColor = .themeStrong
+        qr = Date().formatting(format: "hhmmss")
+        barcode = Date().formatting(format: "hhmmss")
     }
 }
 
