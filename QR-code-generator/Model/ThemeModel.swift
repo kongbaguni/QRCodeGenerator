@@ -131,6 +131,32 @@ extension ThemeModel {
             }
             complete(error)
         }
+    }
+    
+    static func setTheme(id:String, complete:@escaping(Error?)->Void) {
+        guard let collection = FirebaseFirestoreHelper.rootCollection else {
+            return
+        }
         
+        collection.document("info").setData(["themeId":id]) { error in
+            complete(error)
+        }
+    }
+    
+    static func getThemeId(complete:@escaping(Error?,String?)->Void) {
+        guard let collection = FirebaseFirestoreHelper.rootCollection else {
+            return
+        }
+        
+        collection.document("ingo").getDocument { snapShot, error in
+            if let data = snapShot?.data() {
+                if let id = data["themeId"] as? String {
+                    complete(nil,id)
+                    return
+                }
+            }
+            complete(error,nil)
+        }
+
     }
 }

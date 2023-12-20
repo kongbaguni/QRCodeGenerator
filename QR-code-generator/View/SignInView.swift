@@ -10,6 +10,8 @@ import FirebaseAuth
 import CachedAsyncImage
 struct SignInView: View {
     @AppStorage("readSigninDesc") var readSigninDesc = false
+    @AppStorage("selectThemeId") var selectThemeId:String = ""
+
     @State var readCheck = false
     
     @State var error:Error? = nil {
@@ -113,6 +115,7 @@ struct SignInView: View {
     
     func signout() {
         self.error = AuthManager.shared.signout()
+        NotificationCenter.default.post(name: .themeSettingChanged, object: nil)
         checkSignin()
     }
     var appVersion : some View {
@@ -258,11 +261,29 @@ struct SignInView: View {
                     self.error = error 
                 }
             }
+            reloadTheme()
         }
 
         account = AuthManager.shared.accountModel
-        
-        
+    }
+    
+    func reloadTheme() {
+        ThemeModel.sync { error in
+            if error != nil {
+                self.error = error
+            }
+            else {
+                ThemeModel.getThemeId { error, id in
+                    if let id = id {
+                        selectThemeId = id
+                        ThemeManager.shared.selectThemeId = id
+                        NotificationCenter.default.post(name: .themeSettingChanged, object: id)
+                    }
+                    self.error = error
+                }
+            }
+
+        }
     }
 }
 

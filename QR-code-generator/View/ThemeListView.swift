@@ -22,18 +22,28 @@ struct ThemeListView: View {
     @AppStorage("selectThemeId") var selectThemeId:String = ""
     @State var isinited:Bool = false
 
-    @State var error:Error? = nil
+    @State var error:Error? = nil {
+        didSet {
+            if error != nil {
+                isAlert = true
+            }
+        }
+    }
+    
     @State var isAlert:Bool = false
     func refrashSelecton() {
-        ThemeModel.sync { error in
-            self.error = error
-            
+        func load() {
             selected.removeAll()
             for theme in themeList {
                 let isSelected = selectThemeId == theme.id
                 selected.append(isSelected)
             }
             isinited = selected.count == themeList.count
+        }
+        load()
+        ThemeModel.sync { error in
+            self.error = error
+            load()
         }
        
     }
@@ -54,6 +64,9 @@ struct ThemeListView: View {
                         } else if selectThemeId == theme.id {         selectThemeId = ""
                         }
                         refrashSelecton()
+                        ThemeModel.setTheme(id: selectThemeId) { error in
+                            self.error = error
+                        }
                         NotificationCenter.default.post(name: .themeSettingChanged, object: nil)
                     }
                 }
@@ -88,6 +101,9 @@ struct ThemeListView: View {
         }
         .listStyle(.plain)
         .background(Color.themeBackground)
+        .alert(isPresented: $isAlert, content: {
+            .init(title: .init("alert"), message: .init(error!.localizedDescription))
+        })
 
     }
         

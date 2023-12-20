@@ -141,8 +141,7 @@ struct ThemeSettingView: View {
         }
     }
     
-    func save() {
-        
+    func save() {        
         if title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             error = CustomError.emptyTitle
             return
