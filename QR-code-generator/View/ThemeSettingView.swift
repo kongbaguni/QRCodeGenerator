@@ -88,16 +88,19 @@ struct ThemeSettingView: View {
             }
             
             
-            ThemeColorSettingView(colors: $dark, title: .init("dark mode"))
+            ThemeColorSettingView(colors: $dark, title: .init("dark mode"), readonly: themeModel?.userId != AuthManager.shared.userId)
             
-            ThemeColorSettingView(colors: $light, title: .init("light mode"))
+            ThemeColorSettingView(colors: $light, title: .init("light mode"),
+                                  readonly: themeModel?.userId != AuthManager.shared.userId)
             
             
             Section {
-                Button {
-                    save()
-                } label: {
-                    RoundedTextView(text: .init("save"), image: .init(systemName: "square.and.arrow.down"), style: .normal)
+                if themeModel?.userId == AuthManager.shared.userId {
+                    Button {
+                        save()
+                    } label: {
+                        RoundedTextView(text: .init("save"), image: .init(systemName: "square.and.arrow.down"), style: .normal)
+                    }
                 }
             }
             
@@ -117,13 +120,15 @@ struct ThemeSettingView: View {
         .background(Color.themeBackground)
 
         .toolbar {
-            Button(action: {
-                save()
-            }, label: {
-                VStack {
-                    Text("save")
-                }
-            })
+            if themeModel?.userId == AuthManager.shared.userId {
+                Button(action: {
+                    save()
+                }, label: {
+                    VStack {
+                        Text("save")
+                    }
+                })
+            }
         }
         .alert(isPresented: $isAlert, content: {
             switch error as? CustomError {

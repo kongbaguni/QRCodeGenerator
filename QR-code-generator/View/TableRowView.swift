@@ -40,7 +40,7 @@ struct TableRowView: View {
 //                        .padding(5)
                         .foregroundStyle(.primary)
                 }
-                .marqueeDirection(.left2right)
+                .marqueeDirection(.right2left)
                 .marqueeWhenNotFit(true)
                 .marqueeDuration(10)
             }

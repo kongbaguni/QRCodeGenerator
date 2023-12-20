@@ -11,6 +11,8 @@ import SwiftUI
 
 class ThemeModel : Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var id:String = ""
+    @Persisted var userId:String = ""
+
     @Persisted var title:String = ""
     
     @Persisted var background:DynamicColorModel?
@@ -35,6 +37,7 @@ class ThemeModel : Object, ObjectKeyIdentifiable {
 extension ThemeModel {
     static func create(id:String?, title:String, dark:ThemeColorSettingView.Colors, light:ThemeColorSettingView.Colors, complete:@escaping(_ error : Error?,_ id:String?)->Void) {
         let value:[String:AnyHashable] = [
+            "userId" : AuthManager.shared.userId!,
             "id" : id ?? "\(UUID().uuidString):\(Date().timeIntervalSince1970)",
             "title" : title,
             "background" : DynamicColorModel.makeColor(light: light.backgroundColor, dark: dark.backgroundColor),
@@ -62,9 +65,10 @@ extension ThemeModel {
         if let string = model.stringValue {
             let json:[String:AnyHashable] = [
                 "data" : string,
-                "updateDateTmeIntervalSince1970" : model.updateDateTmeIntervalSince1970
+                "updateDateTmeIntervalSince1970" : model.updateDateTmeIntervalSince1970,
+                "userId" : AuthManager.shared.userId ?? "none"
             ]
-            FirebaseFirestoreHelper.themeCollection?.document(model.id)
+            FirebaseFirestoreHelper.themeCollection.document(model.id)
                 .setData(json) { error in
                     complete(error, model.id)
             }
@@ -108,9 +112,7 @@ extension ThemeModel {
     
     
     static func sync(complete:@escaping(Error?)->Void) {
-        guard let collection = FirebaseFirestoreHelper.themeCollection else {
-            return
-        }
+        let collection = FirebaseFirestoreHelper.themeCollection
         let lastDt = Realm.shared.objects(ThemeModel.self).sorted(byKeyPath: "updateDateTmeIntervalSince1970", ascending: true).last?.updateDateTmeIntervalSince1970 ?? 0
         collection.whereField("updateDateTmeIntervalSince1970", isGreaterThan: lastDt).getDocuments { snapshot, error in
             let realm = Realm.shared
@@ -172,9 +174,7 @@ extension ThemeModel {
     }
     
     func delete(complete:@escaping(Error?)->Void) {
-        guard let collection = FirebaseFirestoreHelper.themeCollection else {
-            return
-        }
+        let collection = FirebaseFirestoreHelper.themeCollection
         let id = self.id
         collection.document(self.id).updateData(["data":"","updateDateTmeIntervalSince1970":Date().timeIntervalSince1970]) { error in
             

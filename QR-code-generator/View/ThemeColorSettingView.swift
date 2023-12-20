@@ -26,6 +26,7 @@ struct ThemeColorSettingView: View {
     @Binding var colors:Colors
     let title:Text
 
+    let readonly:Bool
     @State var backgroundColor:Color = .black
     @State var primaryColor:Color = .white
     @State var secondaryColor:Color = .gray
@@ -127,6 +128,43 @@ struct ThemeColorSettingView: View {
         .overlay {
             RoundedRectangle(cornerRadius: 20)
                 .stroke(foreground, lineWidth: 2)
+        }
+    }
+    var previewReadOnly : some View {
+        VStack {
+            Group {
+                Text("primary").foregroundStyle(primaryColor)
+                
+                Text("secondary").foregroundStyle(secondaryColor)
+
+                Text("strong").foregroundStyle(strong)
+            }
+            .font(.system(size: 20))
+            .padding(10)
+            .overlay {
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.themeBtn1Foreground, lineWidth: 2)
+            }
+            .padding(5)
+            makeTextField(title: "empty textField", text: "")
+            makeTextField(title: "textField", text: "textField")
+
+            HStack {
+                makeButton(text: .init("btn1"), background: btn1background, foreground: btn1Foreground)
+
+                makeButton(text: .init("btn2"), background: btn2background, foreground: btn2Foreground)
+                
+                makeButton(text: .init("btn3"), background: btn3background, foreground: btn3Foreground)
+            }
+                
+        }
+        .padding(20)
+        .background {
+            RoundedRectangle(cornerRadius: 20)
+                .foregroundColor(backgroundColor)
+        }
+        .onAppear {
+            load()
         }
     }
     
@@ -290,21 +328,26 @@ struct ThemeColorSettingView: View {
     }
     var body: some View {
         Section {
-            ScrollView(.horizontal) {
-                HStack {
-                    preview
-                        .frame(width:250)
-                    VStack {
-                        settingView
+            if readonly {
+                previewReadOnly
+            }
+            else {
+                ScrollView(.horizontal) {
+                    HStack {
+                        preview
+                            .frame(width:250)
+                        VStack {
+                            settingView
+                        }
                     }
                 }
+                .padding(5)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.primary, lineWidth: 2)
+                }
+                .padding(5)
             }
-            .padding(5)
-            .overlay {
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.primary, lineWidth: 2)
-            }
-            .padding(5)
         } header: {
             title
         }
@@ -327,7 +370,7 @@ struct ThemeColorSettingView: View {
                 btn3Foreground: .white,
                 btn3Background: .brown,
                 strong: .yellow
-            )), title: .init("dark mode"))
+            )), title: .init("dark mode"), readonly: false)
         }
     }
 }
