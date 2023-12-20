@@ -95,7 +95,7 @@ struct ThemeSettingView: View {
             
             
             Section {
-                if themeModel?.userId == AuthManager.shared.userId && themeModel != nil {
+                if themeModel?.userId == AuthManager.shared.userId || themeModel == nil {
                     Button {
                         save()
                     } label: {
@@ -124,7 +124,7 @@ struct ThemeSettingView: View {
         .background(Color.themeBackground)
 
         .toolbar {
-            if themeModel?.userId == AuthManager.shared.userId && themeModel != nil{
+            if themeModel?.userId == AuthManager.shared.userId ||  themeModel == nil{
                 Button(action: {
                     save()
                 }, label: {
