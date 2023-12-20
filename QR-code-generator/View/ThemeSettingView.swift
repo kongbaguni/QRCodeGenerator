@@ -136,18 +136,35 @@ struct ThemeSettingView: View {
         }
         .alert(isPresented: $isAlert, content: {
             switch error as? CustomError {
+            case .notEnoughPoint:
+                return .init(
+                    title: .init("alert"),
+                    message: .init(error!.localizedDescription),
+                    primaryButton: .cancel(),
+                    secondaryButton: .default(.init("watch ad"), action: {
+                        GoogleAd.shared.showAd { error in
+                            self.error = error
+                            
+                        }
+                    }))
+
             case .deleteTheme:
                 return .init(
                     title: .init("alert"),
                     message: .init(error!.localizedDescription),
                     primaryButton: .cancel(),
                     secondaryButton: .default(.init("delete"), action: {
-                        themeModel?.delete(complete: { error in
+                        PointModel.use(useCase: .themeCommit) { error in
                             self.error = error
                             if error == nil {
-                                presentationMode.wrappedValue.dismiss()
+                                themeModel?.delete(complete: { error in
+                                    self.error = error
+                                    if error == nil {
+                                        presentationMode.wrappedValue.dismiss()
+                                    }
+                                })
                             }
-                        })
+                        }
                     }))
                 
             case .emptyTitle:
@@ -172,18 +189,25 @@ struct ThemeSettingView: View {
     
     func save() {
         if title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            error = CustomError.emptyTitle
+            self.error = CustomError.emptyTitle
             return
         }
-        ThemeModel.create(id: themeId,title: title, dark: dark, light: light) { error, id in
+
+        PointModel.use(useCase: .themeCommit) { error in
             if error == nil {
-                NotificationCenter.default.post(name: .themeSettingChanged, object: id)
-                presentationMode.wrappedValue.dismiss()
+                ThemeModel.create(id: themeId,title: title, dark: dark, light: light) { error, id in
+                    if error == nil {
+                        NotificationCenter.default.post(name: .themeSettingChanged, object: id)
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                    self.error = error
+                    
+                }
+            } else {
+                self.error = error
             }
-            self.error = error
-
         }
-
+        
     }
 }
 

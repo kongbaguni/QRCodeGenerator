@@ -44,6 +44,7 @@ extension PointModel {
         case createCode = 2
         case editCode = 3
         case deleteCode = 4
+        case themeCommit = 5
     }
     
     static func initPoint(complete:@escaping(_ error:Error?)->Void) {
@@ -147,6 +148,8 @@ extension PointModel {
                 return "edit code"
             case .shareCode:
                 return "share code"
+            case .themeCommit:
+                return "theme commit"
             }
         }
         use(value: useCase.rawValue, desc: desc, complete: complete)

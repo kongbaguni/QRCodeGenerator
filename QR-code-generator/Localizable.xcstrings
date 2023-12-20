@@ -1141,13 +1141,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Point usage\n* Share Code : 1 * Create Code : 2\n* Edit Code : 3\n* Delete Code : 4"
+            "value" : "Point usage\n* Share Code : 1 * Create Code : 2\n* Edit Code : 3\n* Delete Code : 4 * theme create, edit, delete : 5"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "포인트 사용처 * 코드 공유하기 : 1 * 코드 생성하기 : 2 * 코드 수정하기 : 3 * 코드 삭제하기 : 4"
+            "value" : "포인트 사용처 * 코드 공유하기 : 1 * 코드 생성하기 : 2 * 코드 수정하기 : 3 * 코드 삭제하기 : 4 * 테마 생성,수정,삭제 : 5"
           }
         }
       }
@@ -1536,6 +1536,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "텍스트필드 전경색"
+          }
+        }
+      }
+    },
+    "theme commit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create, edit, delete themes"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "테마 생성,수정,삭제 "
           }
         }
       }
