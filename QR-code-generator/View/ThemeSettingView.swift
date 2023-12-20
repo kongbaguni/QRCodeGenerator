@@ -88,14 +88,14 @@ struct ThemeSettingView: View {
             }
             
             
-            ThemeColorSettingView(colors: $dark, title: .init("dark mode"), readonly: themeModel?.userId != AuthManager.shared.userId)
+            ThemeColorSettingView(colors: $dark, title: .init("dark mode"), readonly: themeModel?.userId != AuthManager.shared.userId && themeModel != nil)
             
             ThemeColorSettingView(colors: $light, title: .init("light mode"),
-                                  readonly: themeModel?.userId != AuthManager.shared.userId)
+                                  readonly: themeModel?.userId != AuthManager.shared.userId && themeModel != nil)
             
             
             Section {
-                if themeModel?.userId == AuthManager.shared.userId {
+                if themeModel?.userId == AuthManager.shared.userId && themeModel != nil {
                     Button {
                         save()
                     } label: {
@@ -104,23 +104,27 @@ struct ThemeSettingView: View {
                 }
             }
             
-            Button {
-                error = CustomError.deleteTheme
-            } label : {
-                RoundedTextView(text: .init("delete"), image: .init(systemName: "trash.circle"), style: .cancel)
+            if themeModel?.userId == AuthManager.shared.userId && themeModel != nil{
+                Button {
+                    error = CustomError.deleteTheme
+                } label : {
+                    RoundedTextView(text: .init("delete"), image: .init(systemName: "trash.circle"), style: .cancel)
+                }
             }
         }
         .padding(20)
         .navigationTitle(
             themeId == nil 
             ? .init("make new theme")
-            : .init("edit theme")
+            : themeModel?.userId == AuthManager.shared.userId
+            ? .init("edit theme")
+            : .init("theme preview")
         )
         .listStyle(.plain)
         .background(Color.themeBackground)
 
         .toolbar {
-            if themeModel?.userId == AuthManager.shared.userId {
+            if themeModel?.userId == AuthManager.shared.userId && themeModel != nil{
                 Button(action: {
                     save()
                 }, label: {

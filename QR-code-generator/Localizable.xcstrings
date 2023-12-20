@@ -1550,6 +1550,17 @@
         }
       }
     },
+    "theme preview" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "테마 미리보기"
+          }
+        }
+      }
+    },
     "themes" : {
       "localizations" : {
         "ko" : {
