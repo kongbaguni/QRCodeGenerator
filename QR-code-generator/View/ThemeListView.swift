@@ -27,13 +27,15 @@ struct ThemeListView: View {
     func refrashSelecton() {
         ThemeModel.sync { error in
             self.error = error
+            
+            selected.removeAll()
+            for theme in themeList {
+                let isSelected = selectThemeId == theme.id
+                selected.append(isSelected)
+            }
+            isinited = selected.count == themeList.count
         }
-        selected.removeAll()
-        for theme in themeList {
-            let isSelected = selectThemeId == theme.id
-            selected.append(isSelected)
-        }
-        isinited = selected.count == themeList.count
+       
     }
 
     func makeThemeItem(idx:Int, theme:ThemeModel)-> some View {
