@@ -29,6 +29,8 @@ enum CustomError : Error {
     case invalidBarcode
     /** 제목 입력 안함 */
     case emptyTitle
+    /** 테마 삭제*/
+    case deleteTheme
 }
 
 extension CustomError {
@@ -56,6 +58,8 @@ extension CustomError {
             return "empty phonenumber"
         case .emptyTitle:
             return "empty title"
+        case .deleteTheme:
+            return "delete theme"
         }
     }
 }
@@ -85,6 +89,8 @@ extension CustomError : LocalizedError {
             return NSLocalizedString("empty phonenumber error msg", comment: "text input")
         case .emptyTitle:
             return NSLocalizedString("empty title error msg", comment: "text input")
+        case .deleteTheme:
+            return NSLocalizedString("delete theme msg", comment: "theme")
         }
     }
 }

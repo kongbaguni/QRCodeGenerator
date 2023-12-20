@@ -495,6 +495,23 @@
         }
       }
     },
+    "delete theme msg" : {
+      "comment" : "theme",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete this theme. Deleted themes cannot be recovered. Are you sure you want to delete?"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 테마를 삭제합니다. 삭제된 테마는 복구할 수 없습니다. 삭제하시겠습니까?"
+          }
+        }
+      }
+    },
     "Don't see this message again" : {
       "localizations" : {
         "ko" : {

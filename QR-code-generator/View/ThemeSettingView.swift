@@ -100,6 +100,12 @@ struct ThemeSettingView: View {
                     RoundedTextView(text: .init("save"), image: .init(systemName: "square.and.arrow.down"), style: .normal)
                 }
             }
+            
+            Button {
+                error = CustomError.deleteTheme
+            } label : {
+                RoundedTextView(text: .init("delete"), image: .init(systemName: "trash.circle"), style: .cancel)
+            }
         }
         .padding(20)
         .navigationTitle(
@@ -121,6 +127,17 @@ struct ThemeSettingView: View {
         }
         .alert(isPresented: $isAlert, content: {
             switch error as? CustomError {
+            case .deleteTheme:
+                return .init(
+                    title: .init("alert"),
+                    message: .init(error!.localizedDescription),
+                    primaryButton: .cancel(),
+                    secondaryButton: .default(.init("delete"), action: {
+                        themeModel?.delete(complete: { error in
+                            self.error = error
+                        })
+                    }))
+                
             case .emptyTitle:
                 return .init(
                     title: .init("alert"),
@@ -141,7 +158,7 @@ struct ThemeSettingView: View {
         }
     }
     
-    func save() {        
+    func save() {
         if title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             error = CustomError.emptyTitle
             return

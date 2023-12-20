@@ -115,7 +115,9 @@ extension ThemeModel {
         collection.whereField("updateDateTmeIntervalSince1970", isGreaterThan: lastDt).getDocuments { snapshot, error in
             for document in snapshot?.documents ?? [] {
                 let data = document.data()
-                print(data)
+                if data["data"] == nil || (data["data"] as? String)?.isEmpty == true {
+                    continue
+                }
                 if let string = data["data"] as? String,
                     let dic = string.dictionaryValue {
                     do {
@@ -148,7 +150,7 @@ extension ThemeModel {
             return
         }
         
-        collection.document("ingo").getDocument { snapShot, error in
+        collection.document("info").getDocument { snapShot, error in
             if let data = snapShot?.data() {
                 if let id = data["themeId"] as? String {
                     complete(nil,id)
@@ -158,5 +160,24 @@ extension ThemeModel {
             complete(error,nil)
         }
 
+    }
+    
+    func delete(complete:@escaping(Error?)->Void) {
+        guard let collection = FirebaseFirestoreHelper.themeCollection else {
+            return
+        }
+        let id = self.id
+        collection.document(self.id).updateData(["data":"","updateDateTmeIntervalSince1970":Date().timeIntervalSince1970]) { error in
+            
+            if error == nil {
+                let realm = Realm.shared
+                if let model = realm.object(ofType: ThemeModel.self, forPrimaryKey: id) {
+                    realm.beginWrite()
+                    realm.delete(model)
+                    try! realm.commitWrite()
+                }
+            }
+            complete(error)
+        }
     }
 }
