@@ -199,4 +199,12 @@ extension ThemeModel {
             complete(error)
         }
     }
+    
+    static var myThemeCount:Int {
+        if let id = AuthManager.shared.userId {
+            let themes = Realm.shared.objects(ThemeModel.self).filter("userId = %@", id)
+            return themes.count
+        }
+        return 0
+    }
 }

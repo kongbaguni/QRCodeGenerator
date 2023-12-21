@@ -9,6 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct ThemeListView: View {
+    @State var reTryAction:()->Void = {}
     @ObservedResults (
         ThemeModel.self,
         sortDescriptor: .init(
@@ -19,6 +20,8 @@ struct ThemeListView: View {
     
     @State var selected:[Bool] = []
 
+    @AppStorage("showMyThemeOnly") var showMyThemeOnly = false
+    
     @AppStorage("selectThemeId") var selectThemeId:String = ""
     @State var isinited:Bool = false
 
@@ -90,12 +93,25 @@ struct ThemeListView: View {
             Group {
                 Section {
                     Text("theme list desc")
+                    if ThemeModel.myThemeCount > 0 {
+                        Toggle(isOn: $showMyThemeOnly) {
+                            Text("show my theme only")
+                        }
+                    }
                 }
                 if themeList.count > 0 && selected.count > 0 {
                     Section("themes") {
                         ForEach(0..<themeList.count, id:\.self) { idx in
                             let theme = themeList[idx]
-                            makeThemeItem(idx: idx, theme:theme)
+                            if showMyThemeOnly {
+                                if theme.userId == AuthManager.shared.userId {
+                                    makeThemeItem(idx: idx, theme:theme)
+                                } else {
+                                    EmptyView()
+                                }
+                            } else {
+                                makeThemeItem(idx: idx, theme:theme)
+                            }
                         }
                     }
                 }
@@ -109,6 +125,9 @@ struct ThemeListView: View {
             .listRowBackground(Color.themeBackground)
         }
         .onAppear {
+            if ThemeModel.myThemeCount == 0 {
+                showMyThemeOnly = false 
+            }
             refrashSelecton()
         }
         .listStyle(.plain)

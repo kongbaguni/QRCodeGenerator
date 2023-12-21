@@ -1281,6 +1281,16 @@
         }
       }
     },
+    "show my theme only" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "내가 만든 테마만 보기"
+          }
+        }
+      }
+    },
     "Signin" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1505,7 +1515,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "텍스트필드 전경색"
+            "value" : "텍스트필드 배경색"
           }
         }
       }
@@ -1666,7 +1676,14 @@
       }
     },
     "userId" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "유저아이디"
+          }
+        }
+      }
     },
     "watch ad" : {
       "localizations" : {
