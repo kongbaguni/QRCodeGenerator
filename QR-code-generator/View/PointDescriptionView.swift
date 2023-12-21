@@ -10,14 +10,16 @@ import SwiftUI
 struct PointDescriptionView: View {
     var body: some View {
         List {
-            Image(systemName: "questionmark.diamond")
-                .resizable()
-                .scaledToFit()
-                .padding(20)
-                .foregroundStyle(.yellow,.orange,.blue)
-            Text("Point Description 1")
-            Text("Point Description 2")
-            Text("Point Description 3")
+            Group {
+                Image(systemName: "questionmark.diamond")
+                    .resizable()
+                    .scaledToFit()
+                    .padding(20)
+                    .foregroundStyle(.yellow,.orange,.blue)
+                Text("Point Description 1")
+                Text("Point Description 2")
+                Text("Point Description 3")
+            }.listRowBackground(Color.themeBackground)
         }
         .listStyle(.plain)
         .background(Color.themeBackground)
