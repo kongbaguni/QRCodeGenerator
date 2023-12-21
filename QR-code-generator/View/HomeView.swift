@@ -48,7 +48,7 @@ struct HomeView: View {
                                     text: "qr",
                                     foreground: .white,
                                     background: .clear,
-                                    useCache: false
+                                    useCache: true
                                     
                                 )
                                 .resizable()
@@ -69,7 +69,7 @@ struct HomeView: View {
                                     text: "barcode",
                                     forground: .white,
                                     background: .clear,
-                                    useCache: false
+                                    useCache: true
                                 )
                                 .resizable()
                                 .scaledToFit()
