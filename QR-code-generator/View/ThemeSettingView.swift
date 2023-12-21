@@ -238,6 +238,7 @@ struct ThemeSettingView: View {
     }
     
     func save() {
+        UIApplication.shared.endEditing()
         if title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.error = CustomError.emptyTitle
             return
