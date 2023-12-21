@@ -35,8 +35,16 @@ class ThemeModel : Object, ObjectKeyIdentifiable {
 }
 
 extension ThemeModel {
+    var regDt:Date {
+        .init(timeIntervalSince1970: regDateTimeIntervalSince1970)
+    }
+    var updateDt:Date {
+        .init(timeIntervalSince1970: updateDateTmeIntervalSince1970)
+    }
     static func create(id:String?, title:String, dark:ThemeColorSettingView.Colors, light:ThemeColorSettingView.Colors, complete:@escaping(_ error : Error?,_ id:String?)->Void) {
-        let value:[String:AnyHashable] = [
+        let now = Date().timeIntervalSince1970
+        
+        var value:[String:AnyHashable] = [
             "userId" : AuthManager.shared.userId!,
             "id" : id ?? "\(UUID().uuidString):\(Date().timeIntervalSince1970)",
             "title" : title,
@@ -52,13 +60,15 @@ extension ThemeModel {
             "btn2Foreground" : DynamicColorModel.makeColor(light: light.btn2Foreground, dark: dark.btn2Foreground),
             "btn3Background" : DynamicColorModel.makeColor(light: light.btn3Background, dark: dark.btn3Background),
             "btn3Foreground" : DynamicColorModel.makeColor(light: light.btn3Foreground, dark: dark.btn3Foreground),
-            "regDateTimeIntervalSince1970" : Date().timeIntervalSince1970,
-            "updateDateTmeIntervalSince1970" : Date().timeIntervalSince1970
+            "updateDateTmeIntervalSince1970" : now
         ]
+        if id == nil {
+            value["regDateTimeIntervalSince1970"] = now
+        }
         
         let realm = Realm.shared
         realm.beginWrite()
-        let model = realm.create(ThemeModel.self, value: value, update: .all)
+        let model = realm.create(ThemeModel.self, value: value, update: .modified)
         try! realm.commitWrite()
         
         print(model.stringValue ?? "없다")

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealmSwift
+import Marquee
 
 extension Notification.Name {
     static let themeSettingChanged = Notification.Name("themeSettingChanged_observer")
@@ -81,10 +82,59 @@ struct ThemeSettingView: View {
         isLoaded = true
     }
     
+    var dateView : some View {
+        Group {
+            if let model = themeModel {
+                HStack {
+                    Text("regDt").foregroundStyle(Color.themeSecondary)
+                    Marquee {
+                        Text(model.regDt.simpleString )
+                    }
+                    .marqueeWhenNotFit(true)
+                    .marqueeDuration(10)
+                }
+                
+                if model.regDateTimeIntervalSince1970 != model.updateDateTmeIntervalSince1970 {
+                    HStack {
+                        Text("updateDt").foregroundStyle(Color.themeSecondary)
+                        Marquee {
+                            Text(model.updateDt.simpleString)
+                        }
+                        .marqueeWhenNotFit(true)
+                        .marqueeDuration(10)
+                    }
+                }
+            }
+        }
+    }
+    
     var body: some View {
         ScrollView {
             Section {
-                TextFieldView(id: "title", title: .init("title"), placeHolder: .init("title input"), inputType: .textfield, keyboardType: .default, value: $title)
+                if themeModel?.userId == AuthManager.shared.userId || themeModel == nil {
+                    TextFieldView(id: "title", title: .init("title"), placeHolder: .init("title input"), inputType: .textfield, keyboardType: .default, value: $title)
+                    if themeModel != nil {
+                        dateView
+                    }
+                } else {
+                    HStack {
+                        Text("title").foregroundStyle(Color.themeSecondary)
+                        Marquee {
+                            Text(themeModel?.title ?? "").foregroundStyle(Color.themePrimary)
+                        }
+                        .marqueeWhenNotFit(true)
+                        .marqueeDuration(10)
+                    }
+                    HStack {
+                        Text("userId").foregroundStyle(Color.themeSecondary)
+                        Marquee {
+                            Text(themeModel?.userId ?? "").foregroundStyle(Color.themePrimary)
+                        }
+                        .marqueeWhenNotFit(true)
+                        .marqueeDuration(10)
+                    }
+                    dateView
+                }
             }
             
             

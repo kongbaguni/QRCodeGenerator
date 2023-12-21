@@ -1567,6 +1567,23 @@
         }
       }
     },
+    "theme list desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can set a theme.\nYou can create a new theme.\n\nCreating or editing a theme costs 5 points."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "테마를 설정할 수 있습니다.\n새로운 테마를 만들 수 있습니다.\n\n테마를 만들거나 수정하는데는 5포인트가 필요합니다."
+          }
+        }
+      }
+    },
     "theme preview" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1647,6 +1664,9 @@
           }
         }
       }
+    },
+    "userId" : {
+
     },
     "watch ad" : {
       "localizations" : {

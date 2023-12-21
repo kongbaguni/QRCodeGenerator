@@ -84,6 +84,9 @@ struct ThemeListView: View {
     var body: some View {
         List {
             Group {
+                Section {
+                    Text("theme list desc")
+                }
                 if themeList.count > 0 && selected.count > 0 {
                     Section("themes") {
                         ForEach(0..<themeList.count, id:\.self) { idx in
@@ -109,6 +112,7 @@ struct ThemeListView: View {
         .alert(isPresented: $isAlert, content: {
             .init(title: .init("alert"), message: .init(error!.localizedDescription))
         })
+        .navigationTitle(.init("theme list"))
 
     }
         
