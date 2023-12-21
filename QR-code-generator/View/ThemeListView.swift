@@ -93,7 +93,7 @@ struct ThemeListView: View {
             Group {
                 Section {
                     Text("theme list desc")
-                    if ThemeModel.myThemeCount > 0 {
+                    if ThemeModel.myThemeCount > 0 && ThemeModel.myThemeCount != ThemeModel.totalCount {
                         Toggle(isOn: $showMyThemeOnly) {
                             Text("show my theme only")
                         }

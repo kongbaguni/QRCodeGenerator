@@ -68,6 +68,8 @@ struct ThemeSettingView: View {
     }
     
     @State var isAlert:Bool = false
+    @AppStorage("selectThemeId") var selectThemeId:String = ""
+    @State var isSelectedTheme = false
     
     func load() {
         if isLoaded {
@@ -80,6 +82,7 @@ struct ThemeSettingView: View {
         light = model.light
         title = model.title
         isLoaded = true
+        isSelectedTheme = selectThemeId == model.id
     }
     
     var dateView : some View {
@@ -161,6 +164,19 @@ struct ThemeSettingView: View {
                     RoundedTextView(text: .init("delete"), image: .init(systemName: "trash.circle"), style: .cancel)
                 }
             }
+            
+            if themeModel != nil {
+                Toggle(isOn: $isSelectedTheme) {
+                    Text("Activate this theme")
+                }.onChange(of: isSelectedTheme) {  value in
+                    if let id = themeModel?.id {
+                        selectThemeId = id
+                        NotificationCenter.default.post(name: .themeSettingChanged, object: id)
+                        isSelectedTheme = true
+                    }
+                }
+                .padding(10)
+            }
         }
         .padding(20)
         .navigationTitle(
@@ -239,6 +255,7 @@ struct ThemeSettingView: View {
     
     func save() {
         UIApplication.shared.endEditing()
+
         if title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             self.error = CustomError.emptyTitle
             return
@@ -250,6 +267,7 @@ struct ThemeSettingView: View {
                     if error == nil {
                         NotificationCenter.default.post(name: .themeSettingChanged, object: id)
                         presentationMode.wrappedValue.dismiss()
+                        
                     }
                     self.error = error
                     

@@ -98,6 +98,16 @@
         }
       }
     },
+    "Activate this theme" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 테마를 활성화"
+          }
+        }
+      }
+    },
     "ad" : {
       "localizations" : {
         "ko" : {

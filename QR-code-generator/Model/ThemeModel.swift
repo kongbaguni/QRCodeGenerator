@@ -207,4 +207,8 @@ extension ThemeModel {
         }
         return 0
     }
+    
+    static var totalCount:Int {
+        Realm.shared.objects(ThemeModel.self).count
+    }
 }
