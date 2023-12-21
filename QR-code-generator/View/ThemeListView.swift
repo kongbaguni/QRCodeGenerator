@@ -54,6 +54,10 @@ struct ThemeListView: View {
         } label: {
             HStack {
                 Text(theme.title)
+                if theme.userId == AuthManager.shared.userId {
+                    Image(systemName: "arrow.backward")
+                        .foregroundColor(.themeSecondary)
+                }
                 Spacer()
                 if isinited && selected.count == themeList.count {
                     Toggle(isOn: $selected[idx], label: {

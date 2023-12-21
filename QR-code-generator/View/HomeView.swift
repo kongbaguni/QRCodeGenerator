@@ -26,8 +26,6 @@ struct HomeView: View {
     @State var isAlert:Bool = false
     @State var isSignIn = AuthManager.shared.isSignined
     @State var strongColor = Color.themeStrong
-    @State var qr:String = "qr"
-    @State var barcode:String = "barcode"
     
     var signin : some View {
         NavigationLink {
@@ -47,7 +45,7 @@ struct HomeView: View {
                         } label: {
                             HStack {
                                 CodeGenerator.makeQRImage(
-                                    text: qr,
+                                    text: "qr",
                                     foreground: .white,
                                     background: .clear,
                                     useCache: false
@@ -68,7 +66,7 @@ struct HomeView: View {
                         } label : {
                             HStack {
                                 CodeGenerator.makeBarcodeImage(
-                                    text: barcode,
+                                    text: "barcode",
                                     forground: .white,
                                     background: .clear,
                                     useCache: false
@@ -177,8 +175,6 @@ struct HomeView: View {
     func setColor() {
         backgroundColor = .themeBackground
         strongColor = .themeStrong
-        qr = Date().formatting(format: "hhmmss")
-        barcode = Date().formatting(format: "hhmmss")
     }
 }
 

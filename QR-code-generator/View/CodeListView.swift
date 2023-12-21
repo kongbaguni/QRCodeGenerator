@@ -21,17 +21,19 @@ struct CodeListView: View {
     
     var body: some View {
         List {
-            ForEach(codelist, id:\.self) { code in
-                NavigationLink {
-                    CodeDetailView(code: code)
-                }label: {
-                    CodeView(code: code)
-                        .frame(maxHeight: 200)
+            Group {
+                ForEach(codelist, id:\.self) { code in
+                    NavigationLink {
+                        CodeDetailView(code: code)
+                    }label: {
+                        CodeView(code: code)
+                            .frame(maxHeight: 200)
+                    }
                 }
-            }
-            Section("ad") {
-                NativeAdView()
-            }
+                Section("ad") {
+                    NativeAdView()
+                }
+            }.listRowBackground(Color.themeBackground)
         }
         .listStyle(.plain)
         .background(Color.themeBackground)

@@ -23,26 +23,27 @@ struct PointHistoryCombineView: View {
     @State var isAlert:Bool = false
     var body: some View {
         List {
-            Text("combine point history alert")
-            if let p = progress {
-                ProgressView("combine point", value: .init(Float(p.completedUnitCount) / Float(p.totalUnitCount)))
-            } else {
-                Button {
-                    PointModel.pointLogCombine { progress in
-                        self.progress = progress
-                    } complete: { error in
-                        if error == nil {
-                            presentationMode.wrappedValue.dismiss()
+            Group {
+                Text("combine point history alert")
+                if let p = progress {
+                    ProgressView("combine point", value: .init(Float(p.completedUnitCount) / Float(p.totalUnitCount)))
+                } else {
+                    Button {
+                        PointModel.pointLogCombine { progress in
+                            self.progress = progress
+                        } complete: { error in
+                            if error == nil {
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                            self.error = error
                         }
-                        self.error = error
+                        
+                    } label: {
+                        ImageTextView(image: .init(systemName: "return"),
+                                      text: .init("confirm"))
                     }
-                    
-                } label: {
-                    ImageTextView(image: .init(systemName: "return"),
-                                  text: .init("confirm"))
                 }
-            }
-
+            }.listRowBackground(Color.themeBackground)
         }
         .listStyle(.plain)
         .background(Color.themeBackground)
