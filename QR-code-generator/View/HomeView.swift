@@ -48,7 +48,7 @@ struct HomeView: View {
                             HStack {
                                 CodeGenerator.makeQRImage(
                                     text: qr,
-                                    foreground: strongColor,
+                                    foreground: .white,
                                     background: .clear,
                                     useCache: false
                                     
@@ -57,6 +57,7 @@ struct HomeView: View {
                                 .scaledToFit()
                                 .padding(20)
                                 .frame(width:100,height: 100)
+                                .colorMultiply(Color.themeStrong)
                                 Text("make QR code")
                                 
                             }
@@ -68,14 +69,15 @@ struct HomeView: View {
                             HStack {
                                 CodeGenerator.makeBarcodeImage(
                                     text: barcode,
-                                    forground: strongColor,
+                                    forground: .white,
                                     background: .clear,
                                     useCache: false
                                 )
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width:100,height: 100)
-                                
+                                .colorMultiply(Color.themeStrong)
+
                                 Text("make Bar codce")
                             }
                         }
