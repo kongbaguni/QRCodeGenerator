@@ -21,8 +21,8 @@ struct QR_code_generatorApp: SwiftUI.App {
                 
             }
         }
-        UITextView.appearance().backgroundColor = .clear
     }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
