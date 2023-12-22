@@ -161,6 +161,7 @@ struct HomeView: View {
         })
         .navigationTitle(Text("Home"))
         
+        
     }
     
     func reload() {
