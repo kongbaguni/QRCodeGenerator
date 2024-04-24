@@ -10,9 +10,14 @@ import RealmSwift
 
 extension Realm {
     static var shared:Realm {
-        let config = Realm.Configuration(schemaVersion:0) { migration, oldSchemaVersion in
-          
+        do {
+            let config = Realm.Configuration(schemaVersion:10) { migration, oldSchemaVersion in
+                
+            }
+            return try Realm(configuration: config)
+        } catch {
+            print(error.localizedDescription)
+            abort()
         }
-        return try! Realm(configuration: config)
     }
 }
