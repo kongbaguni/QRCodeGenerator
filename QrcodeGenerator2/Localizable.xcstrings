@@ -1178,6 +1178,16 @@
         }
       }
     },
+    "point history" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "포인트 내역"
+          }
+        }
+      }
+    },
     "points history" : {
       "extractionState" : "manual",
       "localizations" : {

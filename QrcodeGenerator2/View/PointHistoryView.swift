@@ -26,21 +26,6 @@ struct PointHistoryView: View {
     var body: some View {
         List {
             Group {
-                HStack {
-                    Text("Current Point :")
-                        .foregroundStyle(.secondary)
-                    Text("\(pointSum)")
-                        .bold()
-                        .foregroundStyle(ThemeManager.shared.primary)
-                    
-                }
-                
-                NavigationLink {
-                    PointDescriptionView()
-                } label: {
-                    Text("Point Description title")
-                }
-                
                 Section {
                     ForEach(points, id:\.self) { point in
                         HStack {
@@ -55,6 +40,22 @@ struct PointHistoryView: View {
                         }
                     }
                 }
+                
+                HStack {
+                    Text("Current Point :")
+                        .foregroundStyle(.secondary)
+                    Text("\(pointSum)")
+                        .bold()
+                        .foregroundStyle(ThemeManager.shared.primary)
+                    
+                }
+
+                NavigationLink {
+                    PointDescriptionView()
+                } label: {
+                    Text("Point Description title")
+                }
+
                 
                 Button {
                     self.error = CustomError.watchAddAndEarnPointPrompt
