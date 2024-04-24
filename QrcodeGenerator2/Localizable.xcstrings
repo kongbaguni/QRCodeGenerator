@@ -2,7 +2,6 @@
   "sourceLanguage" : "en",
   "strings" : {
     "!!" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -39,7 +38,6 @@
       }
     },
     "01" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -50,7 +48,6 @@
       }
     },
     "02" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -61,7 +58,6 @@
       }
     },
     "03" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -72,7 +68,6 @@
       }
     },
     "010-1234-1234" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -94,7 +89,6 @@
       }
     },
     "account creation date" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -105,7 +99,6 @@
       }
     },
     "Activate this theme" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -116,7 +109,6 @@
       }
     },
     "ad" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -171,7 +163,6 @@
       }
     },
     "App Version :" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -182,7 +173,6 @@
       }
     },
     "background" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -193,7 +183,6 @@
       }
     },
     "background color" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -204,7 +193,6 @@
       }
     },
     "background Color" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -215,7 +203,6 @@
       }
     },
     "Bar code" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -226,7 +213,6 @@
       }
     },
     "btn1" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -237,7 +223,6 @@
       }
     },
     "btn1 background color" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -248,7 +233,6 @@
       }
     },
     "btn1 foreground color" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -259,7 +243,6 @@
       }
     },
     "btn2" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -270,7 +253,6 @@
       }
     },
     "btn2 background color" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -281,7 +263,6 @@
       }
     },
     "btn2 foreground color" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -292,7 +273,6 @@
       }
     },
     "btn3" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -303,7 +283,6 @@
       }
     },
     "btn3 background color" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -314,7 +293,6 @@
       }
     },
     "btn3 foreground color" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -336,7 +314,6 @@
       }
     },
     "color" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -414,7 +391,6 @@
       }
     },
     "Continue with Apple" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -425,7 +401,6 @@
       }
     },
     "Continue with Google" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -457,7 +432,6 @@
       }
     },
     "dark mode" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -468,7 +442,6 @@
       }
     },
     "delete" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -479,7 +452,6 @@
       }
     },
     "delete account" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -490,7 +462,6 @@
       }
     },
     "delete account desc1" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -552,7 +523,6 @@
       }
     },
     "Don't see this message again" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -563,7 +533,6 @@
       }
     },
     "edit" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -618,7 +587,6 @@
       }
     },
     "email" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -697,7 +665,6 @@
       }
     },
     "error" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -718,7 +685,6 @@
       }
     },
     "facebook id" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -729,7 +695,6 @@
       }
     },
     "facebook.com/" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -740,7 +705,6 @@
       }
     },
     "favorites" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -751,7 +715,6 @@
       }
     },
     "foreground" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -762,7 +725,6 @@
       }
     },
     "foreground Color" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -772,11 +734,7 @@
         }
       }
     },
-    "Hello, world!" : {
-
-    },
     "Home" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -808,7 +766,6 @@
       }
     },
     "http://" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -829,7 +786,6 @@
       }
     },
     "https://" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -840,7 +796,6 @@
       }
     },
     "id" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -851,7 +806,6 @@
       }
     },
     "ID" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -873,7 +827,6 @@
       }
     },
     "input name" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -894,7 +847,6 @@
       }
     },
     "instagram id" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -905,7 +857,6 @@
       }
     },
     "instagram.com/" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -955,7 +906,6 @@
       }
     },
     "last sign in date" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -966,7 +916,6 @@
       }
     },
     "light mode" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -987,7 +936,6 @@
       }
     },
     "mailto:" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -998,7 +946,6 @@
       }
     },
     "make Bar codce" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1020,7 +967,6 @@
       }
     },
     "make new theme" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1031,7 +977,6 @@
       }
     },
     "make QR code" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1053,7 +998,6 @@
       }
     },
     "more...." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1064,7 +1008,6 @@
       }
     },
     "my codes" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1075,7 +1018,6 @@
       }
     },
     "name" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1103,7 +1045,6 @@
       }
     },
     "OpenSorce License" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1114,7 +1055,6 @@
       }
     },
     "org" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1125,7 +1065,6 @@
       }
     },
     "organization name" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1136,7 +1075,6 @@
       }
     },
     "phone" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1167,7 +1105,6 @@
       }
     },
     "Point" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1253,7 +1190,6 @@
       }
     },
     "Preview" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1264,7 +1200,6 @@
       }
     },
     "primary" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1275,7 +1210,6 @@
       }
     },
     "primary color" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1286,7 +1220,6 @@
       }
     },
     "QR code" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1297,7 +1230,6 @@
       }
     },
     "regDt" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1308,7 +1240,6 @@
       }
     },
     "save" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1319,7 +1250,6 @@
       }
     },
     "secondary" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1330,7 +1260,6 @@
       }
     },
     "secondary color" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1363,7 +1292,6 @@
       }
     },
     "show my theme only" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1391,7 +1319,6 @@
       }
     },
     "Signin anonymous" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1419,7 +1346,6 @@
       }
     },
     "Signin with Apple" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1436,7 +1362,6 @@
       }
     },
     "Signin with Google" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1453,7 +1378,6 @@
       }
     },
     "SignOut" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1470,7 +1394,6 @@
       }
     },
     "strong" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1481,7 +1404,6 @@
       }
     },
     "strong color" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1492,7 +1414,6 @@
       }
     },
     "tag input" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1503,7 +1424,6 @@
       }
     },
     "Tag input: separated by commas" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1514,7 +1434,6 @@
       }
     },
     "tags" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1536,7 +1455,6 @@
       }
     },
     "tel:" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1547,7 +1465,6 @@
       }
     },
     "test" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1558,7 +1475,6 @@
       }
     },
     "testjkl djkl djsakl djskal  djklj  djkl jkljkl dsjm,a.jsdajdlkasjdlkasjdklasjdskladjaskldjaskljdslkajd " : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1579,7 +1495,6 @@
       }
     },
     "text input" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1590,7 +1505,6 @@
       }
     },
     "text input placeholder" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1607,7 +1521,6 @@
       }
     },
     "textField background" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1618,7 +1531,6 @@
       }
     },
     "textfield background color" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1629,7 +1541,6 @@
       }
     },
     "textField foreground" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1640,7 +1551,6 @@
       }
     },
     "textfiled foreground color" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1668,7 +1578,6 @@
       }
     },
     "theme list" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1707,7 +1616,6 @@
       }
     },
     "themes" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1718,7 +1626,6 @@
       }
     },
     "title" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1729,7 +1636,6 @@
       }
     },
     "title input" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1740,7 +1646,6 @@
       }
     },
     "title1" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1751,7 +1656,6 @@
       }
     },
     "title2 asd asd" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1762,7 +1666,6 @@
       }
     },
     "title3" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1773,7 +1676,6 @@
       }
     },
     "updateDt" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1784,7 +1686,6 @@
       }
     },
     "userId" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1828,7 +1729,6 @@
       }
     },
     "website" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1839,7 +1739,6 @@
       }
     },
     "webview" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1877,7 +1776,6 @@
       }
     },
     "X id" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1888,7 +1786,6 @@
       }
     },
     "x.com/" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1909,7 +1806,6 @@
       }
     },
     "youtube id" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -1920,7 +1816,6 @@
       }
     },
     "youtube.com/" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {

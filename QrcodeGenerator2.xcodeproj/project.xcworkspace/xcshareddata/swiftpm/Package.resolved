@@ -1,5 +1,5 @@
 {
-  "originHash" : "2a3d5c9901fed56c286705ae1b6a2ff8b7489e0c2641dfd6b6def3f69291b31e",
+  "originHash" : "450c1e948e44bff7c5964b4bd751323b6b1c3af9133e11c4b0f4bcde342c3d60",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -17,6 +17,15 @@
       "state" : {
         "revision" : "9970fd0bb7a05dad0b6566ae1f56937716686b24",
         "version" : "1.1.1"
+      }
+    },
+    {
+      "identity" : "activityview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftUI-Plus/ActivityView.git",
+      "state" : {
+        "revision" : "444ff3755e49b0284c12360b3db0d64d31f0c3f8",
+        "version" : "1.2.0"
       }
     },
     {
@@ -206,6 +215,15 @@
       "state" : {
         "revision" : "467a3d17479887943ab917a379e62bbaff60ac8a",
         "version" : "2.1.1"
+      }
+    },
+    {
+      "identity" : "swiftui-flow-layout",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/globulus/swiftui-flow-layout",
+      "state" : {
+        "revision" : "de7da3440c3b87ba94adfa98c698828d7746a76d",
+        "version" : "1.0.5"
       }
     }
   ],

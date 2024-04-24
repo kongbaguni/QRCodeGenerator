@@ -16,4 +16,5 @@ extension Notification.Name {
     static let signoutDidSucessed = Notification.Name("signoutDidSucessed_observer")
     static let textfieldSetFocus = Notification.Name("textfieldSetFocus_observer")
     static let pointDidChanged = Notification.Name("pointDidChanged_observer")
+    
 }
