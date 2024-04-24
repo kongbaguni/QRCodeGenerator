@@ -46,3 +46,52 @@ extension Color {
         return Color(dynamicColor)
     }
 }
+
+extension Color {
+    static var themeBackground:Color {
+        ThemeManager.shared.background
+    }
+    static var themePrimary:Color {
+        ThemeManager.shared.primary
+    }
+    static var themeSecondary:Color {
+        ThemeManager.shared.secondary
+    }
+    
+    static var themeStrong:Color {
+        ThemeManager.shared.themeModel?.strong?.color ?? .teal
+    }
+
+    static var themeTextfieldForground:Color {
+        ThemeManager.shared.themeModel?.textFieldForeground?.color ?? .primary
+    }
+    
+    static var themeTextFieldBackground:Color {
+        ThemeManager.shared.themeModel?.textFieldBackground?.color ?? .clear
+    }
+    
+    static var themeBtn1Foreground:Color {
+        ThemeManager.shared.btn1Foreground
+    }
+    
+    static var themeBtn1Background:Color {
+        ThemeManager.shared.btn1Background
+    }
+
+    static var themeBtn2Foreground:Color {
+        ThemeManager.shared.btn2Foreground
+    }
+    
+    static var themeBtn2Background:Color {
+        ThemeManager.shared.btn2Background
+    }
+
+    static var themeBtn3Foreground:Color {
+        ThemeManager.shared.btn3Foreground
+    }
+    
+    static var themeBtn3Background:Color {
+        ThemeManager.shared.btn3Background
+    }
+    
+}
