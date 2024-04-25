@@ -156,6 +156,7 @@
 		1BA57F492BD8E8BB00332FE1 /* DeleteAccountConfirmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteAccountConfirmView.swift; sourceTree = "<group>"; };
 		1BA57F4A2BD8E8BB00332FE1 /* AppTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTitleView.swift; sourceTree = "<group>"; };
 		1BA57F4B2BD8E8BC00332FE1 /* ThemeSettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSettingView.swift; sourceTree = "<group>"; };
+		1BD50FFA2BDA282C007302D2 /* QrcodeGenerator2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QrcodeGenerator2.entitlements; sourceTree = "<group>"; };
 		1BF9FDDB2BD77A7A00135E83 /* QrcodeGenerator2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QrcodeGenerator2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BF9FDDE2BD77A7A00135E83 /* QrcodeGenerator2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrcodeGenerator2App.swift; sourceTree = "<group>"; };
 		1BF9FDE02BD77A7A00135E83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -310,6 +311,7 @@
 		1BF9FDDD2BD77A7A00135E83 /* QrcodeGenerator2 */ = {
 			isa = PBXGroup;
 			children = (
+				1BD50FFA2BDA282C007302D2 /* QrcodeGenerator2.entitlements */,
 				1B368EDE2BD8D61200E10464 /* Info.plist */,
 				1B368EDC2BD8D2A100E10464 /* GoogleService-Info.plist */,
 				1B368EDA2BD8A27C00E10464 /* AuthManager.swift */,
@@ -652,6 +654,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QrcodeGenerator2/QrcodeGenerator2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QrcodeGenerator2/Preview Content\"";
@@ -683,6 +686,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QrcodeGenerator2/QrcodeGenerator2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QrcodeGenerator2/Preview Content\"";

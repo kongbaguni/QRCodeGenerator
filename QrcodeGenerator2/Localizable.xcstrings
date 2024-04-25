@@ -1179,6 +1179,7 @@
       }
     },
     "point history" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
