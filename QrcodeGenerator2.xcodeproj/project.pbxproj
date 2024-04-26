@@ -82,6 +82,7 @@
 		1BA57F602BD8E8BC00332FE1 /* ThemeSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA57F4B2BD8E8BC00332FE1 /* ThemeSettingView.swift */; };
 		1BA57F632BD8E90600332FE1 /* ActivityView in Frameworks */ = {isa = PBXBuildFile; productRef = 1BA57F622BD8E90600332FE1 /* ActivityView */; };
 		1BA57F662BD8EC2200332FE1 /* SwiftUIFlowLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 1BA57F652BD8EC2200332FE1 /* SwiftUIFlowLayout */; };
+		1BF721472BDB3D7A00F685A0 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1BF721462BDB3D7A00F685A0 /* InfoPlist.xcstrings */; };
 		1BF9FDDF2BD77A7A00135E83 /* QrcodeGenerator2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9FDDE2BD77A7A00135E83 /* QrcodeGenerator2App.swift */; };
 		1BF9FDE12BD77A7A00135E83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9FDE02BD77A7A00135E83 /* ContentView.swift */; };
 		1BF9FDE32BD77A7C00135E83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9FDE22BD77A7C00135E83 /* Assets.xcassets */; };
@@ -157,6 +158,7 @@
 		1BA57F4A2BD8E8BB00332FE1 /* AppTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTitleView.swift; sourceTree = "<group>"; };
 		1BA57F4B2BD8E8BC00332FE1 /* ThemeSettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSettingView.swift; sourceTree = "<group>"; };
 		1BD50FFA2BDA282C007302D2 /* QrcodeGenerator2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QrcodeGenerator2.entitlements; sourceTree = "<group>"; };
+		1BF721462BDB3D7A00F685A0 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		1BF9FDDB2BD77A7A00135E83 /* QrcodeGenerator2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QrcodeGenerator2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BF9FDDE2BD77A7A00135E83 /* QrcodeGenerator2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrcodeGenerator2App.swift; sourceTree = "<group>"; };
 		1BF9FDE02BD77A7A00135E83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 		1BF9FDD22BD77A7A00135E83 = {
 			isa = PBXGroup;
 			children = (
+				1BF721462BDB3D7A00F685A0 /* InfoPlist.xcstrings */,
 				1B9B2E542BD8F57200E5FDCC /* Launch Screen.storyboard */,
 				1B368ED62BD8A23E00E10464 /* Firebase */,
 				1B368ECA2BD8A09E00E10464 /* GoogleAd */,
@@ -452,6 +455,7 @@
 				1BF9FDE32BD77A7C00135E83 /* Assets.xcassets in Resources */,
 				1B368ECF2BD8A09E00E10464 /* UnifiedNativeAdView.xib in Resources */,
 				1B368EDD2BD8D2A100E10464 /* GoogleService-Info.plist in Resources */,
+				1BF721472BDB3D7A00F685A0 /* InfoPlist.xcstrings in Resources */,
 				1B9B2E552BD8F57200E5FDCC /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -662,6 +666,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QrcodeGenerator2/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -694,6 +699,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QrcodeGenerator2/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
